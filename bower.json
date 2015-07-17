@@ -9,6 +9,7 @@
   "dependencies": {
     "bourbon": "~4.1",
     "neat": "~1.7",
+    "jquery": "~2.1.4",
     "essential.js": "~0.5.0"
   }
 }
