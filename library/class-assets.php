@@ -6,13 +6,16 @@ if ( ! class_exists( 'Lean_Assets' ) ) :
 		private $version = '1.0.0';
 
 		public function __construct( $environment = '' ){
+			$this->environment = $this->get_environment( $environment );
+		}
+
+		private function get_environment( $environment ){
 			if( '' === $environment ){
-				$this->environment = defined('WP_DEBUG') && WP_DEBUG
+				$environment = defined('WP_DEBUG') && WP_DEBUG
 					? 'development'
 					: 'production';
-			} else {
-				$this->environment = $environment;
 			}
+			return $environment;
 		}
 
 		public function load( $version = '1.0.0', $load_comments = false ) {
