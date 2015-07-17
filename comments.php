@@ -7,7 +7,7 @@
  * handled by a callback to digistarter_comment() which is
  * located in the inc/template-tags.php file.
  *
- * @package digistarter
+ * @package lean
  */
 
 /*
