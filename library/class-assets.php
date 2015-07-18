@@ -37,7 +37,10 @@ if ( ! class_exists( 'Lean_Assets' ) ) :
 			$suffix = $this->get_assets_suffix();
 			$this->base_path = get_stylesheet_directory_uri();
 
-			$this->update_jquery();
+			if ( ! is_admin() ) {
+				$this->update_jquery();
+				$this->remove_emoji();
+			}
 			// JS
 			wp_enqueue_script(
 				sprintf('%s-%s-%s', $this->environment, 'lean', 'js'),
@@ -59,11 +62,6 @@ if ( ! class_exists( 'Lean_Assets' ) ) :
 		}
 
 		private function update_jquery(){
-			// Don't do anything on the admin page
-			if( is_admin() ){
-				return;
-			}
-
 			$jquery_path = 'assets/bower_components/jquery/dist/jquery.min.js';
 			$jquery_version = '2.1.4';
 
@@ -78,7 +76,12 @@ if ( ! class_exists( 'Lean_Assets' ) ) :
 			wp_enqueue_script('jquery');
 		}
 
-		public function load_comments_assets(){
+		private function remove_emoji(){
+			remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+			remove_action( 'wp_print_styles', 'print_emoji_styles' );
+		}
+
+		private function load_comments_assets(){
 			if ( is_singular()
 				&& comments_open()
 				&& get_option( 'thread_comments' )
