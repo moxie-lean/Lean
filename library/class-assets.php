@@ -4,6 +4,7 @@ if ( ! class_exists( 'Lean_Assets' ) ) :
 		private $environment = 'development';
 		private $load_comments = false;
 		private $version = '1.0.0';
+		private $base_path = '';
 
 		public function __construct( $environment = '' ){
 			$this->environment = $this->get_environment( $environment );
@@ -34,12 +35,13 @@ if ( ! class_exists( 'Lean_Assets' ) ) :
 
 		public function setup_assets() {
 			$suffix = $this->get_assets_suffix();
-			$base_path = get_stylesheet_directory_uri();
+			$this->base_path = get_stylesheet_directory_uri();
 
+			$this->update_jquery();
 			// JS
 			wp_enqueue_script(
 				sprintf('%s-%s-%s', $this->environment, 'lean', 'js'),
-				sprintf('%s/assets/js/production%s.js', $base_path, $suffix),
+				sprintf('%s/assets/js/production%s.js', $this->base_path, $suffix),
 				array( 'jquery' ),
 				$this->version,
 				true
@@ -48,12 +50,32 @@ if ( ! class_exists( 'Lean_Assets' ) ) :
 			// CSS
 			wp_enqueue_style(
 				sprintf('%s-%s-%s', $this->environment, 'lean', 'style'),
-				sprintf('%s/assets/css/style%s.css', $base_path, $suffix)
+				sprintf('%s/assets/css/style%s.css', $this->base_path, $suffix)
 			);
 
 			if( $this->load_comments ){
 				$this->load_comments_assets();
 			}
+		}
+
+		private function update_jquery(){
+			// Don't do anything on the admin page
+			if( is_admin() ){
+				return;
+			}
+
+			$jquery_path = 'assets/bower_components/jquery/dist/jquery.min.js';
+			$jquery_version = '2.1.4';
+
+			wp_deregister_script('jquery');
+			wp_register_script(
+				'jquery', /// Handle
+				sprintf('%s/%s', $this->base_path, $jquery_path), // source
+				false, // No dependency
+				$jquery_version, // No version
+				false // Don't load on footer
+			);
+			wp_enqueue_script('jquery');
 		}
 
 		public function load_comments_assets(){
