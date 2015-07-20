@@ -18,5 +18,11 @@
   "smarttabs": true,
   "jquery": true,
   "maxdepth": 2,
-  "nonbsp": true
+  "nonbsp": true,
+  "predef": [
+    "Essential",
+    "MoxieLean",
+    "google",
+    "$"
+  ]
 }
