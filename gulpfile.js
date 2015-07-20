@@ -15,6 +15,7 @@ var reload = browserSync.reload;
 var autoprefixer = require('gulp-autoprefixer'); // Autoprefixing magic
 var minifycss = require('gulp-minify-css');
 var jshint = require('gulp-jshint');
+var jscs = require('gulp-jscs');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
@@ -96,9 +97,23 @@ gulp.task('js', function() {
 * Scan our own JS code excluding vendor JS libraries and perform jsHint task.
 */
 gulp.task('jsHint', function() {
-  return gulp.src([source + 'js/app/behaviors/*.js'])
+  return gulp.src([
+    source + 'js/app/*.js',
+    source + 'js/app/behaviors/*.js',
+  ])
   .pipe(jshint('.jshintrc'))
   .pipe(jshint.reporter('default'));
+});
+
+gulp.task('jscs', function() {
+  return gulp.src([
+    source + 'js/app/*.js',
+    source + 'js/app/behaviors/*.js',
+  ])
+  .pipe(jscs());
+});
+
+gulp.task('reviewJS', ['jsHint', 'jscs'], function() {
 });
 
 /**
@@ -112,22 +127,22 @@ gulp.task('jsHint', function() {
 gulp.task('cleanup', function(cb) {
   return del([
     '**/build',
-    bower,
-    './library/vendors/composer',
-    '**/.sass-cache',
-    '**/.codekit-cache',
-    '**/.DS_Store',
-    '!node_modules/**',
+bower,
+'./library/vendors/composer',
+'**/.sass-cache',
+'**/.codekit-cache',
+'**/.DS_Store',
+'!node_modules/**',
   ], cb);
 });
 
 gulp.task('cleanupFinal', function(cb) {
   return del([
     '**/build',
-  bower, '**/.sass-cache',
-  '**/.codekit-cache',
-  '**/.DS_Store',
-  '!node_modules/**',
+bower, '**/.sass-cache',
+'**/.codekit-cache',
+'**/.DS_Store',
+'!node_modules/**',
   ], cb);
 });
 
