@@ -62,7 +62,7 @@ if ( ! class_exists( 'Lean_Assets' ) ) :
 		}
 
 		private function update_jquery(){
-			$jquery_path = 'assets/bower_components/jquery/dist/jquery.min.js';
+			$jquery_path = './bower_components/jquery/dist/jquery.min.js';
 			$jquery_version = '2.1.4';
 
 			wp_deregister_script('jquery');
