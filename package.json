@@ -22,6 +22,7 @@
     "gulp-uglify": "^0.3.1",
     "gulp-util": "^3.0.1",
     "gulp-wp-rev": "0.0.1",
+    "jscs": "^1.13.1",
     "swig": "^1.4.2"
   },
   "engines": {
