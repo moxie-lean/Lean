@@ -4,9 +4,10 @@
 var project = 'somelikeitneat';
 // Files that you want to package into a zip go here
 var build = './build/';
-// Your main project assets and naming 'source' instead of 'src' to avoid confusion with gulp.src
-var source = './assets/';
-var bower = source + '/bower_components/';
+// Your main project assets and naming 'source' instead of 'src' to avoid
+// confusion with gulp.src
+var source ='./assets/';
+var bower = './bower_components/';
 
 // Load plugins
 var gulp = require('gulp');
@@ -30,8 +31,9 @@ var plumber = require('gulp-plumber');
 /**
  * Browser Sync
  *
- * The 'cherry on top!' Asynchronous browser syncing of assets across multiple devices!! Watches for changes to js, image and php files
- * Although, I think this is redundant, since we have a watch task that does this already.
+ * The 'cherry on top!' Asynchronous browser syncing of assets across
+ * multiple devices!! Watches for changes to js, image and php files. Although,
+ * I think this is redundant, since we have a watch task that does this already.
  */
 gulp.task('browser-sync', function() {
     var files = [
@@ -46,22 +48,30 @@ gulp.task('browser-sync', function() {
 /**
  * Styles
  *
- * Looking at src/sass and compiling the files into Expanded format, Autoprefixing and sending the files to the build folder
+ * Looking at src/sass and compiling the files into Expanded format,
+ * Autoprefixing and sending the files to the build folder
  */
 gulp.task('styles', function () {
     return gulp.src([source+'sass/**/*.scss'])
     .pipe(plumber())
     .pipe(sass({ style: 'expanded', 'sourcemap=none': true }))
-    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+    .pipe(autoprefixer(
+      'last 2 version',
+      'safari 5', 'ie 8',
+      'ie 9',
+      'opera 12.1',
+      'ios 6',
+      'android 4'
+    ))
     .pipe(plumber.stop())
     .pipe(gulp.dest(source+'css'))
     .pipe(cmq()) // Combines Media Queries
-    .pipe(reload({stream:true})) // Inject Styles when style file is created
+    .pipe(reload({ stream: true })) // Inject Styles when style file is created
     .pipe(rename({ suffix: '-min' }))
-    .pipe(minifycss({keepBreaks:true}))
+    .pipe(minifycss({ keepBreaks:true }))
     .pipe(minifycss({ keepSpecialComments: 0 }))
-    .pipe(gulp.dest(source+'css'))
-    .pipe(reload({stream:true})) // Inject Styles when min style file is created
+    .pipe(gulp.dest( source + 'css' ))
+    .pipe(reload({ stream: true })) // Inject Styles when min style file is created
     .pipe(notify({ message: 'Styles task complete', onLast: true }));
 });
 
@@ -69,15 +79,21 @@ gulp.task('styles', function () {
 /**
  * Scripts
  *
- * Look at src/js and concatenate those files, send them to assets/js where we then minimize the concatenated file.
+ * Look at src/js and concatenate those files, send them to assets/js where
+ * we then minimize the concatenated file.
  */
 gulp.task('js', function() {
-    return gulp.src([source+'js/vendor/**/*.js', source+'js/app/**/*.js', source+'bower_components/**/*.js'])
+    return gulp.src([
+      bower + 'essential.js/essential.js',
+      source + '/js/app/main.js',
+      source + '/js/app/init.js',
+      source + '/js/app/behaviors/*.js',
+    ])
     .pipe(concat('production.js'))
-    .pipe(gulp.dest(source+'js'))
+    .pipe(gulp.dest(source + 'js'))
     .pipe(rename({ suffix: '-min' }))
     .pipe(uglify())
-    .pipe(gulp.dest(build+'assets/js/'))
+    .pipe(gulp.dest(source + 'js'))
     .pipe(notify({ message: 'Scripts task complete', onLast: true }));
 });
 
@@ -87,7 +103,7 @@ gulp.task('js', function() {
  * Scan our own JS code excluding vendor JS libraries and perform jsHint task.
  */
 gulp.task( 'jsHint', function() {
-    return gulp.src( [ source+'js/app/**/*.js' ] )
+    return gulp.src( [ source + 'js/app/behaviors/*.js' ] )
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'));
 } );
@@ -103,19 +119,40 @@ gulp.task('cleanup', function(cb) {
 });
 
 gulp.task('cleanupFinal', function(cb) {
-	return del(['**/build', bower,'**/.sass-cache','**/.codekit-cache','**/.DS_Store','!node_modules/**'], cb);
+	return del([
+      '**/build',
+      bower, '**/.sass-cache',
+      '**/.codekit-cache',
+      '**/.DS_Store',
+      '!node_modules/**'
+    ], cb);
 });
 
 /**
  * Build task that moves essential theme files for production-ready sites
  *
- * First, we're moving PHP files to the build folder for redistribution. Also we're excluding the library, build and src directories. Why?
- * Excluding build prevents recursive copying and Inception levels of bullshit. We exclude library because there are certain non-php files
- * there that need to get moved as well. So I put the library directory into its own task. Excluding src because, well, we don't want to
- * distribute uniminified/unoptimized files. And, uh, grabbing screenshot.png cause I'm janky like that!
+ * First, we're moving PHP files to the build folder for redistribution.
+ * Also we're excluding the library, build and src directories. Why?
+ * Excluding build prevents recursive copying and Inception levels of bullshit.
+ * We exclude library because there are certain non-php files there that need
+ * to get moved as well. So I put the library directory into its own task.
+ * Excluding src because, well, we don't want to * distribute
+ * uniminified/unoptimized files. And, uh, grabbing screenshot.png
+ * cause I'm janky like that!
  */
 gulp.task('buildPhp', function() {
-    return gulp.src(['**/*.php', './style.css','./gulpfile.js','./package.json','./.bowercc','.gitignore', './screenshot.png','!./build/**','!./library/**','!./src/**'])
+    return gulp.src([
+      '**/*.php',
+      './style.css',
+      './gulpfile.js',
+      './package.json',
+      './.bowercc',
+      '.gitignore',
+      './screenshot.png',
+      '!./build/**',
+      '!./library/**',
+      '!./src/**'
+    ])
     .pipe(gulp.dest(build))
     .pipe(notify({ message: 'Moving files complete', onLast: true }));
 });
