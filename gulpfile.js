@@ -65,7 +65,7 @@ gulp.task('styles', function() {
   .pipe(minifycss({ keepBreaks:true }))
   .pipe(minifycss({ keepSpecialComments: 0 }))
   .pipe(gulp.dest(source + 'css'))
-  .pipe(reload({ stream: true })) // Inject Styles when min style file is created
+  .pipe(reload({ stream: true })) // Inject Styles in min style file is created
   .pipe(notify({ message: 'Styles task complete', onLast: true }));
 });
 
@@ -104,8 +104,10 @@ gulp.task('jsHint', function() {
 /**
  * Clean
  *
- * Being a little overzealous, but we're cleaning out the build folder, codekit-cache directory and annoying DS_Store files and Also
- * clearing out unoptimized image files in zip as those will have been moved and optimized
+ * Being a little overzealous, but we're cleaning out the build folder,
+ * codekit-cache directory and annoying DS_Store files and Also
+ * clearing out unoptimized image files in zip as those will have been moved
+ * and optimized
  */
 gulp.task('cleanup', function(cb) {
   return del([
