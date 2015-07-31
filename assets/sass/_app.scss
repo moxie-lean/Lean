@@ -1,15 +1,15 @@
 /*
-Theme Name:
-Theme URI:
-Author:
-Author URI:
+Theme Name: Lean
+Theme URI: https://github.com/moxienyc/Lean/
+Author: Moxie
+Author URI: https://getmoxied.net/
 Description:
-Version: 1.0.1
+Version: 1.0.0
 License: GNU General Public License
 License URI: license.txt
-Text Domain: digistarter
+Text Domain: lean
 Domain Path: /library/languages/
-Tags: white, light, one-column, two-columns, right-sidebar, responsive-layout, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, translation-ready, accessibility-ready
+Tags:
 */
 
 /*--------------------------------------------------------------
@@ -21,23 +21,16 @@ Tags: white, light, one-column, two-columns, right-sidebar, responsive-layout, c
 4.0 - Forms
 5.0 - Components/ Add-ons
 6.0 - Layout and Structure
-6.1 - Header
-6.2 - Navigation
-6.3 - Content
-6.4 - Page Templates
-6.5 - Sidebar
-6.6 - Footer
-6.7 - Accessbility
 
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
 1.0 Bourbon, Bitters, Neat
 --------------------------------------------------------------*/
-@import "../../assets/bower_components/bourbon/app/assets/stylesheets/bourbon";
+@import "../../bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "base/base"; // Bitters
 @import "grid-settings";
-@import "../../assets/bower_components/neat/app/assets/stylesheets/neat";
+@import "../../bower_components/neat/app/assets/stylesheets/neat";
 
 /*--------------------------------------------------------------
 2.0 Normalize/Reset
@@ -57,9 +50,9 @@ Tags: white, light, one-column, two-columns, right-sidebar, responsive-layout, c
 /*--------------------------------------------------------------
 5.0 Components/Add-ons
 --------------------------------------------------------------*/
-@import "../../assets/bower_components/bourbon/app/assets/stylesheets/addons/clearfix";
-@import "../../assets/bower_components/bourbon/app/assets/stylesheets/addons/prefixer";
-@import "../../assets/bower_components/bourbon/app/assets/stylesheets/addons/font-family";
+@import "../../bower_components/bourbon/app/assets/stylesheets/addons/clearfix";
+@import "../../bower_components/bourbon/app/assets/stylesheets/addons/prefixer";
+@import "../../bower_components/bourbon/app/assets/stylesheets/addons/font-family";
 
 /*--------------------------------------------------------------
 6.0 Layout and Structure

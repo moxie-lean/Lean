@@ -1,30 +1,24 @@
 <?php
-/**
- * digistarter functions and definitions
- *
- * @package digistarter
- */
-if ( ! function_exists( 'digistarter_setup' ) ) :
+if ( ! function_exists( 'lean_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
  * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
+ * runs before the init hook.
  */
-function digistarter_setup() {
+function lean_setup() {
+
 	/**
 	 * Set the content width based on the theme's design and stylesheet.
+	 * based on pixels
 	 */
 	if ( ! isset( $content_width ) ) {
-		$content_width = 640; /* pixels */
+		$content_width = 640;
 	}
 
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on digistarter, use a find and replace
-	 * to change 'digistarter' to the name of your theme in all the template files
 	 */
 	load_theme_textdomain( 'digistarter', get_template_directory() . '/library/languages' );
 
@@ -58,34 +52,12 @@ function digistarter_setup() {
 	 */
 	require get_template_directory() . '/library/vendors/template-tags.php';
 }
-endif; // digistarter_setup
-add_action( 'after_setup_theme', 'digistarter_setup' );
+endif;
+add_action( 'after_setup_theme', 'lean_setup' );
 
-/**
- * Enqueue scripts and styles.
- */
-if ( !function_exists('digistarter_scripts') ) :
-	function digistarter_scripts() {
-
-		if ( SCRIPT_DEBUG || WP_DEBUG ) :
-			// Concatonated Scripts
-			wp_enqueue_script( 'production-js', get_template_directory_uri() . '/assets/js/production.js', array( 'jquery' ), '1.0.0', false );
-			// Main Style
-			wp_enqueue_style( 'digistarter-style',  get_stylesheet_directory_uri() . '/assets/css/style.css' );
-		else :
-			// Concatonated Scripts
-			wp_enqueue_script( 'production-js', get_template_directory_uri() . '/assets/js/production-min.js', array( 'jquery' ), '1.0.0', false );
-			// Main Style
-			wp_enqueue_style( 'digistarter-style',  get_stylesheet_directory_uri() . '/assets/css/style-min.css' );
-
-		endif;
-
-		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-			wp_enqueue_script( 'comment-reply' );
-		}
-	}
-	add_action( 'wp_enqueue_scripts', 'digistarter_scripts' );
-endif; // Enqueue Scripts and Styles
+include 'library/class-assets.php';
+$assets = new Lean_Assets();
+$assets->load();
 
 /**
  * Register widgetized area and update sidebar with default widgets.

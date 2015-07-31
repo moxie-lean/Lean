@@ -2,9 +2,7 @@
 /**
  * The template for displaying Archive pages.
  *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
- * @package digistarter
+ * @package lean
  */
 get_header();
 ?>
