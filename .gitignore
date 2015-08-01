@@ -59,7 +59,8 @@ node_modules
 
 ## Build files
 assets/css/rtl*.css
-assets/css/style*.css
+assets/css/*.css
+assets/css/maps/*.map
 assets/js/production.js
 assets/js/production-min.js
 

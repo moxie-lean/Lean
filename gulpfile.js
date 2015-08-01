@@ -1,12 +1,13 @@
 'use strict';
 
-var project = 'somelikeitneat';
-var build = './build/';
+// Set up a general path to the current project
+var project = '.';
+var build = project + './build/';
 
 // Your main project assets and naming 'source' instead of 'src' to avoid
 // confusion with gulp.src
-var source = './assets/';
-var bower = './bower_components/';
+var source = project + '/assets/';
+var bower = project + '/bower_components/';
 
 // Load plugins
 var gulp = require('gulp');
@@ -22,6 +23,7 @@ var concat = require('gulp-concat');
 var notify = require('gulp-notify');
 var cmq = require('gulp-combine-media-queries');
 var runSequence = require('gulp-run-sequence');
+var sourcemaps = require('gulp-sourcemaps');
 
 // Our Sass compiler
 var sass = require('gulp-ruby-sass');
@@ -46,10 +48,13 @@ gulp.task('browser-sync', function() {
  * Looking at src/sass and compiling the files into Expanded format,
  * Autoprefixing and sending the files to the build folder
  */
-gulp.task('styles', function() {
-  return gulp.src([source + 'sass/**/*.scss'])
-  .pipe(plumber())
-  .pipe(sass({ style: 'expanded', 'sourcemap=none': true }))
+gulp.task('compileCSS', function(){
+  return sass(source + 'sass/style.scss', {
+    sourcemap: true,
+    style: 'expanded',
+  }).on('error', function (err) {
+    console.error('Error!', err.message);
+  })
   .pipe(autoprefixer(
     'last 2 version',
     'safari 5', 'ie 8',
@@ -58,17 +63,24 @@ gulp.task('styles', function() {
     'ios 6',
     'android 4'
   ))
-  .pipe(plumber.stop())
+  .pipe(sourcemaps.write('maps', {
+    includeContent: false,
+    sourceRoot: '/source'
+  }))
   .pipe(gulp.dest(source + 'css'))
-  .pipe(cmq()) // Combines Media Queries
-  .pipe(reload({ stream: true })) // Inject Styles when style file is created
   .pipe(rename({ suffix: '-min' }))
   .pipe(minifycss({ keepBreaks:true }))
   .pipe(minifycss({ keepSpecialComments: 0 }))
   .pipe(gulp.dest(source + 'css'))
-  .pipe(reload({ stream: true })) // Inject Styles in min style file is created
   .pipe(notify({ message: 'Styles task complete', onLast: true }));
 });
+
+gulp.task('styles', ['compileCSS'], function() {
+  // Compile the CSS normally afther that delete the source map of the
+  // production file
+  return del( [source + 'css/maps/style.css-min.map' ] );
+});
+// });
 
 /**
  * Scripts
@@ -113,8 +125,7 @@ gulp.task('jscs', function() {
   .pipe(jscs());
 });
 
-gulp.task('reviewJS', ['jsHint', 'jscs'], function() {
-});
+gulp.task('reviewJS', ['jsHint', 'jscs']);
 
 /**
  * Clean
@@ -139,11 +150,11 @@ bower,
 gulp.task('cleanupFinal', function(cb) {
   return del([
     '**/build',
-bower, '**/.sass-cache',
-'**/.codekit-cache',
-'**/.DS_Store',
-'!node_modules/**',
-  ], cb);
+    bower, '**/.sass-cache',
+    '**/.codekit-cache',
+    '**/.DS_Store',
+    '!node_modules/**',
+      ], cb);
 });
 
 /**
