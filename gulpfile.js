@@ -48,11 +48,13 @@ gulp.task('browser-sync', function() {
  * Looking at src/sass and compiling the files into Expanded format,
  * Autoprefixing and sending the files to the build folder
  */
-gulp.task('styles', function() {
-  return gulp.src([source + 'sass/**/*.scss'])
-  .pipe(plumber())
-  .pipe(sass({ style: 'expanded', 'sourcemap=auto': true }))
-  .pipe(sourcemaps.init())
+gulp.task('compileCSS', function(){
+  return sass(source + 'sass/style.scss', {
+    sourcemap: true,
+    style: 'expanded',
+  }).on('error', function (err) {
+    console.error('Error!', err.message);
+  })
   .pipe(autoprefixer(
     'last 2 version',
     'safari 5', 'ie 8',
@@ -61,18 +63,24 @@ gulp.task('styles', function() {
     'ios 6',
     'android 4'
   ))
-  .pipe(plumber.stop())
-  .pipe(sourcemaps.write( source + 'maps' ))
+  .pipe(sourcemaps.write('maps', {
+    includeContent: false,
+    sourceRoot: '/source'
+  }))
   .pipe(gulp.dest(source + 'css'))
-  .pipe(cmq()) // Combines Media Queries
-  .pipe(reload({ stream: true })) // Inject Styles when style file is created
   .pipe(rename({ suffix: '-min' }))
   .pipe(minifycss({ keepBreaks:true }))
   .pipe(minifycss({ keepSpecialComments: 0 }))
   .pipe(gulp.dest(source + 'css'))
-  .pipe(reload({ stream: true })) // Inject Styles in min style file is created
   .pipe(notify({ message: 'Styles task complete', onLast: true }));
 });
+
+gulp.task('styles', ['compileCSS'], function() {
+  // Compile the CSS normally afther that delete the source map of the
+  // production file
+  return del( [source + 'css/maps/style.css-min.map' ] );
+});
+// });
 
 /**
  * Scripts
