@@ -2,11 +2,16 @@
 
 > Bare bones WordPress starter theme focused on modularity, scalability and performance.
 
-Insipired in the amazing job from [digisavvy](https://github.com/digisavvy) in [some-like-it-neat](https://github.com/digisavvy/some-like-it-neat), as Moxie we decied to create something that help us improve our workflow, we are focus on develop platforms using [Wordpress](https://wordpress.org/), so this is the base of those platforms and that's why it's focused in construct a platform for larger sites insted of a normal blog platform.
+Insipired in the amazing job from [digisavvy](https://github.com/digisavvy) in [some-like-it-neat](https://github.com/digisavvy/some-like-it-neat). As [Moxie](https://github.com/moxienyc) we decied to create something that help us improve our workflow, we are focus on develop platforms using [Wordpress](https://wordpress.org/), so this is the base of those platforms and that's why it's focused in construct a platform for larger sites insted of a normal blog platform.
 
-## Commands
+## Content
 
-Inside of the theme there a few utilities that will make your life easier to write code and different tools to set up.
+- [Requirements][#requirements]
+- [Installation][#installation]
+- [Commands][#commands]
+- [Contribution][#contribution]
+ - [Colaborate][#colaborate]
+ - [Erorr reporting][#error-reporting]
 
 ## Requirements
 
@@ -23,6 +28,10 @@ To set up you need to clone the theme where are you going to install the theme w
 ```
 git clone git@github.com:moxienyc/Lean.git
 ```
+
+## Commands
+
+Inside of the theme there a few utilities that will make your life easier to write code and different tools to set up.
 
 
 ## Contribution
