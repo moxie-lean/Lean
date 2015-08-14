@@ -22,12 +22,14 @@ install(){
   echo "                 Installing Packages from Node - By Moxie                  "
   echo "==========================================================================="
   echo "Running: npm install, wait, please."
+  echo ""
   npm install
   echo ""
   echo "==========================================================================="
   echo "                Installing Packages from Bower - By Moxie                  "
   echo "==========================================================================="
   echo "Running: bower install, wait, please."
+  echo ""
   bower install
   # echo ""
   # echo "==========================================================================="
