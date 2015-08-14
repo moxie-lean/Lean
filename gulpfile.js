@@ -26,7 +26,7 @@ var runSequence = require('gulp-run-sequence');
 var sourcemaps = require('gulp-sourcemaps');
 
 // Our Sass compiler
-var sass = require('gulp-ruby-sass');
+var sass = require('gulp-sass');
 var del = require('del');
 
 // Helps prevent stream crashing on errors
@@ -48,13 +48,33 @@ gulp.task('browser-sync', function() {
  * Looking at src/sass and compiling the files into Expanded format,
  * Autoprefixing and sending the files to the build folder
  */
-gulp.task('compileCSS', function(){
-  return sass(source + 'sass/style.scss', {
-    sourcemap: true,
-    style: 'expanded',
-  }).on('error', function (err) {
-    console.error('Error!', err.message);
-  })
+gulp.task('styles', ['minify-css'], function() {
+  var styles = [source + 'css/style.css', source + 'css/style-min.css'];
+  return gulp.src(styles)
+  .pipe( notify({ message: 'Styles task complete', onLast: true }) );
+});
+
+/**
+ * Minify the CSS after has been created with the source maps, has as the task
+ * compile-css as a depnency after this task it's completed it's going to minify
+ * the CSS.
+ */
+gulp.task('minify-css', ['compile-css'], function(){
+  return gulp.src(source + 'css/style.css')
+    .pipe(minifycss({ keepBreaks: true }))
+    .pipe(minifycss({ keepSpecialComments: 0 }))
+    .pipe(rename({ suffix: '-min' }))
+    .pipe(gulp.dest(source + 'css'));
+});
+
+/**
+ * Task to compile the CSS from sass, adss the prefixes and creates the
+ * sourcempas for debug purposes only for the not minified version of this style.
+ */
+gulp.task('compile-css', function(){
+  return gulp.src(source + 'sass/style.scss')
+  .pipe(sourcemaps.init())
+  .pipe(sass().on('error', sass.logError))
   .pipe(autoprefixer(
     'last 2 version',
     'safari 5', 'ie 8',
@@ -63,23 +83,10 @@ gulp.task('compileCSS', function(){
     'ios 6',
     'android 4'
   ))
-  .pipe(sourcemaps.write('maps', {
-    includeContent: false,
-    sourceRoot: '/source'
-  }))
-  .pipe(gulp.dest(source + 'css'))
-  .pipe(rename({ suffix: '-min' }))
-  .pipe(minifycss({ keepBreaks:true }))
-  .pipe(minifycss({ keepSpecialComments: 0 }))
-  .pipe(gulp.dest(source + 'css'))
-  .pipe(notify({ message: 'Styles task complete', onLast: true }));
+  .pipe(sourcemaps.write('./maps'))
+  .pipe(gulp.dest(source + 'css'));
 });
 
-gulp.task('styles', ['compileCSS'], function() {
-  // Compile the CSS normally afther that delete the source map of the
-  // production file
-  return del( [source + 'css/maps/style.css-min.map' ] );
-});
 // });
 
 /**
@@ -93,6 +100,8 @@ gulp.task('js', function() {
     bower + 'essential.js/essential.js',
     source + '/js/app/main.js',
     source + '/js/app/init.js',
+    source + '/js/app/base.js',
+    source + '/js/app/!(base).js',
     source + '/js/app/behaviors/*.js',
   ])
   .pipe(concat('production.js'))
