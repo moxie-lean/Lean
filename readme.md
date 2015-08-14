@@ -6,12 +6,12 @@ Insipired in the amazing job from [digisavvy](https://github.com/digisavvy) in [
 
 ## Content
 
-- [Requirements][#requirements]
-- [Installation][#installation]
-- [Commands][#commands]
-- [Contribution][#contribution]
- - [Colaborate][#colaborate]
- - [Erorr reporting][#error-reporting]
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Commands](#commands)
+- [Contribution](#contribution)
+ - [Colaborate](#colaborate)
+ - [Erorr reporting](#error-reporting)
 
 ## Requirements
 
