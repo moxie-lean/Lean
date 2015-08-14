@@ -51,13 +51,13 @@ function lean_setup() {
 	 * Custom template tags for this theme.
 	 */
 	require get_template_directory() . '/library/vendors/template-tags.php';
+
+	include 'library/class-assets.php';
+	$assets = new Lean_Assets();
+	$assets->load();
 }
 endif;
 add_action( 'after_setup_theme', 'lean_setup' );
-
-include 'library/class-assets.php';
-$assets = new Lean_Assets();
-$assets->load();
 
 /**
  * Register widgetized area and update sidebar with default widgets.
