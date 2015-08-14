@@ -25,14 +25,40 @@ The theme has few utilities that need you to have
 
 To set up you need to clone the theme where are you going to install the theme with:
 
-```
+```shell
 git clone git@github.com:moxienyc/Lean.git
 ```
 
 ## Commands
 
-Inside of the theme there a few utilities that will make your life easier to write code and different tools to set up.
+Inside of the theme there a few utilities that will make your life easier to write code and different tools to set up. We have a set of taks handled using gulp, so we use gulp to compile, minify and sniff the code as examples. This commands needs to be run in the theme directory and most are using the terminal.
 
+### Set up
+
+To install the required files and dependencies just run:
+
+```shell
+./install.sh
+```
+
+In your terminal so make sure you are in the theme directory to install the node and bower dependencies. This script run the following commands:
+
+```shell
+npm install && bower install
+```
+
+Tyr the second way if you are not able to use the first way. Those commands are going to install the required packages and versions of each packackge to allow other tools work properly (like gulp).
+
+
+### Gulp taks
+
+There few gulp taks than are useful we list the taks as we guess are more common use and with a description of what the task can do if you want to run the task by separate, a gulp taks it's executed using:
+
+```shell
+gulp <task-name>
+```
+
+Where `<task-name>` it's the name of the task to use.
 
 ## Contribution
 
