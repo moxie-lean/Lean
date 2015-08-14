@@ -21,16 +21,11 @@ var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var notify = require('gulp-notify');
-var cmq = require('gulp-combine-media-queries');
-var runSequence = require('gulp-run-sequence');
 var sourcemaps = require('gulp-sourcemaps');
 
 // Our Sass compiler
 var sass = require('gulp-sass');
 var del = require('del');
-
-// Helps prevent stream crashing on errors
-var plumber = require('gulp-plumber');
 
 gulp.task('browser-sync', function() {
   var files = [
@@ -69,7 +64,7 @@ gulp.task('minify-css', ['compile-css'], function(){
 
 /**
  * Task to compile the CSS from sass, adss the prefixes and creates the
- * sourcempas for debug purposes only for the not minified version of this style.
+ * sourcempas for debug purposes only for the not minified version of this style
  */
 gulp.task('compile-css', function(){
   return gulp.src(source + 'sass/style.scss')
@@ -86,8 +81,6 @@ gulp.task('compile-css', function(){
   .pipe(sourcemaps.write('./maps'))
   .pipe(gulp.dest(source + 'css'));
 });
-
-// });
 
 /**
  * Scripts
