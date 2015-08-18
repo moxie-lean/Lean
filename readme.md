@@ -17,9 +17,9 @@ sites insted of a normal blog platform.
 - [Commands](#commands)
  - [Set Up](#set-up)
  - [Gulp Tasks](#gulp-taks)
-  - [styles][#styles]
-  - [compile-css][#compile-css]o
-  - [minify-css][#minify-css]
+  - [styles](#styles)
+  - [compile-css](#compile-css)
+  - [minify-css](#minify-css)
 - [Contribution](#contribution)
  - [Colaborate](#colaborate)
  - [Error reporting](#error-reporting)
