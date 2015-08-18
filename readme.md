@@ -15,8 +15,8 @@ sites insted of a normal blog platform.
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Commands](#commands)
- - [Set Up](#set-up)
- - [Gulp Tasks](#gulp-taks)
+- [Set Up](#set-up)
+- [Gulp Tasks](#gulp-taks)
   - [styles](#styles)
   - [compile-css](#compile-css)
   - [minify-css](#minify-css)
@@ -48,7 +48,7 @@ to write code and different tools to set up. We have a set of taks handled
 using gulp, so we use gulp to compile, minify and sniff the code as examples.
 This commands needs to be run in the theme directory and most are using the terminal.
 
-### Set up
+## Set up
 
 To install the required files and dependencies just run:
 
@@ -67,7 +67,7 @@ are going to install the required packages and versions of each packackge
 to allow other tools work properly (like gulp).
 
 
-### Gulp taks
+## Gulp taks
 
 There few gulp taks than are useful we list the taks as we guess are more
 common use and with a description of what the task can do if you
@@ -79,7 +79,7 @@ gulp <task-name>
 
 Where `<task-name>` it's the name of the task to use.
 
-#### styles
+### styles
 
 ```shell
 gulp styles
@@ -93,7 +93,7 @@ dependency `compile-css` so the order of execution is as follows:
 2. minify-css
 3. run notification
 
-#### compile-css
+### compile-css
 
 ```shell
 gulp compile-css
@@ -108,7 +108,7 @@ required CSS.
 
 **Note:** The sourcemaps are stored in the `assets/maps` directory.
 
-#### minify-css
+### minify-css
 
 ```shell
 gulp minify-css
