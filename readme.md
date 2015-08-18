@@ -60,6 +60,47 @@ gulp <task-name>
 
 Where `<task-name>` it's the name of the task to use.
 
+#### styles
+
+```shell
+gulp styles
+```
+
+With this gulp task, you can compile the sass files and minify the output, this task has one dependency: `minify-css`, this task has another dependency `compile-css` so the order of execution is as follows:
+
+1. compile-css
+2. minify-css
+3. run notification
+
+#### compile-css
+
+```shell
+gulp compile-css
+```
+
+This gulp task compiles the `assets/sass/style.scss` file. The task produces a file `style.css` this file has a source map and it's added only in the development environment.
+
+Another thing that this task does it's added th autoprexier to the
+required CSS.
+
+**Note:** The sourcemaps are stored in the `assets/maps` directory.
+
+#### minify-css
+
+```shell
+gulp minify-css
+```
+
+This gulp task creates a minified version of `assets/css/style.css`,
+this minified version does not have any sourcemap associated, and this
+is the version used in production.
+
+Another thing that this task does it's added th autoprexier to the
+required CSS.
+
+**Note:** The sourcemaps are stored in the `assets/maps` directory.
+
+
 ## Contribution
 
 You're more than welcome to help in this project, you can help us sending fixes to or to correct typos or any new feature, or if you found an error, please create a new issue with the problem:
