@@ -13,7 +13,7 @@ var bower = project + '/bower_components/';
 var gulp = require('gulp');
 var browserSync	= require('browser-sync');
 var reload = browserSync.reload;
-var autoprefixer = require('gulp-autoprefixer'); // Autoprefixing magic
+var autoprefixer = require('gulp-autoprefixer');
 var minifycss = require('gulp-minify-css');
 var jshint = require('gulp-jshint');
 var jscs = require('gulp-jscs');
@@ -38,10 +38,8 @@ gulp.task('browser-sync', function() {
 });
 
 /**
- * Styles
- *
- * Looking at src/sass and compiling the files into Expanded format,
- * Autoprefixing and sending the files to the build folder
+ * Run the minify-css gulp task as dependency, which will compile from sass,
+ * generate a source map and then minifies the result css.
  */
 gulp.task('styles', ['minify-css'], function() {
   var styles = [source + 'css/style.css', source + 'css/style-min.css'];
@@ -78,31 +76,48 @@ gulp.task('compile-css', function(){
     'ios 6',
     'android 4'
   ))
-  .pipe(sourcemaps.write('./maps'))
+  .pipe(sourcemaps.write('../maps'))
   .pipe(gulp.dest(source + 'css'));
 });
 
 /**
- * Scripts
- *
- * Look at src/js and concatenate those files, send them to assets/js where
- * we then minimize the concatenated file.
+ * Task to combine and minify the js scripts.
  */
-gulp.task('js', function() {
-  return gulp.src([
-    bower + 'essential.js/essential.js',
-    source + '/js/app/main.js',
-    source + '/js/app/init.js',
-    source + '/js/app/base.js',
-    source + '/js/app/!(base).js',
-    source + '/js/app/behaviors/*.js',
-  ])
-  .pipe(concat('production.js'))
-  .pipe(gulp.dest(source + 'js'))
+gulp.task('js', ['minify-js'], function() {
+  return gulp.src( source + 'js/production.js')
+  .pipe(notify({ message: 'Scripts task complete', onLast: true }));
+});
+
+/**
+ * Runs a minify task to combine and minify the scripts after are combined in
+ * a single file stored in js as production.js
+ */
+gulp.task('minify-js', ['combine-js'], function(){
+  return gulp.src(source + 'js/production.js')
   .pipe(rename({ suffix: '-min' }))
   .pipe(uglify())
-  .pipe(gulp.dest(source + 'js'))
-  .pipe(notify({ message: 'Scripts task complete', onLast: true }));
+  .pipe(gulp.dest(source + 'js'));
+});
+
+/**
+ * Combines all the files in the scripts array, and creates a source map for the
+ * generated file to easy access to the original files from the browser to
+ * enable faster development process.
+ */
+gulp.task('combine-js', function(){
+  var scripts = [
+    bower + 'essential.js/essential.js',
+    source + 'js/app/main.js',
+    source + 'js/app/init.js',
+    source + 'js/app/base.js',
+    source + 'js/app/!(base).js',
+    source + 'js/app/behaviors/*.js',
+  ];
+  return gulp.src( scripts )
+  .pipe(sourcemaps.init())
+  .pipe(concat('production.js'))
+  .pipe(sourcemaps.write('../maps'))
+  .pipe(gulp.dest(source + 'js'));
 });
 
 /**
@@ -110,7 +125,9 @@ gulp.task('js', function() {
 *
 * Scan our own JS code excluding vendor JS libraries and perform jsHint task.
 */
-gulp.task('jsHint', function() {
+gulp.task('review-js', ['js-hint', 'js-cs']);
+
+gulp.task('js-hint', function() {
   return gulp.src([
     source + 'js/app/*.js',
     source + 'js/app/behaviors/*.js',
@@ -119,15 +136,13 @@ gulp.task('jsHint', function() {
   .pipe(jshint.reporter('default'));
 });
 
-gulp.task('jscs', function() {
+gulp.task('js-cs', function() {
   return gulp.src([
     source + 'js/app/*.js',
     source + 'js/app/behaviors/*.js',
   ])
   .pipe(jscs());
 });
-
-gulp.task('reviewJS', ['jsHint', 'jscs']);
 
 /**
  * Clean
@@ -190,13 +205,8 @@ gulp.task('buildPhp', function() {
 
 // ==== TASKS ==== //
 // Package Distributable Theme
-gulp.task('build', function(cb) {
-  runSequence('cleanup', 'styles', 'js', 'buildPhp', 'cleanupFinal', cb);
-});
-
-// Watch Task
 gulp.task('default', ['styles', 'js', 'jsHint', 'browser-sync'], function() {
   gulp.watch(source + 'sass/**/*.scss', ['styles']);
-  gulp.watch(source + 'js/app/**/*.js', ['js', browserSync.reload]);
+  gulp.watch(source + 'js/app/**/*.js', ['js', reload]);
   gulp.watch(source + 'js/app/**/*.js', ['jsHint']);
 });

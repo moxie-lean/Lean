@@ -44,7 +44,6 @@ bower_components/*
 *.codekit
 **.codekit-cache/*
 
-
 # NPM #
 ##########
 node_modules
@@ -57,12 +56,11 @@ node_modules
 # PhpStrom Project Files #
 .idea/
 
-## Build files
+## Build files from assets: js & css
 assets/css/rtl*.css
 assets/css/*.css
-assets/css/maps/*.map
-assets/js/production.js
-assets/js/production-min.js
+assets/maps/*.map
+assets/js/production*.js
 
 # Ruby Sass #
 ##########
