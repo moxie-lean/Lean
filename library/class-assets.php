@@ -76,16 +76,20 @@ if ( ! class_exists( 'Lean_Assets' ) ) :
 			wp_enqueue_script('jquery');
 		}
 
+		/**
+		 * Remove emoji libries, it causes different issues in the console
+		 * during the development phase.
+		 */
 		private function remove_emoji(){
 			remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 			remove_action( 'wp_print_styles', 'print_emoji_styles' );
 		}
 
 		private function load_comments_assets(){
-			if ( is_singular()
-				&& comments_open()
-				&& get_option( 'thread_comments' )
-			) {
+			$load_comments = is_singular() && comments_open()
+				&& get_option( 'thread_comments' );
+
+			if ( $load_comments ) {
 				wp_enqueue_script( 'comment-reply' );
 			}
 		}
