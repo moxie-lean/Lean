@@ -42,7 +42,7 @@ install(){
 }
 
 
-echo "Are you ready to continue (yes / no): "
+echo "Are you ready to continue (enter: 1 or 0): "
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) install; break;;
