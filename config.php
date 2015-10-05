@@ -4,18 +4,24 @@
  * a better organizades structure of the code.
  */
 
-if( ! defined('BASE_THEME_PATH') ){
-	define('BASE_THEME_PATH', get_template_directory() );
+// absolute server path to the theme
+if( ! defined( 'FULL_THEME_PATH' ) ){
+	define( 'FULL_THEME_PATH', get_template_directory() );
+}
+
+// stylesheet directory URI for the current theme/child theme.
+if( ! defined( 'FULL_THEME_URL' ) ){
+	define( 'FULL_THEME_URL', get_stylesheet_directory_uri() );
 }
 
 /**
  * Dependencies from other files like external classes from a composer directory
  * or something different like a custom class to load into the project.
  */
-include BASE_THEME_PATH . '/config/dependencies.php';
+include FULL_THEME_PATH . '/config/dependencies.php';
 
 /**
  * Specific constants to the project can be store in this file, different things
  * like ACF fields.
  */
-include BASE_THEME_PATH . '/config/constans.php';
+include FULL_THEME_PATH . '/config/constans.php';
