@@ -1,13 +1,14 @@
 <?php
-if ( ! function_exists( 'lean_setup' ) ) :
+if ( ! function_exists( 'theme_setup_base' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
  * Note that this function is hooked into the after_setup_theme hook, which
  * runs before the init hook.
  */
-function lean_setup() {
+function theme_setup_base() {
 
+	include 'config.php';
 	/**
 	 * Set the content width based on the theme's design and stylesheet.
 	 * based on pixels
@@ -20,7 +21,7 @@ function lean_setup() {
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 */
-	load_theme_textdomain( 'digistarter', get_template_directory() . '/library/languages' );
+	load_theme_textdomain( 'digistarter', BASE_THEME_PATH . '/library/languages' );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -42,22 +43,14 @@ function lean_setup() {
 	// Enable support for Post Formats.
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link', 'status', 'gallery', 'chat', 'audio' ) );
 
-	/**
-	 * Including Theme Hook Alliance (https://github.com/zamoose/themehookalliance).
-	 */
-	include( 'library/vendors/tha-theme-hooks/tha-theme-hooks.php' );
-
-	/**
-	 * Custom template tags for this theme.
-	 */
-	require get_template_directory() . '/library/vendors/template-tags.php';
-
-	include 'library/class-assets.php';
+	if( function_exists('load_dependencies') ){
+		load_dependencies();
+	}
 	$assets = new Lean_Assets();
 	$assets->load();
 }
 endif;
-add_action( 'after_setup_theme', 'lean_setup' );
+add_action( 'after_setup_theme', 'theme_setup_base' );
 
 /**
  * Register widgetized area and update sidebar with default widgets.
