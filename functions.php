@@ -19,9 +19,8 @@ function theme_setup_base() {
 
 	/*
 	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
 	 */
-	load_theme_textdomain( 'digistarter', BASE_THEME_PATH . '/library/languages' );
+	load_theme_textdomain( 'digistarter', FULL_THEME_PATH . '/config/languages' );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -46,7 +45,10 @@ function theme_setup_base() {
 	if( function_exists('load_dependencies') ){
 		load_dependencies();
 	}
-	$assets = new Lean_Assets();
+	$assets = new Lean_Assets(array(
+		'css_version' => false,
+		'js_version' => time(),
+	));
 	$assets->load();
 }
 endif;

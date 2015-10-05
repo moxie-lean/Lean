@@ -4,19 +4,37 @@ if ( ! class_exists( 'Lean_Assets' ) ) :
 		private $environment = 'development';
 		private $load_comments = false;
 		private $version = '1.0.0';
-		private $base_path = '';
+		private $js_version = false;
+		private $css_version = false;
+		private $options = array();
 
-		public function __construct( $environment = '' ){
-			$this->environment = $this->get_environment( $environment );
+		public function __construct( $options = array() ){
+			$this->options = is_array( $options ) ? $options : array();
+			$this->set_up_environment();
+			$this->set_up_version_numbers();
 		}
 
-		private function get_environment( $environment ){
-			if( '' === $environment ){
-				$environment = defined('WP_DEBUG') && WP_DEBUG
+		private function set_up_environment(){
+			if( $this->it_has('environment') ) {
+				$this->environment = $this->options['environment'];
+			} else {
+				$this->environment = defined('WP_DEBUG') && WP_DEBUG
 					? 'development'
 					: 'production';
 			}
-			return $environment;
+		}
+
+		private function set_up_version_numbers(){
+			if( $this->it_has('js_version') ){
+				$this->js_version = $this->options['js_version'];
+			}
+			if( $this->it_has('css_version') ){
+				$this->css_version = $this->options['css_version'];
+			}
+		}
+
+		private function it_has( $option_name ){
+			return array_key_exists( $option_name, $this->options ) && ! empty( $this->options[ $option_name ] );
 		}
 
 		public function load( $version = '1.0.0', $load_comments = false ) {
@@ -35,25 +53,28 @@ if ( ! class_exists( 'Lean_Assets' ) ) :
 
 		public function setup_assets() {
 			$suffix = $this->get_assets_suffix();
-			$this->base_path = get_stylesheet_directory_uri();
 
 			if ( ! is_admin() ) {
 				$this->update_jquery();
 				$this->remove_emoji();
 			}
+
 			// JS
 			wp_enqueue_script(
 				sprintf('%s-%s-%s', $this->environment, 'lean', 'js'),
-				sprintf('%s/assets/js/production%s.js', $this->base_path, $suffix),
+				sprintf('%s/assets/js/production%s.js', FULL_THEME_URL, $suffix),
 				array( 'jquery' ),
-				$this->version,
+				$this->js_version,
 				true
 			);
 
 			// CSS
 			wp_enqueue_style(
 				sprintf('%s-%s-%s', $this->environment, 'lean', 'style'),
-				sprintf('%s/assets/css/style%s.css', $this->base_path, $suffix)
+				sprintf('%s/assets/css/style%s.css', FULL_THEME_URL, $suffix),
+				array(),
+				$this->css_version,
+				'all'
 			);
 
 			if( $this->load_comments ){
@@ -68,7 +89,7 @@ if ( ! class_exists( 'Lean_Assets' ) ) :
 			wp_deregister_script('jquery');
 			wp_register_script(
 				'jquery', /// Handle
-				sprintf('%s/%s', $this->base_path, $jquery_path), // source
+				sprintf('%s/%s', FULL_THEME_URL, $jquery_path), // source
 				false, // No dependency
 				$jquery_version, // No version
 				false // Don't load on footer
