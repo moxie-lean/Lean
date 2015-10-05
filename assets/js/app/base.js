@@ -1,6 +1,6 @@
 'use strict';
 
-MoxieLean.Behaviors.Base = Essential.Behaviors.extend({
+MoxieLean.Behaviors.Base = Essential.Behavior.extend({
 
   init: function() {
     this.$el = $(this.el);

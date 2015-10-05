@@ -1,95 +1,126 @@
-/* =Typographical Mixins/Functions
--------------------------------------------------------------- */
+/*
+ * Custom group of mixing to allow use rem or pixel in the
+ * fontSize mixing.
+ */
+@function fromRemToPixel( $rem ){
+  $rem: $rem / ($rem * 0 + 1);
+  @return #{$rem * 16}px;
+}
+@function fromPixelToRem( $pixel ){
+  @return #{$pixel / 16px}rem;
+}
 
-@function calculateRem($size) {
-  $remSize: $size / 16px;
-  @return #{$remSize}rem;
+@function typeOfUnit( $size ){
+  $unit: str-slice(#{$size}, -3);
+  $unit: to-lower-case($unit);
+
+  @if  $unit != 'rem' {
+    $unit: str-slice(#{$size}, -2);
+    $unit: to-lower-case($unit);
+  }
+  @return $unit;
+}
+
+@mixin fontSizeFromPixel( $pixelSize ){
+  font-size: $pixelSize;
+  font-size: fromPixelToRem( $pixelSize );
+}
+
+@mixin fontSizeFromRem( $remSize ){
+  font-size: fromRemToPixel( $remSize );
+  font-size: $remSize;
 }
 
 @mixin fontSize($size) {
-  font-size: $size; //Fallback in px
-  font-size: calculateRem($size);
+
+  $unit: typeOfUnit( $size );
+
+  @if $unit == 'px' {
+    @include fontSizeFromPixel($size);
+  } @else if( $unit == 'rem' ) {
+    @include fontSizeFromRem($size);
+  }
 }
 
 /* =Typography
 -------------------------------------------------------------- */
 html {
-	font-size: 100%;
+  font-size: 100%;
 }
 
 body {
-	@include fontSize(20px);
+  @include fontSize(20px);
 }
 h1, h2, h3, h4, h5, h6 {
-	@include clearfix;
-	clear: both;
-	float: none;
-	line-height: 1.25em;
-	margin-bottom: 20px;
-	text-transform: uppercase;
+  @include clearfix;
+  clear: both;
+  float: none;
+  line-height: 1.25em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
 
-	a, a:visited {
-		text-decoration: none;
+  a, a:visited {
+    text-decoration: none;
 
-		&:hover {
-			text-decoration: underline;
-		}
-	}
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 h1 {
-	@include fontSize(75px);
-	color: #000;
-	font-family: $title;
+  @include fontSize(75px);
+  color: #000;
+  font-family: $title;
 }
 h2 {
-	@include fontSize(50px);
-	font-family: $title;
+  @include fontSize(50px);
+  font-family: $title;
 }
 h3 {
-	@include fontSize(35px);
-	font-family: $title;
+  @include fontSize(35px);
+  font-family: $title;
 }
 h4 {
-	@include fontSize(24px);
-	font-family: $title;
+  @include fontSize(24px);
+  font-family: $title;
 }
 h5 {
-	@include fontSize(20px);
-	font-family: $title;
+  @include fontSize(20px);
+  font-family: $title;
 }
 h6 {
-	@include fontSize(18px);
-	font-family: $title;
+  @include fontSize(18px);
+  font-family: $title;
 }
 blockquote {
-	background-color: #f9f9f9;
-	border-left: solid 5px $primary-color;
-	font-style: italic;
-	padding: 20px;
+  background-color: #f9f9f9;
+  border-left: solid 5px $primary-color;
+  font-style: italic;
+  padding: 20px;
 }
 cite {
-	font-style: italic;
+  font-style: italic;
 }
 strong, b {
-	@include fontSize(20px);
-	color: #000;
-	font-family: $title;
+  @include fontSize(20px);
+  color: #000;
+  font-family: $title;
 }
 a, a:visited {
-	@include transition (all 200ms ease-in-out);
-	color: #666;
-	text-decoration: none;
+  @include transition (all 200ms ease-in-out);
+  color: #666;
+  text-decoration: none;
 
-	&:hover {
-		@include transition (all 200ms ease-in-out);
-		color: $primary-color;
-	}
+  &:hover {
+    @include transition (all 200ms ease-in-out);
+    color: $primary-color;
+  }
 }
 ul {
-	@extend %default-ul; // Adds browser default spacing back
+  @extend %default-ul; // Adds browser default spacing back
 }
 ol {
-	@extend %default-ol; // Adds browser default spacing back
+  @extend %default-ol; // Adds browser default spacing back
 }
 
 

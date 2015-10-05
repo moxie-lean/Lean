@@ -26,7 +26,6 @@
 
 	<footer class="entry-meta">
 		<?php if ( is_single() ) : ?>
-			<?php digistarter_entry_meta(); ?>
 			<?php edit_post_link( __( 'Edit', 'digistarter' ), '<span class="edit-link">', '</span>' ); ?>
 
 			<?php if ( get_the_author_meta( 'description' ) && is_multi_author() ) : ?>
@@ -35,7 +34,7 @@
 
 		<?php else : ?>
 			<div class="entry-meta">
-				<span class="genericon genericon-time"></span> <?php digistarter_posted_on(); ?>
+				<span class="genericon genericon-time"></span>
 			</div><!-- .entry-meta -->
 			<?php edit_post_link( __( 'Edit', 'digistarter' ), '<span class="edit-link">', '</span>' ); ?>
 		<?php endif; // is_single() ?>
