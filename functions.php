@@ -9,6 +9,7 @@ if ( ! function_exists( 'theme_setup_base' ) ) :
 function theme_setup_base() {
 
 	include 'config.php';
+
 	/**
 	 * Set the content width based on the theme's design and stylesheet.
 	 * based on pixels
@@ -17,24 +18,18 @@ function theme_setup_base() {
 		$content_width = 640;
 	}
 
-	/*
-	 * Make theme available for translation.
-	 */
+	// Make theme available for translation.
 	load_theme_textdomain( 'digistarter', FULL_THEME_PATH . '/config/languages' );
 
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-	 */
+	// Enable support for Post Thumbnails on posts and pages.
 	add_theme_support( 'post-thumbnails' );
 
-	/*
-	 * Add Editor Style for adequate styling in text editor.
-	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_editor_style
-	 */
-	add_editor_style( '/assets/css/style.css' );
+	// Add Editor Style for adequate styling in text editor.
+	if( defined('WP_DEBUG') && true === WP_DEBUG ){
+		add_editor_style( EDITOR_STYLESHEET_UNMINIFIED );
+	} else {
+		add_editor_style( EDITOR_STYLESHEET );
+	}
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menu( 'primary-navigation', __( 'Primary Menu', 'digistarter' ) );

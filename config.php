@@ -14,6 +14,14 @@ if( ! defined( 'FULL_THEME_URL' ) ){
 	define( 'FULL_THEME_URL', get_stylesheet_directory_uri() );
 }
 
+if( ! defined( 'EDITOR_STYLESHEET') ){
+	define( 'EDITOR_STYLESHEET', FULL_THEME_URL . '/assets/css/style-min.css' );
+}
+
+if( ! defined( 'EDITOR_STYLESHEET_UNMINIFIED') ){
+	define( 'EDITOR_STYLESHEET_UNMINIFIED', FULL_THEME_URL . '/assets/css/style.css' );
+}
+
 /**
  * Dependencies from other files like external classes from a composer directory
  * or something different like a custom class to load into the project.
