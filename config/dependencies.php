@@ -5,12 +5,13 @@ if( ! function_exists('load_dependencies') ){
 		 * Including Theme Hook Alliance
 		 * https://github.com/zamoose/themehookalliance.
 		 */
-		include FULL_THEME_PATH . '/library/vendors/tha-theme-hooks/tha-theme-hooks.php';
+		require  COMPOSER_DIR . '/zamoose/themehookalliance/tha-theme-hooks.php';
+		// add_theme_support( 'tha_hooks', array('all') );
 		/**
 		 * Custom template tags for this theme.
 		 */
-		require FULL_THEME_PATH . '/library/vendors/template-tags.php';
+		require LIB_DIR . '/vendors/template-tags.php';
 
-		include FULL_THEME_PATH . '/library/class-theme-assets.php';
+		require LIB_DIR . '/class-theme-assets.php';
 	}
 }
