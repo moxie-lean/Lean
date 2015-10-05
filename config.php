@@ -32,4 +32,4 @@ include FULL_THEME_PATH . '/config/dependencies.php';
  * Specific constants to the project can be store in this file, different things
  * like ACF fields.
  */
-include FULL_THEME_PATH . '/config/constans.php';
+include FULL_THEME_PATH . '/config/constants.php';
