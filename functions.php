@@ -32,7 +32,7 @@ function theme_setup_base() {
 	}
 
 	// This theme uses wp_nav_menu() in one location.
-	register_nav_menu( 'primary-navigation', __( 'Primary Menu', 'digistarter' ) );
+	register_nav_menu( 'primary-navigation', __( 'Primary Menu', 'lean' ) );
 
 	// Enable support for Post Formats.
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link', 'status', 'gallery', 'chat', 'audio' ) );
@@ -55,7 +55,7 @@ add_action( 'after_setup_theme', 'theme_setup_base' );
 if ( !function_exists('_widgets_init') ) :
 	function _widgets_init() {
 		register_sidebar( array(
-			'name'          => __( 'Sidebar', 'digistarter' ),
+			'name'          => __( 'Sidebar', 'lean' ),
 			'id'            => 'sidebar-1',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',

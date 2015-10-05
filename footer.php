@@ -1,10 +1,4 @@
-<?php
-/**
- * The template for displaying the footer.
- *
- * @package lean
- */
-?>
+<?php // The template for displaying the footer.  ?>
 		<?php tha_content_bottom(); ?>
 		</div>
 		<?php tha_content_after(); ?>
@@ -13,10 +7,9 @@
 			itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 			<?php tha_footer_top(); ?>
 			<div class="site-info">
-				<?php do_action( 'digistarter_credits' ); ?>
 				<a href="http://wordpress.org/" rel="generator">
 				<?php
-				printf( __( 'Proudly powered by <span class="genericon genericon-wordpress"></span> %s', 'digistarter' ), 'WordPress'
+				printf( __( 'Proudly powered by <span class="genericon genericon-wordpress"></span> %s', 'lean' ), 'WordPress'
 				); ?>
 				</a>
 			</div>

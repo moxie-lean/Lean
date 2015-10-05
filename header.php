@@ -1,10 +1,3 @@
-<?php
-/**
- * Displays all of the <head> section and everything up till <div id="content">
- *
- * @package lean
- */
-?>
 <!DOCTYPE html>
 <?php tha_html_before(); ?>
 <html <?php language_attributes(); ?>>
@@ -25,20 +18,29 @@
 <div id="page" class="hfeed site">
 	<div class="wrap">
 		<?php tha_header_before(); ?>
-		<header id="masthead" class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+		<header id="masthead" class="site-header" role="banner"
+				itemscope="itemscope" itemtype="http://schema.org/WPHeader">
 			<?php tha_header_top(); ?>
 			<div class="site-branding">
-				<div class="site-title"><h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1></div>
-				<div class="site-description"><?php bloginfo( 'description' ) ?></div>
+				<div class="site-title">
+					<h1>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+							<?php bloginfo( 'name' ); ?>
+						</a>
+					</h1>
+				</div>
+				<div class="site-description">
+					<?php bloginfo( 'description' ) ?>
+				</div>
 			</div>
 
 			<nav id="primary-nav" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-				<?php 	wp_nav_menu( array(
-					    'theme_location' => 'primary-navigation',
-					    'menu_class' => 'flexnav', //Adding the class for FlexNav
-					    'items_wrap' => '<ul data-breakpoint=" '. esc_attr( get_theme_mod( 'digistarter_mobile_min_width' ) ) .' " id="%1$s" class="%2$s">%3$s</ul>', // Adding data-breakpoint for FlexNav
-					    ));
-				?>
+			<?php
+			wp_nav_menu( array(
+				'theme_location' => 'primary-navigation',
+				'items_wrap' => '<ul data-breakpoint=" '. esc_attr( get_theme_mod( 'digistarter_mobile_min_width' ) ) .' " id="%1$s" class="%2$s">%3$s</ul>', // Adding data-breakpoint for FlexNav
+			));
+			?>
 			</nav>
 			<?php tha_header_bottom(); ?>
 
