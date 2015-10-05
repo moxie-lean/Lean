@@ -66,3 +66,6 @@ assets/js/production*.js
 ##########
 .ruby-version
 .ruby-gemset
+
+/vendor/
+composer.phar

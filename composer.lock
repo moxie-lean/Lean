@@ -1,0 +1,53 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "a87206f21b024bcfec898a644d018352",
+    "content-hash": "db5a1a7d4d3a11af6f6e438868baf8d4",
+    "packages": [
+        {
+            "name": "zamoose/themehookalliance",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zamoose/themehookalliance.git",
+                "reference": "969c949df8c0a9740f27b88755d053762be5d283"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zamoose/themehookalliance/zipball/969c949df8c0a9740f27b88755d053762be5d283",
+                "reference": "969c949df8c0a9740f27b88755d053762be5d283",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Doug Stewart",
+                    "homepage": "http://literalbarrage.org"
+                }
+            ],
+            "description": "Theme Hook Alliance",
+            "homepage": "https://github.com/zamoose/themehookalliance",
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2015-08-05 03:42:29"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "zamoose/themehookalliance": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
