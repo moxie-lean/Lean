@@ -1,9 +1,8 @@
 <?php
-if ( ! class_exists( 'Lean_Assets' ) ) :
-	class Lean_Assets {
+if ( ! class_exists( 'Theme_Assets' ) ) :
+	class Theme_Assets {
 		private $environment = 'development';
 		private $load_comments = false;
-		private $version = '1.0.0';
 		private $js_version = false;
 		private $css_version = false;
 		private $options = array();
@@ -37,9 +36,10 @@ if ( ! class_exists( 'Lean_Assets' ) ) :
 			return array_key_exists( $option_name, $this->options ) && ! empty( $this->options[ $option_name ] );
 		}
 
-		public function load( $version = '1.0.0', $load_comments = false ) {
-			$this->version = $version;
-			$this->load_comments = $load_comments;
+		public function load() {
+			$this->load_comments = $this->it_has( 'load_coments', $this->options )
+				? $this->options['load_comments']
+				: false;
 			$this->enqueue_assets();
 		}
 
@@ -56,12 +56,17 @@ if ( ! class_exists( 'Lean_Assets' ) ) :
 
 			if ( ! is_admin() ) {
 				$this->update_jquery();
-				$this->remove_emoji();
+				$remove_emoji_exists = array_key_exists('remove_emoji', $this->options);
+				if( ! $remove_emoji_exists ||
+					( $remove_emoji_exists && $this->options['remove_emoji'] )
+				){
+					$this->remove_emoji();
+				}
 			}
 
 			// JS
 			wp_enqueue_script(
-				sprintf('%s-%s-%s', $this->environment, 'lean', 'js'),
+				sprintf('%s-%s', $this->environment, 'js'),
 				sprintf('%s/assets/js/production%s.js', FULL_THEME_URL, $suffix),
 				array( 'jquery' ),
 				$this->js_version,
@@ -70,7 +75,7 @@ if ( ! class_exists( 'Lean_Assets' ) ) :
 
 			// CSS
 			wp_enqueue_style(
-				sprintf('%s-%s-%s', $this->environment, 'lean', 'style'),
+				sprintf('%s-%s', $this->environment, 'style'),
 				sprintf('%s/assets/css/style%s.css', FULL_THEME_URL, $suffix),
 				array(),
 				$this->css_version,
@@ -116,11 +121,7 @@ if ( ! class_exists( 'Lean_Assets' ) ) :
 		}
 
 		public function enqueue_assets(){
-			$args = array(
-				$this, // Instance
-				'setup_assets' // Method name
-			);
-			add_action( 'wp_enqueue_scripts', $args );
+			add_action( 'wp_enqueue_scripts', array( $this, 'setup_assets') );
 		}
 	}
 endif;

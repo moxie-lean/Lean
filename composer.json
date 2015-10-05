@@ -1,0 +1,13 @@
+{
+    "name": "root/moxie-lean",
+    "description": "Bare bones WordPress starter theme focused on modularity, scalability and performance",
+    "authors": [
+        {
+            "name": "mitogh",
+            "email": "mitogh@gmail.com"
+        }
+    ],
+    "require": {
+        "zamoose/themehookalliance": "dev-master"
+    }
+}

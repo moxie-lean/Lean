@@ -19,7 +19,7 @@ function theme_setup_base() {
 	}
 
 	// Make theme available for translation.
-	load_theme_textdomain( 'digistarter', FULL_THEME_PATH . '/config/languages' );
+	load_theme_textdomain( 'lean', FULL_THEME_PATH . '/config/languages' );
 
 	// Enable support for Post Thumbnails on posts and pages.
 	add_theme_support( 'post-thumbnails' );
@@ -32,7 +32,7 @@ function theme_setup_base() {
 	}
 
 	// This theme uses wp_nav_menu() in one location.
-	register_nav_menu( 'primary-navigation', __( 'Primary Menu', 'digistarter' ) );
+	register_nav_menu( 'primary-navigation', __( 'Primary Menu', 'lean' ) );
 
 	// Enable support for Post Formats.
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link', 'status', 'gallery', 'chat', 'audio' ) );
@@ -40,7 +40,7 @@ function theme_setup_base() {
 	if( function_exists('load_dependencies') ){
 		load_dependencies();
 	}
-	$assets = new Lean_Assets(array(
+	$assets = new Theme_Assets(array(
 		'css_version' => false,
 		'js_version' => time(),
 	));
@@ -52,10 +52,10 @@ add_action( 'after_setup_theme', 'theme_setup_base' );
 /**
  * Register widgetized area and update sidebar with default widgets.
  */
-if ( !function_exists('digistarter_widgets_init') ) :
-	function digistarter_widgets_init() {
+if ( !function_exists('_widgets_init') ) :
+	function _widgets_init() {
 		register_sidebar( array(
-			'name'          => __( 'Sidebar', 'digistarter' ),
+			'name'          => __( 'Sidebar', 'lean' ),
 			'id'            => 'sidebar-1',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
@@ -63,5 +63,5 @@ if ( !function_exists('digistarter_widgets_init') ) :
 			'after_title'   => '</h4>',
 		) );
 	}
-	add_action( 'widgets_init', 'digistarter_widgets_init' );
+	add_action( 'widgets_init', '_widgets_init' );
 endif;
