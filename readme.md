@@ -53,7 +53,7 @@ This commands needs to be run in the theme directory and most are using the term
 To install the required files and dependencies just run:
 
 ```shell
-./install.sh
+./bin/install.sh
 ```
 
 In your terminal so make sure you are in the theme directory to install the node and bower dependencies. This script run the following commands:
