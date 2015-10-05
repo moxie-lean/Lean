@@ -34,13 +34,18 @@
 				</div>
 			</div>
 
-			<nav id="primary-nav" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'primary-navigation',
-				'items_wrap' => '<ul data-breakpoint=" '. esc_attr( get_theme_mod( 'digistarter_mobile_min_width' ) ) .' " id="%1$s" class="%2$s">%3$s</ul>', // Adding data-breakpoint for FlexNav
-			));
-			?>
+			<nav id="primary-nav" role="navigation" itemscope="itemscope"
+				itemtype="http://schema.org/SiteNavigationElement">
+				<?php
+				wp_nav_menu( array(
+					'theme_location' => 'primary-navigation',
+					'items_wrap' =>
+						'<ul data-breakpoint=" '.
+						esc_attr( get_theme_mod( 'digistarter_mobile_min_width' ) ) .
+						' " id="%1$s" class="%2$s">%3$s</ul>',
+						// Adding data-breakpoint for FlexNav
+				) );
+				?>
 			</nav>
 			<?php tha_header_bottom(); ?>
 

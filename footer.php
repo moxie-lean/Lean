@@ -9,7 +9,9 @@
 			<div class="site-info">
 				<a href="http://wordpress.org/" rel="generator">
 				<?php
-				printf( __( 'Proudly powered by <span class="genericon genericon-wordpress"></span> %s', 'lean' ), 'WordPress'
+				printf(
+					__( 'Proudly powered by <span class="genericon genericon-wordpress"></span> %s', 'lean' ),
+					'WordPress'
 				); ?>
 				</a>
 			</div>
