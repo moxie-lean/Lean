@@ -3,7 +3,6 @@ if ( ! class_exists( 'Lean_Assets' ) ) :
 	class Lean_Assets {
 		private $environment = 'development';
 		private $load_comments = false;
-		private $version = '1.0.0';
 		private $js_version = false;
 		private $css_version = false;
 		private $options = array();
