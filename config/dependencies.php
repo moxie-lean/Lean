@@ -11,6 +11,6 @@ if( ! function_exists('load_dependencies') ){
 		 */
 		require FULL_THEME_PATH . '/library/vendors/template-tags.php';
 
-		include FULL_THEME_PATH . '/library/class-assets.php';
+		include FULL_THEME_PATH . '/library/class-theme-assets.php';
 	}
 }

@@ -1,6 +1,6 @@
 <?php
-if ( ! class_exists( 'Lean_Assets' ) ) :
-	class Lean_Assets {
+if ( ! class_exists( 'Theme_Assets' ) ) :
+	class Theme_Assets {
 		private $environment = 'development';
 		private $load_comments = false;
 		private $js_version = false;
@@ -66,7 +66,7 @@ if ( ! class_exists( 'Lean_Assets' ) ) :
 
 			// JS
 			wp_enqueue_script(
-				sprintf('%s-%s-%s', $this->environment, 'lean', 'js'),
+				sprintf('%s-%s', $this->environment, 'js'),
 				sprintf('%s/assets/js/production%s.js', FULL_THEME_URL, $suffix),
 				array( 'jquery' ),
 				$this->js_version,
@@ -75,7 +75,7 @@ if ( ! class_exists( 'Lean_Assets' ) ) :
 
 			// CSS
 			wp_enqueue_style(
-				sprintf('%s-%s-%s', $this->environment, 'lean', 'style'),
+				sprintf('%s-%s', $this->environment, 'style'),
 				sprintf('%s/assets/css/style%s.css', FULL_THEME_URL, $suffix),
 				array(),
 				$this->css_version,
