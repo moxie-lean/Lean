@@ -37,9 +37,10 @@ if ( ! class_exists( 'Lean_Assets' ) ) :
 			return array_key_exists( $option_name, $this->options ) && ! empty( $this->options[ $option_name ] );
 		}
 
-		public function load( $version = '1.0.0', $load_comments = false ) {
-			$this->version = $version;
-			$this->load_comments = $load_comments;
+		public function load() {
+			$this->load_comments = $this->it_has( 'load_coments', $this->options )
+				? $this->options['load_comments']
+				: false;
 			$this->enqueue_assets();
 		}
 
@@ -56,7 +57,12 @@ if ( ! class_exists( 'Lean_Assets' ) ) :
 
 			if ( ! is_admin() ) {
 				$this->update_jquery();
-				$this->remove_emoji();
+				$remove_emoji_exists = array_key_exists('remove_emoji', $this->options);
+				if( ! $remove_emoji_exists ||
+					( $remove_emoji_exists && $this->options['remove_emoji'] )
+				){
+					$this->remove_emoji();
+				}
 			}
 
 			// JS
@@ -116,11 +122,7 @@ if ( ! class_exists( 'Lean_Assets' ) ) :
 		}
 
 		public function enqueue_assets(){
-			$args = array(
-				$this, // Instance
-				'setup_assets' // Method name
-			);
-			add_action( 'wp_enqueue_scripts', $args );
+			add_action( 'wp_enqueue_scripts', array( $this, 'setup_assets') );
 		}
 	}
 endif;
