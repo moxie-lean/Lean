@@ -21,7 +21,7 @@ echo "==========================================================================
 echo "Get latest version of composer"
 curl -sS https://getcomposer.org/installer | php
 echo "Running: composer install && composer update, wait, please."
-composer install && composer update
+php composer.phar install && php composer.phar update
 echo ""
 echo "==========================================================================="
 echo "               Create CSS and JS Assets - By Moxie                "
