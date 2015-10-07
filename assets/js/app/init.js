@@ -1,2 +1,2 @@
-window.MoxieLean = {};
-window.MoxieLean.Behaviors = {};
+window.Lean = {};
+window.Lean.Behaviors = {};

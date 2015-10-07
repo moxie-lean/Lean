@@ -1,4 +1,4 @@
-MoxieLean.Behaviors.Example = MoxieLean.Behaviors.Base.extend({
+Lean.Behaviors.Example = Lean.Behaviors.Base.extend({
   initialize: function() {
   },
 });

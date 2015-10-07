@@ -3,6 +3,6 @@
 $(document).ready(function() {
   Essential.loadBehaviors({
     context: document,
-    application: MoxieLean.Behaviors,
+    application: Lean.Behaviors,
   });
 });
