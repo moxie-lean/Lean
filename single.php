@@ -1,5 +1,9 @@
 <?php
-// The Template for displaying all single posts.
+/**
+ * The Template for displaying all single posts.
+ * @package Lean
+ **/
+
 get_header();
 ?>
 
@@ -13,8 +17,8 @@ get_header();
 
 		digistarter_post_nav();
 
-		// If comments are open or we have at least one comment
-		if ( comments_open() || '0' != get_comments_number() ) :
+		// If comments are open or we have at least one comment.
+		if ( comments_open() || '0' !== get_comments_number() ) :
 			comments_template();
 		endif;
 
