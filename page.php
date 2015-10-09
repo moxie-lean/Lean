@@ -1,5 +1,9 @@
 <?php
-// Template that displays all pages by default.
+/**
+ * Template that displays all pages by default.
+ * @package Lean
+ */
+
 get_header();
 ?>
 <div id="primary" class="content-area">
@@ -8,8 +12,8 @@ get_header();
 		<?php
 		while ( have_posts() ) : the_post();
 			get_template_part( 'partials/content', 'page' );
-			// If comments are open or we have at least one comment
-			if ( comments_open() || '0' != get_comments_number() ) :
+			// If comments are open or we have at least one comment.
+			if ( comments_open() || '0' !== intval( get_comments_number() ) ) :
 					comments_template();
 			endif;
 		endwhile;
