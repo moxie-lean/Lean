@@ -28,6 +28,8 @@ if ( ! function_exists( 'theme_setup_base' ) ) :
 
 		// Enable support for Post Thumbnails on posts and pages.
 		add_theme_support( 'post-thumbnails' );
+		// Add support for all the hooks from tha_hooks.
+		add_theme_support( 'tha_hooks', array( 'all' ) );
 
 		// Add Editor Style for adequate styling in text editor.
 		if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) {
