@@ -22,6 +22,7 @@ var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var notify = require('gulp-notify');
 var sourcemaps = require('gulp-sourcemaps');
+var phpcs = require('gulp-phpcs');
 
 // Our Sass compiler
 var sass = require('gulp-sass');
@@ -144,68 +145,23 @@ gulp.task('js-cs', function() {
   .pipe(jscs());
 });
 
-/**
- * Clean
- *
- * Being a little overzealous, but we're cleaning out the build folder,
- * codekit-cache directory and annoying DS_Store files and Also
- * clearing out unoptimized image files in zip as those will have been moved
- * and optimized
- */
-gulp.task('cleanup', function(cb) {
-  return del([
-    '**/build',
-bower,
-'./library/vendors/composer',
-'**/.sass-cache',
-'**/.codekit-cache',
-'**/.DS_Store',
-'!node_modules/**',
-  ], cb);
-});
+gulp.task('php', function () {
+  var files = [
+    '*.php'
+  ];
+  var options = {
+    bin: './vendor/bin/phpcs',
+    standard: './codesniffer.ruleset.xml',
+    colors: true,
+  };
 
-gulp.task('cleanupFinal', function(cb) {
-  return del([
-    '**/build',
-    bower, '**/.sass-cache',
-    '**/.codekit-cache',
-    '**/.DS_Store',
-    '!node_modules/**',
-      ], cb);
-});
-
-/**
-* Build task that moves essential theme files for production-ready sites
-*
-* First, we're moving PHP files to the build folder for redistribution.
-* Also we're excluding the library, build and src directories. Why?
-* Excluding build prevents recursive copying and Inception levels of bullshit.
-* We exclude library because there are certain non-php files there that need
-* to get moved as well. So I put the library directory into its own task.
-* Excluding src because, well, we don't want to * distribute
-* uniminified/unoptimized files. And, uh, grabbing screenshot.png
-* cause I'm janky like that!
-*/
-gulp.task('buildPhp', function() {
-  return gulp.src([
-    '**/*.php',
-    './style.css',
-    './gulpfile.js',
-    './package.json',
-    './.bowercc',
-    '.gitignore',
-    './screenshot.png',
-    '!./build/**',
-    '!./library/**',
-    '!./src/**',
-  ])
-  .pipe(gulp.dest(build))
-  .pipe(notify({ message: 'Moving files complete', onLast: true }));
+  return gulp.src( files )
+  .pipe(phpcs(options))
+  .pipe(phpcs.reporter('log'));
 });
 
 // ==== TASKS ==== //
-// Package Distributable Theme
-gulp.task('default', ['styles', 'js', 'jsHint', 'browser-sync'], function() {
+gulp.task('default', ['styles', 'js'], function() {
   gulp.watch(source + 'sass/**/*.scss', ['styles']);
   gulp.watch(source + 'js/app/**/*.js', ['js', reload]);
   gulp.watch(source + 'js/app/**/*.js', ['jsHint']);
