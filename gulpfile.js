@@ -147,7 +147,13 @@ gulp.task('js-cs', function() {
 
 gulp.task('php', function () {
   var files = [
-    '*.php'
+    '*.php',
+    'lib/*.php',
+    'lib/*/*.php',
+    'config/*.php',
+    'page-templates/*.php',
+    'page-templates/*.php',
+    'partials/*.php'
   ];
   var options = {
     bin: './vendor/bin/phpcs',
