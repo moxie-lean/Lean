@@ -1,10 +1,4 @@
-<?php
-/**
- * The template for displaying the footer.
- * @package Lean
- */
-
-?>
+<?php // The template for displaying the footer.  ?>
 		<?php tha_content_bottom(); ?>
 		</div>
 		<?php tha_content_after(); ?>
@@ -16,7 +10,7 @@
 				<a href="http://wordpress.org/" rel="generator">
 				<?php
 				printf(
-					esc_html_e( 'Proudly powered by <span class="genericon genericon-wordpress"></span> %s', TRANSLATED_TEXT_DOMAIN ),
+					__( 'Proudly powered by <span class="genericon genericon-wordpress"></span> %s', 'lean' ),
 					'WordPress'
 				); ?>
 				</a>

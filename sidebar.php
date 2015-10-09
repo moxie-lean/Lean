@@ -1,10 +1,4 @@
-<?php
-/**
- * The Sidebar containing the main widget areas.
- * @package Lean
- */
-
-?>
+<?php // The Sidebar containing the main widget areas.  ?>
 <?php tha_sidebars_before(); ?>
 <div id="secondary" class="widget-area" role="complementary">
 	<?php tha_sidebar_top(); ?>
@@ -16,23 +10,14 @@
 		</aside>
 
 		<aside id="archives" class="widget">
-			<h4 class="widget-title">
-				<?php esc_html_e( 'Archives', TRANSLATED_TEXT_DOMAIN ); ?>
-			</h4>
+			<h4 class="widget-title"><?php _e( 'Archives', 'lean' ); ?></h4>
 			<ul>
-				<?php
-				$args = array(
-					'type' => 'monthly',
-				);
-				wp_get_archives( $args );
-				?>
+				<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
 			</ul>
 		</aside>
 
 		<aside id="meta" class="widget">
-			<h4 class="widget-title">
-				<?php esc_html_e( 'Meta', TRANSLATED_TEXT_DOMAIN ); ?>
-			</h4>
+			<h4 class="widget-title"><?php _e( 'Meta', 'lean' ); ?></h4>
 			<ul>
 				<?php wp_register(); ?>
 				<li><?php wp_loginout(); ?></li>
