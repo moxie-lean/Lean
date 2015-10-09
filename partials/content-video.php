@@ -1,7 +1,7 @@
 <?php
 /**
  * Template part for displaying video post formats.
- * @package Lean
+ * @package lean
  */
 
 ?>
@@ -33,9 +33,9 @@
 	<div class="entry-content">
 		<?php
 			the_content( sprintf(
-				esc_html_e( 'Continue reading%s &rarr;', TRANSLATED_TEXT_DOMAIN ),
+				esc_html__( 'Continue reading%s &rarr;', TRANSLATED_TEXT_DOMAIN ),
 				'<span class="screen-reader-text">  '.get_the_title().'</span>'
-			)  );
+			) );
 		?>
 
 		<?php
