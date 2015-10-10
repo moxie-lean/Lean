@@ -24,10 +24,12 @@ if ( ! function_exists( 'theme_setup_base' ) ) :
 		}
 
 		// Make theme available for translation.
-		load_theme_textdomain( 'lean', FULL_THEME_PATH . '/config/languages' );
+		load_theme_textdomain( TRANSLATED_TEXT_DOMAIN , FULL_THEME_PATH . '/config/languages' );
 
 		// Enable support for Post Thumbnails on posts and pages.
 		add_theme_support( 'post-thumbnails' );
+		// Add support for all the hooks from tha_hooks.
+		add_theme_support( 'tha_hooks', array( 'all' ) );
 
 		// Add Editor Style for adequate styling in text editor.
 		if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) {
