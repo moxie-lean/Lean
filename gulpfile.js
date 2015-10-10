@@ -162,9 +162,17 @@ gulp.task('php:lint', function () {
 /******************************************************************************
 | >   WATCH TASKS
 ******************************************************************************/
-gulp.task('watch:php', ['php:lint'], function(){
-  gulp.watch( phpFiles, ['php'] );
+gulp.task('watch:all', ['watch:php', 'watch:js'], function(){
 });
+
+gulp.task('watch:php', ['php:lint'], function(){
+  gulp.watch( phpFiles, ['php:lint'] );
+});
+
+gulp.task('watch:js', ['js'], function(){
+  gulp.watch(source + 'js/app/**/*.js', ['js']);
+});
+
 
 /******************************************************************************
 | >   DEFAULT TASK
