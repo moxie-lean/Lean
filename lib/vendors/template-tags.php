@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package Lean
+ * @package digistarter
  */
 
 if ( ! function_exists( 'digistarter_paging_nav' ) ) :
@@ -20,9 +20,7 @@ function digistarter_paging_nav() {
 	}
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h4 class="screen-reader-text">
-		<?php esc_html_e( 'Posts navigation', TRANSLATED_TEXT_DOMAIN ); ?>
-		</h4>
+		<h4 class="screen-reader-text"><?php _e( 'Posts navigation', 'digistarter' ); ?></h4>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
@@ -55,67 +53,14 @@ function digistarter_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h3 class="screen-reader-text">
-		<?php esc_html_e( 'Post navigation', TRANSLATED_TEXT_DOMAIN ); ?>
-		</h3>
+		<h3 class="screen-reader-text"><?php _e( 'Post navigation', 'digistarter' ); ?></h3>
 		<div class="nav-links">
 
-			<?php
-			previous_post_link(
-				'%link',
-				wp_kses(
-					_x( '<span class="meta-nav prev">&larr;</span> %title', 'Previous post link', TRANSLATED_TEXT_DOMAIN ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				)
-			);
-			?>
-			<?php
-			next_post_link(
-				'%link',
-				wp_kses(
-					_x( '%title <span class="meta-nav next">&rarr;</span>', 'Next post link', TRANSLATED_TEXT_DOMAIN ),
-					array(
-						'span' => array(
-							'class' => array(),
-					   	),
-					)
-				)
-			);
-			?>
-
+			<?php previous_post_link( '%link', _x( '<span class="meta-nav prev">&larr;</span> %title', 'Previous post link', 'digistarter' ) ); ?>
+			<?php next_post_link(     '%link', _x( '%title <span class="meta-nav next">&rarr;</span>', 'Next post link',     'digistarter' ) ); ?>
 
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
 	<?php
-}
-endif;
-
-if ( ! function_exists( 'digistarter_categorized_blog' ) ) :
-/**
- * Returns true if a blog has more than 1 category.
- *
- * @return bool Whether we have more than one category or not.
- */
-function digistarter_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
-		// Create an array of all the categories that are attached to posts.
-		$all_the_cool_cats = get_categories( array(
-			'hide_empty' => 1,
-		) );
-		// Count the number of categories that are attached to the posts.
-		$all_the_cool_cats = count( $all_the_cool_cats );
-		set_transient( 'all_the_cool_cats', $all_the_cool_cats );
-	}
-	if ( 1 !== $all_the_cool_cats ) {
-		// This blog has more than 1 category so some_like_it_neat_categorized_blog should return true.
-		return true;
-	} else {
-		// This blog has only 1 category so some_like_it_neat_categorized_blog should return false.
-		return false;
-	}
 }
 endif;

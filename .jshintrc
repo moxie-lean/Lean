@@ -19,7 +19,7 @@
 
   "predef": [
     "Essential",
-    "Lean",
+    "MoxieLean",
     "google",
     "$"
   ]
