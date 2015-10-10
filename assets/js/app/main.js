@@ -20,3 +20,5 @@ Lean.Behaviors.Base = Essential.Behavior.extend({
   },
 
 });
+
+var unusedVariableAnd_Should_Be_FAIL = "MUST Write better code :/";
