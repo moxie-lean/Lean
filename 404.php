@@ -55,8 +55,3 @@ get_header();
 	</div>
 
 <?php get_footer(); ?>
-<?php
-if(this_must_fail()){
-	printf('failing');
-}
-?>
