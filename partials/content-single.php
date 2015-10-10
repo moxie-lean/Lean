@@ -86,7 +86,7 @@
 		?>
 		<?php
 			edit_post_link(
-				esc_html_e( 'Edit', TRANSLATED_TEXT_DOMAIN ),
+				esc_html__( 'Edit', TRANSLATED_TEXT_DOMAIN ),
 				'<span class="edit-link">', '</span>'
 			);
 		?>

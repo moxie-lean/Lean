@@ -39,7 +39,7 @@
 
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html_e( 'Pages:', TRANSLATED_TEXT_DOMAIN ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', TRANSLATED_TEXT_DOMAIN ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -89,13 +89,13 @@
 			<?php endif; ?>
 		<?php endif; ?>
 
-		<?php if ( ! post_password_required() && ( comments_open() || '0' !== intval( get_comments_number() ) ) ) : ?>
+		<?php if ( ! post_password_required() && ( comments_open() || 0 !== get_comments_number() ) ) : ?>
 		<span class="comments-link">
 		<?php
 			comments_popup_link(
-				esc_html_e( 'Leave a comment', TRANSLATED_TEXT_DOMAIN ),
-				esc_html_e( '1 Comment', TRANSLATED_TEXT_DOMAIN ),
-				esc_html_e( '% Comments', TRANSLATED_TEXT_DOMAIN )
+				esc_html__( 'Leave a comment', TRANSLATED_TEXT_DOMAIN ),
+				esc_html__( '1 Comment', TRANSLATED_TEXT_DOMAIN ),
+				esc_html__( '% Comments', TRANSLATED_TEXT_DOMAIN )
 			);
 		?>
 		</span>
@@ -103,7 +103,7 @@
 
 		<?php
 			edit_post_link(
-				esc_html_e( 'Edit', TRANSLATED_TEXT_DOMAIN ),
+				esc_html__( 'Edit', TRANSLATED_TEXT_DOMAIN ),
 				'<span class="edit-link">', '</span>'
 			);
 		?>
