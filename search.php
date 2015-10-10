@@ -1,5 +1,9 @@
 <?php
-// The template for displaying Search Results pages.
+/**
+ * The template for displaying Search Results pages.
+ * @package Lean
+ */
+
 get_header();
 ?>
 <section id="primary" class="content-area">
@@ -11,7 +15,7 @@ get_header();
 			<h1 class="page-title">
 			<?php
 			printf(
-				__( 'Search Results for: %s', 'lean' ),
+				esc_html_e( 'Search Results for: %s', TRANSLATED_TEXT_DOMAIN ),
 				'<span>' . get_search_query() . '</span>'
 			);
 			?>

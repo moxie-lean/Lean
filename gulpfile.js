@@ -8,6 +8,15 @@ var build = project + './build/';
 // confusion with gulp.src
 var source = project + '/assets/';
 var bower = project + '/bower_components/';
+var phpFiles = [
+  '*.php',
+  'lib/*.php',
+  'lib/*/*.php',
+  'config/*.php',
+  'page-templates/*.php',
+  'page-templates/*.php',
+  'partials/*.php'
+];
 
 // Load plugins
 var gulp = require('gulp');
@@ -38,10 +47,10 @@ gulp.task('browser-sync', function() {
   });
 });
 
-/**
- * Run the minify-css gulp task as dependency, which will compile from sass,
- * generate a source map and then minifies the result css.
- */
+  /**
+   * Run the minify-css gulp task as dependency, which will compile from sass,
+   * generate a source map and then minifies the result css.
+   */
 gulp.task('styles', ['minify-css'], function() {
   var styles = [source + 'css/style.css', source + 'css/style-min.css'];
   return gulp.src(styles)
@@ -55,10 +64,10 @@ gulp.task('styles', ['minify-css'], function() {
  */
 gulp.task('minify-css', ['compile-css'], function(){
   return gulp.src(source + 'css/style.css')
-    .pipe(minifycss({ keepBreaks: true }))
-    .pipe(minifycss({ keepSpecialComments: 0 }))
-    .pipe(rename({ suffix: '-min' }))
-    .pipe(gulp.dest(source + 'css'));
+  .pipe(minifycss({ keepBreaks: true }))
+  .pipe(minifycss({ keepSpecialComments: 0 }))
+  .pipe(rename({ suffix: '-min' }))
+  .pipe(gulp.dest(source + 'css'));
 });
 
 /**
@@ -122,10 +131,10 @@ gulp.task('combine-js', function(){
 });
 
 /**
-* jsHint Tasks
-*
-* Scan our own JS code excluding vendor JS libraries and perform jsHint task.
-*/
+ * jsHint Tasks
+ *
+ * Scan our own JS code excluding vendor JS libraries and perform jsHint task.
+ */
 gulp.task('review-js', ['js-hint', 'js-cs']);
 
 gulp.task('js-hint', function() {
@@ -146,16 +155,13 @@ gulp.task('js-cs', function() {
 });
 
 gulp.task('php', function () {
-  var files = [
-    '*.php'
-  ];
   var options = {
     bin: './vendor/bin/phpcs',
     standard: './codesniffer.ruleset.xml',
     colors: true,
   };
 
-  return gulp.src( files )
+  return gulp.src( phpFiles )
   .pipe(phpcs(options))
   .pipe(phpcs.reporter('log'));
 });
@@ -165,4 +171,8 @@ gulp.task('default', ['styles', 'js'], function() {
   gulp.watch(source + 'sass/**/*.scss', ['styles']);
   gulp.watch(source + 'js/app/**/*.js', ['js', reload]);
   gulp.watch(source + 'js/app/**/*.js', ['jsHint']);
+});
+
+gulp.task('watch:php', function(){
+  gulp.watch( phpFiles, ['php'] );
 });
