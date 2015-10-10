@@ -4,6 +4,7 @@ node_js:
   - "0.10"
 
 before_install:
+  - ./bin/setup.sh
   - npm install -g gulp
   - composer install
 
