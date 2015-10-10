@@ -1,25 +1,8 @@
 'use strict';
-
-// Set up a general path to the current project
-var project = '.';
-
-// Your main project assets and naming 'source' instead of 'src' to avoid
-var source = project + '/assets/';
-var bower = project + '/bower_components/';
-var phpFiles = [
-  '*.php',
-  'lib/*.php',
-  'lib/*/*.php',
-  'config/*.php',
-  'page-templates/*.php',
-  'page-templates/*.php',
-  'partials/*.php'
-];
-
-// Load plugins
+/******************************************************************************
+| >   PLUGINS
+******************************************************************************/
 var gulp = require('gulp');
-var browserSync	= require('browser-sync');
-var reload = browserSync.reload;
 var autoprefixer = require('gulp-autoprefixer');
 var minifycss = require('gulp-minify-css');
 var jshint = require('gulp-jshint');
@@ -30,36 +13,37 @@ var concat = require('gulp-concat');
 var notify = require('gulp-notify');
 var sourcemaps = require('gulp-sourcemaps');
 var phpcs = require('gulp-phpcs');
-
-// Our Sass compiler
 var sass = require('gulp-sass');
+/******************************************************************************
+| >   PROJECT VARIABLES
+******************************************************************************/
+var project = '.';
+var source = project + '/assets/';
+var bower = project + '/bower_components/';
 
-gulp.task('browser-sync', function() {
-  var files = [
-    '**/*.php',
+/******************************************************************************
+| >   CSS TASKS
+******************************************************************************/
+
+/**
+ * Run the minify:styles task as dependency, which will compile from sass,
+ * will generate a source map and then minify the result css.
+ */
+gulp.task('styles', ['styles:minify'], function() {
+  var styles = [
+    source + 'css/style.css',
+    source + 'css/style-min.css'
   ];
-
-  browserSync.init(files, {
-    proxy: project + '.dev',
-  });
-});
-
-  /**
-   * Run the minify-css gulp task as dependency, which will compile from sass,
-   * generate a source map and then minifies the result css.
-   */
-gulp.task('styles', ['minify-css'], function() {
-  var styles = [source + 'css/style.css', source + 'css/style-min.css'];
   return gulp.src(styles)
   .pipe( notify({ message: 'Styles task complete', onLast: true }) );
 });
 
 /**
- * Minify the CSS after has been created with the source maps, has as the task
- * compile-css as a depnency after this task it's completed it's going to minify
+ * Minify the CSS after has been created with source maps, styles:minify
+ * is a depnency after this task it's completed it's going to minify
  * the CSS.
  */
-gulp.task('minify-css', ['compile-css'], function(){
+gulp.task('styles:minify', ['styles:combine'], function(){
   return gulp.src(source + 'css/style.css')
   .pipe(minifycss({ keepBreaks: true }))
   .pipe(minifycss({ keepSpecialComments: 0 }))
@@ -68,10 +52,11 @@ gulp.task('minify-css', ['compile-css'], function(){
 });
 
 /**
- * Task to compile the CSS from sass, adss the prefixes and creates the
- * sourcempas for debug purposes only for the not minified version of this style
+ * Task to compile the CSS from sass, this will add the prefixes and creates the
+ * sourcemap, this source map is going to be loaded only in the non minified
+ * version.
  */
-gulp.task('compile-css', function(){
+gulp.task('styles:combine', function(){
   return gulp.src(source + 'sass/style.scss')
   .pipe(sourcemaps.init())
   .pipe(sass().on('error', sass.logError))
@@ -87,10 +72,12 @@ gulp.task('compile-css', function(){
   .pipe(gulp.dest(source + 'css'));
 });
 
-/**
- * Task to combine and minify the js scripts.
- */
-gulp.task('js', ['minify-js'], function() {
+/******************************************************************************
+| >   JS TASKS
+******************************************************************************/
+
+// Task to combine and minify the js scripts.
+gulp.task('js', ['js:minify'], function() {
   return gulp.src( source + 'js/production.js')
   .pipe(notify({ message: 'Scripts task complete', onLast: true }));
 });
@@ -99,7 +86,7 @@ gulp.task('js', ['minify-js'], function() {
  * Runs a minify task to combine and minify the scripts after are combined in
  * a single file stored in js as production.js
  */
-gulp.task('minify-js', ['combine-js'], function(){
+gulp.task('js:minify', ['js:combine'], function(){
   return gulp.src(source + 'js/production.js')
   .pipe(rename({ suffix: '-min' }))
   .pipe(uglify())
@@ -111,7 +98,7 @@ gulp.task('minify-js', ['combine-js'], function(){
  * generated file to easy access to the original files from the browser to
  * enable faster development process.
  */
-gulp.task('combine-js', function(){
+gulp.task('js:combine', function(){
   var scripts = [
     bower + 'essential.js/essential.js',
     source + 'js/app/main.js',
@@ -124,47 +111,61 @@ gulp.task('combine-js', function(){
   .pipe(gulp.dest(source + 'js'));
 });
 
-/**
- * jsHint Tasks
- *
- * Scan our own JS code excluding vendor JS libraries and perform jsHint task.
- */
-gulp.task('review-js', ['js-hint', 'js-cs']);
-
-gulp.task('js-hint', function() {
-  return gulp.src([
+var jsFiles = [
     source + 'js/app/*.js',
     source + 'js/app/behaviors/*.js',
-  ])
+];
+
+gulp.task('js:lint', ['js:hint', 'js:cs']);
+
+gulp.task('js:hint', function() {
+  return gulp.src( jsFiles )
   .pipe(jshint('.jshintrc'))
   .pipe(jshint.reporter('default'));
 });
 
-gulp.task('js-cs', function() {
-  return gulp.src([
-    source + 'js/app/*.js',
-    source + 'js/app/behaviors/*.js',
-  ])
+gulp.task('js:cs', function() {
+  return gulp.src( jsFiles )
   .pipe(jscs());
 });
 
-gulp.task('php', function () {
+/******************************************************************************
+| >   PHP TASKS
+******************************************************************************/
+var phpFiles = [
+  '*.php',
+  'lib/*.php',
+  'lib/*/*.php',
+  'config/*.php',
+  'page-templates/*.php',
+  'page-templates/*.php',
+  'partials/*.php'
+];
+
+gulp.task('php:lint', function () {
   var options = {
     bin: './vendor/bin/phpcs',
     standard: './codesniffer.ruleset.xml',
     colors: true,
   };
-
   return gulp.src( phpFiles )
   .pipe(phpcs(options))
   .pipe(phpcs.reporter('log'));
 });
 
-gulp.task('default', ['styles', 'js'], function() {
-  gulp.watch(source + 'sass/**/*.scss', ['styles']);
-  gulp.watch(source + 'js/app/**/*.js', ['js', reload]);
-});
 
-gulp.task('watch:php', function(){
+/******************************************************************************
+| >   WATCH TASKS
+******************************************************************************/
+gulp.task('watch:php', ['php:lint'], function(){
   gulp.watch( phpFiles, ['php'] );
 });
+
+/******************************************************************************
+| >   DEFAULT TASK
+******************************************************************************/
+gulp.task('default', ['styles', 'js'], function() {
+  gulp.watch(source + 'sass/**/*.scss', ['styles']);
+  gulp.watch(source + 'js/app/**/*.js', ['js']);
+});
+
