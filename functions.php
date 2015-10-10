@@ -24,7 +24,7 @@ if ( ! function_exists( 'theme_setup_base' ) ) :
 		}
 
 		// Make theme available for translation.
-		load_theme_textdomain( 'lean', FULL_THEME_PATH . '/config/languages' );
+		load_theme_textdomain( TRANSLATED_TEXT_DOMAIN , FULL_THEME_PATH . '/config/languages' );
 
 		// Enable support for Post Thumbnails on posts and pages.
 		add_theme_support( 'post-thumbnails' );
