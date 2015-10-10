@@ -2,10 +2,8 @@
 
 // Set up a general path to the current project
 var project = '.';
-var build = project + './build/';
 
 // Your main project assets and naming 'source' instead of 'src' to avoid
-// confusion with gulp.src
 var source = project + '/assets/';
 var bower = project + '/bower_components/';
 var phpFiles = [
@@ -35,7 +33,6 @@ var phpcs = require('gulp-phpcs');
 
 // Our Sass compiler
 var sass = require('gulp-sass');
-var del = require('del');
 
 gulp.task('browser-sync', function() {
   var files = [
@@ -118,9 +115,6 @@ gulp.task('combine-js', function(){
   var scripts = [
     bower + 'essential.js/essential.js',
     source + 'js/app/main.js',
-    source + 'js/app/init.js',
-    source + 'js/app/base.js',
-    source + 'js/app/!(base).js',
     source + 'js/app/behaviors/*.js',
   ];
   return gulp.src( scripts )
@@ -166,11 +160,9 @@ gulp.task('php', function () {
   .pipe(phpcs.reporter('log'));
 });
 
-// ==== TASKS ==== //
 gulp.task('default', ['styles', 'js'], function() {
   gulp.watch(source + 'sass/**/*.scss', ['styles']);
   gulp.watch(source + 'js/app/**/*.js', ['js', reload]);
-  gulp.watch(source + 'js/app/**/*.js', ['jsHint']);
 });
 
 gulp.task('watch:php', function(){
