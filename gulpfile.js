@@ -111,6 +111,7 @@ gulp.task('js:combine', function(){
   .pipe(gulp.dest(source + 'js'));
 });
 
+// Files to inspect in order to follow the same standard
 var jsFiles = [
     source + 'js/app/*.js',
     source + 'js/app/behaviors/*.js',
@@ -121,12 +122,14 @@ gulp.task('js:lint', ['js:hint', 'js:cs']);
 gulp.task('js:hint', function() {
   return gulp.src( jsFiles )
   .pipe(jshint('.jshintrc'))
-  .pipe(jshint.reporter('default'));
+  .pipe(jshint.reporter('default'))
+  .pipe( notify({ message: 'JSHint complete', onLast: true }) );
 });
 
 gulp.task('js:cs', function() {
   return gulp.src( jsFiles )
-  .pipe(jscs());
+  .pipe(jscs())
+  .pipe( notify({ message: 'JSCS complete', onLast: true }) );
 });
 
 /******************************************************************************
@@ -142,6 +145,7 @@ var phpFiles = [
   'partials/*.php'
 ];
 
+// Lint taks to inspect PHP files in order to follow WP Standards
 gulp.task('php:lint', function () {
   var options = {
     bin: './vendor/bin/phpcs',
@@ -150,7 +154,8 @@ gulp.task('php:lint', function () {
   };
   return gulp.src( phpFiles )
   .pipe(phpcs(options))
-  .pipe(phpcs.reporter('log'));
+  .pipe(phpcs.reporter('log'))
+  .pipe( notify({ message: 'PHP Sniffer Complete', onLast: true }) );
 });
 
 
