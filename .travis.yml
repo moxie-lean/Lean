@@ -7,6 +7,7 @@ before_install:
   - npm install
 
 install:
+  - travis_retry composer install --no-interaction --prefer-source;
   - travis_retry composer update --prefer-source --no-interaction --prefer-stable;
 
 script:
