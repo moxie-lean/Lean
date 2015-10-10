@@ -126,11 +126,28 @@ gulp.task('js:hint', function() {
   .pipe( notify({ message: 'JSHint complete', onLast: true }) );
 });
 
+gulp.task('js:hint-ci', function() {
+  return gulp.src( jsFiles )
+  .pipe(jshint('.jshintrc'))
+  .pipe(jshint.reporter('default'))
+  .pipe(jshint.reporter('fail'));
+});
+
 gulp.task('js:cs', function() {
   return gulp.src( jsFiles )
   .pipe(jscs())
   .pipe( notify({ message: 'JSCS complete', onLast: true }) );
 });
+
+gulp.task('js:cs-ci', function() {
+  return gulp.src( jsFiles )
+  .pipe(jscs())
+  .pipe(jscs.reporter())
+  .pipe(jscs.reporter('fail'));
+});
+
+
+gulp.task('js:ci', ['js:hint-ci', 'js:cs-ci']);
 
 /******************************************************************************
 | >   PHP TASKS
@@ -144,18 +161,25 @@ var phpFiles = [
   'page-templates/*.php',
   'partials/*.php'
 ];
-
+var phpOptions = {
+  bin: './vendor/bin/phpcs',
+  standard: './codesniffer.ruleset.xml',
+  colors: true,
+};
+// Lint that does not break gulp
 // Lint taks to inspect PHP files in order to follow WP Standards
-gulp.task('php:lint', function () {
-  var options = {
-    bin: './vendor/bin/phpcs',
-    standard: './codesniffer.ruleset.xml',
-    colors: true,
-  };
-  return gulp.src( phpFiles )
-  .pipe(phpcs(options))
+ gulp.task('php:lint', function () {
+ return gulp.src( phpFiles )
+  .pipe(phpcs( phpOptions ))
   .pipe(phpcs.reporter('log'))
-  .pipe( notify({ message: 'PHP Sniffer Complete', onLast: true }) );
+  .pipe( notify({ message: 'php sniffer complete', onlast: true }) );
+});
+// Generate an error if there is a mistakte on PHP
+gulp.task('php:ci', function () {
+  return gulp.src( phpFiles )
+  .pipe(phpcs( phpOptions ))
+  .pipe(phpcs.reporter('log'))
+  .pipe(phpcs.reporter('fail'));
 });
 
 
@@ -173,11 +197,10 @@ gulp.task('watch:js', ['js'], function(){
   gulp.watch(source + 'js/app/**/*.js', ['js']);
 });
 
-
 /******************************************************************************
 | >   CONTINUOUS INTEGRATION TASK
 ******************************************************************************/
-gulp.task('ci', ['js:lint', 'php:lint'], function(){
+gulp.task('ci', ['js:ci', 'php:ci'], function(){
 });
 
 /******************************************************************************
