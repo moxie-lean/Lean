@@ -1,7 +1,7 @@
 <?php
 /**
  * Template part for displaying video post formats.
- * @package lean
+ * @package Lean
  */
 
 ?>

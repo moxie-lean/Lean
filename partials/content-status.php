@@ -1,7 +1,7 @@
 <?php
 /**
  * Template part for displaying status post formats.
- * @package lean
+ * @package Lean
  */
 
 ?>
