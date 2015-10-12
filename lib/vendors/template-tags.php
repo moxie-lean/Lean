@@ -7,6 +7,11 @@
  * @package Lean
  */
 
+// Exit if this fiel is loaded directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 if ( ! function_exists( 'digistarter_paging_nav' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
