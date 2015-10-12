@@ -83,21 +83,21 @@ Or you can download the latest release from
 
 Once you have the files you need to be on the theme path or theme
 directory, then you need to install the `node`, `composer` and
-`bower` dependencies in order to exectue some utilities. You need to run
+`bower` dependencies in order to execute some utilities. You need to run
 the following command from your terminal in the theme path: 
 
 ```shell
 ./bin/install.sh
 ```
 
-**Note: Make sure to use the dot before the /bin/ directory to exectue
+**Note: Make sure to use the dot before the /bin/ directory to execute
 the file inside of the theme bin directory**
 
 You are going to be prompt you can reply with `1` or `0`, where `1` is
 yes and `0` means no.
 
 If you have any problem to run this shell script, try by copy and paste
-the following commangs in your terminal if the command above does not
+the following commands in your terminal if the command above does not
 work.
 
 ```shell
