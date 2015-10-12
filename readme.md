@@ -8,7 +8,7 @@ As [Moxie](https://github.com/moxienyc) we decied to create something that
 help us improve our workflow. 
 
 We are focus on create custom platforms using [Wordpress](https://wordpress.org/), 
-this is the base of those platforms and that's why it's focused in construct a 
+this is the base of those platforms and that's why is focused in construct a 
 platform for larger sites insted of a normal blog platform.  
 
 ### Note
@@ -29,7 +29,7 @@ have any.
 
 ## Requirements
 
-This theme has few requiremenents that you to have in order to execute
+This theme has few requiremenents that you need to have in order to execute
 the utilites inside of this theme.
 
 - [php](http://php.net/)
@@ -37,7 +37,7 @@ the utilites inside of this theme.
 - [bower](http://bower.io/#install-bower)
 - [composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
 
-Please make sure to have all of the latest version of softwared listed
+Please make sure to have all of the latest version of software listed
 above. 
 
 ## File Organization
@@ -105,7 +105,7 @@ npm install && bower install && curl -sS https://getcomposer.org/installer | php
 ```
 
 Those commands are going to install the required dependencies of the
-theme to allow other tools work properly (like gulp).
+theme in order to allow other tools to work properly (like gulp).
 
 ## Gulp taks and other utilites
 
@@ -117,8 +117,8 @@ all of the available commands.
 
 ## Contribution
 
-You're more than welcome to help in this project, you can help us sending
-fixes to or to correct typos or any new feature, or if you found an error,
+You're more than welcome to help in this project, you can help us by sending
+fixes or by corecting typos or to request a new feature, if you found an error,
 please create a [new issue](https://github.com/moxienyc/Lean/issues/new) with
 the problem:
 
