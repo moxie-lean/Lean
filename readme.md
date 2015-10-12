@@ -1,4 +1,4 @@
-# Moxie Lean
+# Moxie Lean [![Build Status](https://travis-ci.org/moxienyc/Moxie-Lean.svg)](https://travis-ci.org/moxienyc/Moxie-Lean)
 
 > Bare bones WordPress starter theme focused on modularity, scalability and performance.
 
