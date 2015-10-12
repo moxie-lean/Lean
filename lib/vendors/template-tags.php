@@ -21,7 +21,7 @@ function digistarter_paging_nav() {
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
 		<h4 class="screen-reader-text">
-		<?php esc_html_e( 'Posts navigation', TRANSLATED_TEXT_DOMAIN ); ?>
+		<?php __( 'Posts navigation', TRANSLATED_TEXT_DOMAIN ); ?>
 		</h4>
 		<div class="nav-links">
 
@@ -56,7 +56,7 @@ function digistarter_post_nav() {
 	?>
 	<nav class="navigation post-navigation" role="navigation">
 		<h3 class="screen-reader-text">
-		<?php esc_html_e( 'Post navigation', TRANSLATED_TEXT_DOMAIN ); ?>
+		<?php __( 'Post navigation', TRANSLATED_TEXT_DOMAIN ); ?>
 		</h3>
 		<div class="nav-links">
 
