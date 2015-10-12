@@ -206,6 +206,10 @@ gulp.task('watch:js', ['js'], function(){
   gulp.watch(source + 'js/app/**/*.js', ['js']);
 });
 
+gulp.task('watch:sass', ['js'], function(){
+  gulp.watch(source + 'sass/**/*.scss', ['styles']);
+});
+
 /******************************************************************************
 | >   CONTINUOUS INTEGRATION TASK
 ******************************************************************************/
