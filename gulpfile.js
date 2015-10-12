@@ -117,8 +117,10 @@ var jsFiles = [
     source + 'js/app/behaviors/*.js',
 ];
 
+// Tasks that are handle the lints without breaking the gulp report
 gulp.task('js:lint', ['js:hint', 'js:cs']);
 
+// JS hint to explore the errors in the JS file using jshintrc
 gulp.task('js:hint', function() {
   return gulp.src( jsFiles )
   .pipe(jshint('.jshintrc'))
@@ -126,6 +128,10 @@ gulp.task('js:hint', function() {
   .pipe( notify({ message: 'JSHint complete', onLast: true }) );
 });
 
+/**
+ * Task for continious integration using jshintrc, it will exit with code 1 if
+ * there is an error in the JS files compared with the rules from .jshintrc
+ */
 gulp.task('js:hint-ci', function() {
   return gulp.src( jsFiles )
   .pipe(jshint('.jshintrc'))
@@ -133,12 +139,14 @@ gulp.task('js:hint-ci', function() {
   .pipe(jshint.reporter('fail'));
 });
 
+// Gulp taks to analyze the code using JS CS rules witouth breaking gulp
 gulp.task('js:cs', function() {
   return gulp.src( jsFiles )
   .pipe(jscs())
   .pipe( notify({ message: 'JSCS complete', onLast: true }) );
 });
 
+// Tasks for continuous integration using the JS CS rules
 gulp.task('js:cs-ci', function() {
   return gulp.src( jsFiles )
   .pipe(jscs())
@@ -146,12 +154,13 @@ gulp.task('js:cs-ci', function() {
   .pipe(jscs.reporter('fail'));
 });
 
-
+// Group of JS tasks for continuous integration
 gulp.task('js:ci', ['js:hint-ci', 'js:cs-ci']);
 
 /******************************************************************************
 | >   PHP TASKS
 ******************************************************************************/
+// Files where the code sniffer should run
 var phpFiles = [
   '*.php',
   'lib/*.php',
@@ -161,6 +170,7 @@ var phpFiles = [
   'page-templates/*.php',
   'partials/*.php'
 ];
+// Options for the code sniffer
 var phpOptions = {
   bin: './vendor/bin/phpcs',
   standard: './codesniffer.ruleset.xml',
@@ -174,6 +184,7 @@ var phpOptions = {
   .pipe(phpcs.reporter('log'))
   .pipe( notify({ message: 'php sniffer complete', onlast: true }) );
 });
+
 // Generate an error if there is a mistakte on PHP
 gulp.task('php:ci', function () {
   return gulp.src( phpFiles )
@@ -182,12 +193,10 @@ gulp.task('php:ci', function () {
   .pipe(phpcs.reporter('fail'));
 });
 
-
 /******************************************************************************
 | >   WATCH TASKS
 ******************************************************************************/
-gulp.task('watch:all', ['watch:php', 'watch:js'], function(){
-});
+gulp.task('watch:all', ['watch:php', 'watch:js']);
 
 gulp.task('watch:php', ['php:lint'], function(){
   gulp.watch( phpFiles, ['php:lint'] );
@@ -200,8 +209,7 @@ gulp.task('watch:js', ['js'], function(){
 /******************************************************************************
 | >   CONTINUOUS INTEGRATION TASK
 ******************************************************************************/
-gulp.task('ci', ['js:ci', 'php:ci'], function(){
-});
+gulp.task('ci', ['js:ci', 'php:ci']);
 
 /******************************************************************************
 | >   DEFAULT TASK

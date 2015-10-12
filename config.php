@@ -5,6 +5,11 @@
  * @package Lean
  */
 
+// Exit if this fiel is loaded directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 // Absolute server path to the theme.
 if ( ! defined( 'FULL_THEME_PATH' ) ) {
 	define( 'FULL_THEME_PATH', get_template_directory() );

@@ -7,6 +7,11 @@
  * @package Lean
  */
 
+// Exit if this fiel is loaded directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 if ( ! function_exists( 'digistarter_paging_nav' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
@@ -21,7 +26,7 @@ function digistarter_paging_nav() {
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
 		<h4 class="screen-reader-text">
-		<?php esc_html_e( 'Posts navigation', TRANSLATED_TEXT_DOMAIN ); ?>
+		<?php __( 'Posts navigation', TRANSLATED_TEXT_DOMAIN ); ?>
 		</h4>
 		<div class="nav-links">
 
@@ -56,7 +61,7 @@ function digistarter_post_nav() {
 	?>
 	<nav class="navigation post-navigation" role="navigation">
 		<h3 class="screen-reader-text">
-		<?php esc_html_e( 'Post navigation', TRANSLATED_TEXT_DOMAIN ); ?>
+		<?php __( 'Post navigation', TRANSLATED_TEXT_DOMAIN ); ?>
 		</h3>
 		<div class="nav-links">
 

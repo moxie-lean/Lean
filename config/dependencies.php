@@ -5,6 +5,11 @@
  * @package Lean
  */
 
+// Exit if this fiel is loaded directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 if ( ! function_exists( 'load_dependencies' ) ) {
 	/**
 	 * Load theme dependencies.
