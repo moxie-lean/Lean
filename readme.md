@@ -22,7 +22,6 @@ have any.
 - [Requirements](#requirements)
 - [File Organization](#file-organization)
 - [Installation](#installation)
-- [Features](#features)
 - [Wiki](https://github.com/moxienyc/Moxie-Lean/wiki)
 - [Contribution](#contribution)
  - [Colaborate](#colaborate)
@@ -102,10 +101,7 @@ the following commangs in your terminal if the command above does not
 work.
 
 ```shell
-npm install && bower install &&
-curl -sS https://getcomposer.org/installer | php
-&& php composer.phar install && php composer.phar update
-&& gulp js && gulp styles
+npm install && bower install && curl -sS https://getcomposer.org/installer | php && php composer.phar install && php composer.phar update && gulp js && gulp styles
 ```
 
 Those commands are going to install the required dependencies of the
@@ -139,5 +135,4 @@ the problem:
 If you found a problem or you have a trouble using the theme please 
 [open a new issue](https://github.com/moxienyc/Lean/issues/new) with the 
 information of your problem, we will take a look at the problem as soon as 
-possible.
 
