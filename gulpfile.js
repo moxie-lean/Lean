@@ -196,7 +196,7 @@ gulp.task('php:ci', function () {
 /******************************************************************************
 | >   WATCH TASKS
 ******************************************************************************/
-gulp.task('watch:all', ['watch:php', 'watch:js']);
+gulp.task('watch:all', ['watch:php', 'watch:js', 'watch:sass']);
 
 gulp.task('watch:php', ['php:lint'], function(){
   gulp.watch( phpFiles, ['php:lint'] );
@@ -204,6 +204,10 @@ gulp.task('watch:php', ['php:lint'], function(){
 
 gulp.task('watch:js', ['js'], function(){
   gulp.watch(source + 'js/app/**/*.js', ['js']);
+});
+
+gulp.task('watch:sass', ['js'], function(){
+  gulp.watch(source + 'sass/**/*.scss', ['styles']);
 });
 
 /******************************************************************************
@@ -214,8 +218,5 @@ gulp.task('ci', ['js:ci', 'php:ci']);
 /******************************************************************************
 | >   DEFAULT TASK
 ******************************************************************************/
-gulp.task('default', ['styles', 'js'], function() {
-  gulp.watch(source + 'sass/**/*.scss', ['styles']);
-  gulp.watch(source + 'js/app/**/*.js', ['js']);
-});
+gulp.task('default', ['watch:js', 'watch:sass']);
 
