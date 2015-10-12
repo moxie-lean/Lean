@@ -5,6 +5,11 @@
  * @package Lean
  */
 
+// Exit if this fiel is loaded directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 if ( ! class_exists( 'Theme_Assets' ) ) :
 
 	/**

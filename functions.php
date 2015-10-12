@@ -74,7 +74,7 @@ if ( ! function_exists( '_widgets_init' ) ) :
 	 */
 	function _widgets_init() {
 		$args = array(
-			'name'          => esc_html_e( 'Sidebar', TRANSLATED_TEXT_DOMAIN ),
+			'name'          => esc_html__( 'Sidebar', TRANSLATED_TEXT_DOMAIN ),
 			'id'            => 'sidebar-1',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
@@ -85,3 +85,4 @@ if ( ! function_exists( '_widgets_init' ) ) :
 	}
 add_action( 'widgets_init', '_widgets_init' );
 endif;
+
