@@ -23,19 +23,19 @@ Tags:
 6.0 - Layout and Structure
 
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+2.0 Normalize/Reset
+--------------------------------------------------------------*/
+@import "layouts/normalize";
 
 /*--------------------------------------------------------------
 1.0 Bourbon, Bitters, Neat
 --------------------------------------------------------------*/
 @import "../../bower_components/bourbon/app/assets/stylesheets/bourbon";
+@import "../../bower_components/neat/app/assets/stylesheets/neat";
 @import "base/base"; // Bitters
 @import "grid-settings";
-@import "../../bower_components/neat/app/assets/stylesheets/neat";
 
-/*--------------------------------------------------------------
-2.0 Normalize/Reset
---------------------------------------------------------------*/
-@import "layouts/normalize";
 
 /*--------------------------------------------------------------
 3.0 Variables
