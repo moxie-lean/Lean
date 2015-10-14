@@ -15,27 +15,28 @@ Tags:
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-1.0 - Bourbon, Bitters, Neat
-2.0 - Normalize
+1.0 - Normalize
+2.0 - Bourbon, Bitters, Neat
 3.0 - Elements
 4.0 - Forms
 5.0 - Components/ Add-ons
 6.0 - Layout and Structure
 
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+1.0 Normalize/Reset
+--------------------------------------------------------------*/
+@import "../../bower_components/normalize-scss/normalize";
+
 
 /*--------------------------------------------------------------
-1.0 Bourbon, Bitters, Neat
+2.0 Bourbon, Bitters, Neat
 --------------------------------------------------------------*/
 @import "../../bower_components/bourbon/app/assets/stylesheets/bourbon";
+@import "../../bower_components/neat/app/assets/stylesheets/neat";
 @import "base/base"; // Bitters
 @import "grid-settings";
-@import "../../bower_components/neat/app/assets/stylesheets/neat";
 
-/*--------------------------------------------------------------
-2.0 Normalize/Reset
---------------------------------------------------------------*/
-@import "layouts/normalize";
 
 /*--------------------------------------------------------------
 3.0 Variables
