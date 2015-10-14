@@ -1,0 +1,73 @@
+//Gravity Form
+
+form{
+  li{
+    list-style: none;
+  }
+  input{
+    margin-bottom: 0px;
+  }
+  textarea,
+  #{$all-text-inputs},
+  select,
+  select[multiple=multiple] {
+    margin-bottom: 0;
+  }
+}
+
+.ginput_container{
+  margin-bottom: 15px;
+}
+
+.gfield{
+  label{
+    display: inline-block;
+  }
+}
+
+.gform_fields{
+  padding-left: 0px;
+}
+
+.ginput_complex {
+  label{
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+select:not([multiple]){
+  height: 48px;
+  -webkit-appearance: menulist-button;
+}
+
+//Field Time
+.gfield_time_hour,
+.gfield_time_minute,
+.gfield_time_ampm{
+  width: 80px;
+  display: inline-block;
+  vertical-align: top;
+}
+.gfield_time_hour{
+  input, i{
+    display: inline-block;
+  }
+  input{
+    width: 80%;
+  }
+  i{
+    font-style: normal;
+  }
+}
+
+//Field Name
+.has_first_name.no_middle_name.has_last_name{
+  span{
+    @include span-columns(6);
+  }
+  .name_last{
+    margin-right: 0;
+  }
+}
+

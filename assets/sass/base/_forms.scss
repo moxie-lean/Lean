@@ -6,7 +6,8 @@ fieldset {
 
 input,
 label,
-select {
+select,
+option {
   display: block;
   font-family: $form-font-family;
   font-size: $form-font-size;
@@ -27,7 +28,9 @@ label {
 
 textarea,
 #{$all-text-inputs},
-select[multiple=multiple] {
+select,
+select[multiple=multiple],
+input[type="file"] {
   @include box-sizing(border-box);
   @include transition(border-color);
   border-radius: $form-border-radius;
