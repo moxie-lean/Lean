@@ -2,7 +2,7 @@
 /**
  * Template Name: Full-Width, No Sidebars
  *
- * This template display content at full with, with no sidebars.
+ * This template display content at full with.
  * Please note that this is the WordPress construct of pages and that other
  * 'pages' on your WordPress site will use a different template.
  *
@@ -33,5 +33,4 @@ get_header(); ?>
 				</main>
 		</div>
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
