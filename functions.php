@@ -41,23 +41,10 @@ if ( ! function_exists( 'theme_setup_base' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menu( 'primary-navigation', __( 'Primary Menu', 'lean' ) );
 
-		// Enable support for Post Formats.
-		$supported_formats = array(
-			'aside',
-			'image',
-			'video',
-			'quote',
-			'link',
-			'status',
-			'gallery',
-			'chat',
-			'audio',
-		);
-		add_theme_support( 'post-formats', $supported_formats );
-
 		if ( function_exists( 'load_dependencies' ) ) {
 			load_dependencies();
 		}
+
 		$args = array(
 			'css_version' => false,
 			'js_version' => time(),
@@ -67,22 +54,3 @@ if ( ! function_exists( 'theme_setup_base' ) ) :
 	}
 endif;
 add_action( 'after_setup_theme', 'theme_setup_base' );
-
-if ( ! function_exists( '_widgets_init' ) ) :
-	/**
-	 * Register widgetized area and update sidebar with default widgets.
-	 */
-	function _widgets_init() {
-		$args = array(
-			'name'          => esc_html__( 'Sidebar', TRANSLATED_TEXT_DOMAIN ),
-			'id'            => 'sidebar-1',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
-			'before_title'  => '<h4 class="widget-title">',
-			'after_title'   => '</h4>',
-		);
-		register_sidebar( $args );
-	}
-add_action( 'widgets_init', '_widgets_init' );
-endif;
-
