@@ -20,3 +20,6 @@ Lean.Behaviors.Base = Essential.Behavior.extend({
   },
 
 });
+
+for(var i=0;i<10;i++){
+}

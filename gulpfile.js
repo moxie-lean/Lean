@@ -143,6 +143,7 @@ gulp.task('js:hint-ci', function() {
 gulp.task('js:cs', function() {
   return gulp.src( jsFiles )
   .pipe(jscs())
+  .pipe(jscs.reporter())
   .pipe( notify({ message: 'JSCS complete', onLast: true }) );
 });
 
