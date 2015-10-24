@@ -181,8 +181,7 @@ var phpOptions = {
  gulp.task('php:lint', function () {
  return gulp.src( phpFiles )
   .pipe(phpcs( phpOptions ))
-  .pipe(phpcs.reporter('log'))
-  .pipe( notify({ message: 'php sniffer complete', onlast: true }) );
+  .pipe(phpcs.reporter('log'));
 });
 
 // Generate an error if there is a mistakte on PHP
@@ -196,6 +195,8 @@ gulp.task('php:ci', function () {
 /******************************************************************************
 | >   WATCH TASKS
 ******************************************************************************/
+// Alias to the watcH:all task
+gulp.task('watch', ['watch:all']);
 gulp.task('watch:all', ['watch:php', 'watch:js', 'watch:sass']);
 
 gulp.task('watch:php', ['php:lint'], function(){
