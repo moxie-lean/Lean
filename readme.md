@@ -7,14 +7,14 @@ in [some-like-it-neat](https://github.com/digisavvy/some-like-it-neat).
 As [Moxie](https://github.com/moxienyc) we decied to create something that
 help us improve our workflow. 
 
-We are focus on create custom platforms using [Wordpress](https://wordpress.org/), 
+We are focus on create custom platforms using [WordPress](https://wordpress.org/), 
 this is the base of those platforms and that's why is focused in construct a 
 platform for larger sites insted of a normal blog platform.  
 
 ### Note
 
 > As mentioned above we are focus on build custom platforms or custom
-websites using wordpress instead of normal blogs, this blogs does not
+websites using WordPress instead of normal blogs, this blogs does not
 have any. 
 
 ## Content
