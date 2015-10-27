@@ -9,8 +9,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Text domain of the translated text.
-if ( ! defined( 'TRANSLATED_TEXT_DOMAIN' ) ) {
-	define( 'TRANSLATED_TEXT_DOMAIN', 'lean' );
-}
+define( 'TRANSLATED_TEXT_DOMAIN', 'lean' );
 
