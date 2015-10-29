@@ -195,7 +195,7 @@ gulp.task('php:ci', function () {
 });
 
 // task to inspect and FIX PHP files
-gulp.task('php:fix', functsion () {
+gulp.task('php:fix', function () {
   return gulp.src( phpFiles )
   .pipe(phpcbf( phpOptions ))
   .pipe(phpcbf.reporter('log'))
