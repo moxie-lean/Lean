@@ -181,17 +181,28 @@ var phpOptions = {
 // Lint taks to inspect PHP files in order to follow WP Standards
  gulp.task('php:lint', function () {
  return gulp.src( phpFiles )
-  .pipe(phpcbf( phpOptions ))
-  .pipe(phpcbf.reporter('log'))
+  .pipe(phpcs( phpOptions ))
+  .pipe(phpcs.reporter('log'))
   .pipe( notify({ message: 'php sniffer complete', onlast: true }) );
 });
 
 // Generate an error if there is a mistakte on PHP
 gulp.task('php:ci', function () {
   return gulp.src( phpFiles )
+  .pipe(phpcs( phpOptions ))
+  .pipe(phpcs.reporter('log'))
+  .pipe(phpcs.reporter('fail'));
+});
+
+// task to inspect and FIX PHP files
+gulp.task('php:fix', functsion () {
+  return gulp.src( phpFiles )
   .pipe(phpcbf( phpOptions ))
   .pipe(phpcbf.reporter('log'))
-  .pipe(phpcbf.reporter('fail'));
+  .pipe(phpcbf.reporter('fail'))
+  .pipe(phpcbf( phpOptions ))
+  .pipe(phpcbf.reporter('log'))
+  .pipe( notify({ message: 'php sniffer complete', onlast: true }) );
 });
 
 /******************************************************************************
