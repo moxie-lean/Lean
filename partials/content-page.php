@@ -3,6 +3,8 @@
  * The template used for displaying page content in page.php
  *
  * @package Lean
+ * @subpackage partials
+ * @since 1.0.0
  */
 
 ?>

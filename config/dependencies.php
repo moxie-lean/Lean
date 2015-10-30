@@ -3,6 +3,8 @@
  * Theme dependencies
  *
  * @package Lean
+ * @subpackage config
+ * @since 1.0.0
  */
 
 // Exit if this fiel is loaded directly.

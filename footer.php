@@ -1,7 +1,9 @@
 <?php
 /**
  * The template for displaying the footer.
+ *
  * @package Lean
+ * @since 1.0.0
  */
 
 ?>

@@ -2,7 +2,9 @@
 /**
  * Configuration file to handle different common areas of the project to have
  * a better organizades structure of the code.
+ *
  * @package Lean
+ * @since 1.0.0
  */
 
 // Exit if this fiel is loaded directly.
