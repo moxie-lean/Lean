@@ -1,7 +1,9 @@
 <?php
 /**
  * The main header file.
+ *
  * @package Lean
+ * @since 1.0.0
  */
 
 ?>

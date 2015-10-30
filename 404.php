@@ -1,7 +1,9 @@
 <?php
 /**
  * Template for displaying 404 pages (Not Found).
+ *
  * @package Lean
+ * @since 1.0.0
  */
 
 get_header();

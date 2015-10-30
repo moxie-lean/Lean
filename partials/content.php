@@ -1,7 +1,10 @@
 <?php
 /**
  * Template part for displaying posts.
+ *
  * @package Lean
+ * @subpackage partials
+ * @since 1.0.0
  */
 
 ?>

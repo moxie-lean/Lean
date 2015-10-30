@@ -1,8 +1,11 @@
 <?php
 /**
  * Lean functions and definitions
+ *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
  * @package Lean
+ * @since 1.0.0
  */
 
 if ( ! function_exists( 'theme_setup_base' ) ) :

@@ -1,7 +1,9 @@
 <?php
 /**
  * Template that displays all pages by default.
+ *
  * @package Lean
+ * @since 1.0.0
  */
 
 get_header();

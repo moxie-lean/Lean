@@ -7,6 +7,8 @@
  * 'pages' on your WordPress site will use a different template.
  *
  * @package Lean
+ * @subpackage page-templates
+ * @since 1.0.0
  */
 
 get_header(); ?>

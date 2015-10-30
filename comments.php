@@ -8,6 +8,7 @@
  * located in the inc/template-tags.php file.
  *
  * @package Lean
+ * @since 1.0.0
  */
 
 /*
