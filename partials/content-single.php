@@ -1,7 +1,10 @@
 <?php
 /**
  * Template part to display the content from single.php
- * @package digistarter
+ *
+ * @package Lean
+ * @subpackage partials
+ * @since 1.0.0
  */
 
 ?>

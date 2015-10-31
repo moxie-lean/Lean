@@ -5,6 +5,10 @@
         {
             "name": "mitogh",
             "email": "mitogh@gmail.com"
+        }.
+        {
+          "name": "Moxie Developer",
+          "email": "developer@getmoxied.net"
         }
     ],
     "require": {

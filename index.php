@@ -2,7 +2,9 @@
 /**
  * The main template file.  It is used to display a page when nothing more
  * specific matches a query.
+ *
  * @package Lean
+ * @since 1.0.0
  */
 
 get_header();
