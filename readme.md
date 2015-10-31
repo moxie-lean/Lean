@@ -63,7 +63,7 @@ process.
 |  |- languages/ ---------------> Translations
 |  |- constans.php -------------> Constant of the project
 |  |- dependencies.php ---------> File to load other php files in the theme
-|- lib/ ------------------------> PHP files or custom ones.
+|- inc/ ------------------------> PHP files or custom ones.
 |  |- class-theme-assets.php ---> Class to load JS and CSS in the theme.
 |- page-templates/ -------------> Custom page templates.
 |- partials/ -------------------> Repeated views than can be reusable.
