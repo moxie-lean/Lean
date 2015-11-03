@@ -15,7 +15,7 @@
     "disallowEmptyBlocks": true,
     "disallowSpacesInCallExpression": true,
     "disallowSpacesInsideArrayBrackets": true,
-    "disallowSpacesInsideParentheses": true,
+    "disallowSpacesInsideParentheses": false,
     "disallowQuotedKeysInObjects": true,
     "disallowSpaceAfterObjectKeys": true,
     "disallowSpaceAfterPrefixUnaryOperators": true,
