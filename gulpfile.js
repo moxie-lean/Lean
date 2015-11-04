@@ -13,6 +13,7 @@ var concat = require('gulp-concat');
 var notify = require('gulp-notify');
 var sourcemaps = require('gulp-sourcemaps');
 var phpcs = require('gulp-phpcs');
+var phpcbf = require('gulp-phpcbf');
 var sass = require('gulp-sass');
 /******************************************************************************
 | >   PROJECT VARIABLES
@@ -196,6 +197,16 @@ gulp.task('php:ci', function () {
   .pipe(phpcs( phpOptions ))
   .pipe(phpcs.reporter('log'))
   .pipe(phpcs.reporter('fail'));
+});
+
+// task to inspect and FIX PHP files
+gulp.task('php:fix', function () {
+  return gulp.src( phpFiles )
+  .pipe(phpcbf({
+    bin: './vendor/bin/phpcbf',
+    standard: './codesniffer.ruleset.xml',
+    warningSeverity: 0
+  }));
 });
 
 /******************************************************************************
