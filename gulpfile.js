@@ -23,6 +23,11 @@ var source = project + '/assets/';
 var bower = project + '/bower_components/';
 
 /******************************************************************************
+| >  JS and CSS task
+******************************************************************************/
+gulp.task('assets', ['styles', 'js']);
+
+/******************************************************************************
 | >   CSS TASKS
 ******************************************************************************/
 
@@ -164,8 +169,8 @@ gulp.task('js:ci', ['js:hint-ci', 'js:cs-ci']);
 // Files where the code sniffer should run
 var phpFiles = [
   '*.php',
-  'lib/*.php',
-  'lib/*/*.php',
+  'inc/*.php',
+  'inc/*/*.php',
   'config/*.php',
   'page-templates/*.php',
   'page-templates/*.php',

@@ -3,6 +3,8 @@
  * Theme dependencies
  *
  * @package Lean
+ * @subpackage config
+ * @since 1.0.0
  */
 
 // Exit if this fiel is loaded directly.
@@ -27,8 +29,8 @@ if ( ! function_exists( 'load_dependencies' ) ) {
 		/*
 		 * Custom template tags for this theme.
 		 */
-		require LIB_DIR . '/vendors/template-tags.php';
+		require INC_DIR . '/vendors/template-tags.php';
 
-		require LIB_DIR . '/class-theme-assets.php';
+		require INC_DIR . '/class-theme-assets.php';
 	}
 }

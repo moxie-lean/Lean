@@ -1,7 +1,9 @@
 <?php
 /**
  * The Template for displaying all single posts.
+ *
  * @package Lean
+ * @since 1.0.0
  **/
 
 get_header();

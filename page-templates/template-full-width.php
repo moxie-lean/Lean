@@ -7,6 +7,8 @@
  * 'pages' on your WordPress site will use a different template.
  *
  * @package Lean
+ * @subpackage page-templates
+ * @since 1.0.0
  */
 
 get_header(); ?>
@@ -17,7 +19,7 @@ get_header(); ?>
 				<?php
 				while ( have_posts() ) : the_post();
 
-								get_template_part( 'partials/content', 'page' );
+					get_template_part( 'partials/content', 'page' );
 
 					/**
 					 * If comments are open or we have at least one comment,

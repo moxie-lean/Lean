@@ -5,6 +5,8 @@
  * Eventually, some of the functionality here could be replaced by core features.
  *
  * @package Lean
+ * @subpackage inc
+ * @since 1.0.0
  */
 
 // Exit if this fiel is loaded directly.

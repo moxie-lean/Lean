@@ -1,7 +1,9 @@
 <?php
 /**
  * The template for displaying Search Results pages.
+ *
  * @package Lean
+ * @since 1.0.0
  */
 
 get_header();
