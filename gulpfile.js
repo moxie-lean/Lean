@@ -202,12 +202,11 @@ gulp.task('php:ci', function () {
 // task to inspect and FIX PHP files
 gulp.task('php:fix', function () {
   return gulp.src( phpFiles )
-  .pipe(phpcbf( phpOptions ))
-  .pipe(phpcbf.reporter('log'))
-  .pipe(phpcbf.reporter('fail'))
-  .pipe(phpcbf( phpOptions ))
-  .pipe(phpcbf.reporter('log'))
-  .pipe( notify({ message: 'php sniffer complete', onlast: true }) );
+  .pipe(phpcbf({
+    bin: './vendor/bin/phpcbf',
+    standard: './codesniffer.ruleset.xml',
+    warningSeverity: 0
+  }));
 });
 
 /******************************************************************************
