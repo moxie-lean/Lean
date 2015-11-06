@@ -26,7 +26,7 @@ echo ""
 echo "==========================================================================="
 echo "               Create CSS and JS Assets - By Moxie                "
 echo "==========================================================================="
-gulp js && gulp styles
+gulp assets
 echo "Installation complete, thank you!"
 
 ./bin/bye.sh
