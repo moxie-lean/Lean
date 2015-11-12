@@ -61,12 +61,12 @@
 				 * probably display them here
 				 */
 				if ( ! empty( $tag_list )  ) {
-					$meta_text = esc_html__(
+					$meta_text = __(
 						'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.',
 						TRANSLATED_TEXT_DOMAIN
 					);
 				} else {
-					$meta_text = esc_html__(
+					$meta_text = __(
 						'This entry was posted in %1$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.',
 						TRANSLATED_TEXT_DOMAIN
 					);
@@ -82,7 +82,9 @@
 				),
 				array(
 					'a' => array(
+						'href' => array(),
 						'class' => array(),
+						'rel' => array(),
 					),
 				)
 			);
