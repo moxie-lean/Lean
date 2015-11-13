@@ -14,6 +14,7 @@ var notify = require('gulp-notify');
 var sourcemaps = require('gulp-sourcemaps');
 var phpcs = require('gulp-phpcs');
 var sass = require('gulp-sass');
+var browserSync = require('browser-sync').create();
 /******************************************************************************
 | >   PROJECT VARIABLES
 ******************************************************************************/
@@ -74,7 +75,8 @@ gulp.task('styles:combine', function(){
     'android 4'
   ))
   .pipe(sourcemaps.write('../maps'))
-  .pipe(gulp.dest(source + 'css'));
+  .pipe(gulp.dest(source + 'css'))
+  .pipe(browserSync.stream());
 });
 
 /******************************************************************************
@@ -200,6 +202,7 @@ gulp.task('php:ci', function () {
 /******************************************************************************
 | >   WATCH TASKS
 ******************************************************************************/
+gulp.task('watch', ['watch:all']);
 gulp.task('watch:all', ['watch:php', 'watch:js', 'watch:sass']);
 
 gulp.task('watch:php', ['php:lint'], function(){
@@ -222,5 +225,9 @@ gulp.task('ci', ['js:ci', 'php:ci']);
 /******************************************************************************
 | >   DEFAULT TASK
 ******************************************************************************/
-gulp.task('default', ['watch:js', 'watch:sass']);
-
+gulp.task('default', ['watch']);
+gulp.task('serve', ['watch'], function(){
+  browserSync.init({
+    proxy: "lean.dev"
+  });
+});
