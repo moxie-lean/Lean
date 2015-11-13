@@ -186,8 +186,7 @@ var phpOptions = {
  gulp.task('php:lint', function () {
  return gulp.src( phpFiles )
   .pipe(phpcs( phpOptions ))
-  .pipe(phpcs.reporter('log'))
-  .pipe( notify({ message: 'php sniffer complete', onlast: true }) );
+  .pipe(phpcs.reporter('log'));
 });
 
 // Generate an error if there is a mistakte on PHP
