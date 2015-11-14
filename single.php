@@ -6,6 +6,8 @@
  * @since 1.0.0
  **/
 
+use lean\inc\helpers as helpers;
+
 get_header();
 ?>
 
@@ -17,7 +19,7 @@ get_header();
 
 		get_template_part( 'partials/content', 'single' );
 
-		digistarter_post_nav();
+		helpers\post_nav();
 
 		// If comments are open or we have at least one comment.
 		if ( comments_open() || '0' !== get_comments_number() ) :

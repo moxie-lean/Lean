@@ -6,6 +6,8 @@
  * @since 1.0.0
  */
 
+use lean\inc\helpers as helpers;
+
 get_header();
 ?>
 
@@ -40,7 +42,7 @@ get_header();
 
 			<?php endwhile; ?>
 
-			<?php digistarter_paging_nav(); ?>
+			<?php helpers\pagination(); ?>
 
 		<?php else : ?>
 

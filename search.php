@@ -6,6 +6,8 @@
  * @since 1.0.0
  */
 
+use lean\inc\helpers as helpers;
+
 get_header();
 ?>
 <section id="primary" class="content-area">
@@ -28,7 +30,7 @@ get_header();
 		while ( have_posts() ) : the_post();
 			get_template_part( 'partials/content', 'search' );
 		endwhile;
-			digistarter_paging_nav();
+			helpers\pagination();
 		else :
 		get_template_part( 'partials/content', 'none' );
 		?>

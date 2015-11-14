@@ -7,6 +7,8 @@
  * @since 1.0.0
  */
 
+use lean\inc\helpers as helpers;
+
 get_header();
 ?>
 <div id="primary" class="content-area">
@@ -25,7 +27,7 @@ get_header();
 			get_template_part( 'partials/content', get_post_format() );
 		endwhile;
 
-		digistarter_paging_nav();
+		helpers\pagination();
 
 	else :
 		get_template_part( 'partials/content', 'none' );

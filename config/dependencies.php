@@ -7,6 +7,8 @@
  * @since 1.0.0
  */
 
+namespace lean;
+
 // Exit if this fiel is loaded directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -29,8 +31,9 @@ if ( ! function_exists( 'load_dependencies' ) ) {
 		/*
 		 * Custom template tags for this theme.
 		 */
-		require INC_DIR . '/vendors/template-tags.php';
-
 		require INC_DIR . '/class-theme-assets.php';
+		require INC_DIR . '/helpers/loader.php';
+		require INC_DIR . '/helpers/template-tags.php';
+		require INC_DIR . '/helpers/comment.php';
 	}
 }

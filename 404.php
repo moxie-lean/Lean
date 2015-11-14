@@ -6,6 +6,8 @@
  * @since 1.0.0
  */
 
+use lean\inc\helpers as helpers;
+
 get_header();
 ?>
 	<div id="primary" class="content-area">
@@ -27,7 +29,7 @@ get_header();
 
 					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 
-					<?php if ( digistarter_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
+					<?php if ( helpers\categorized_blog() ) : ?>
 					<div class="widget widget_categories">
 						<h2 class="widgettitle"><?php esc_html_e( 'Most Used Categories', TRANSLATED_TEXT_DOMAIN ); ?></h2>
 						<ul>
