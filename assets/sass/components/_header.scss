@@ -1,0 +1,35 @@
+.site-header {
+  padding-top: 60px;
+}
+.site-title {
+  & h1 {
+    padding: 0;
+    margin: 0;
+    font-size: 2rem;
+  }
+}
+.site-description {
+font-size: 0.9rem;
+}
+
+#primary-nav {
+  background: #f8f8f8;
+  padding: 25px 15px 15px 15px;
+  text-align: center;
+  margin: 20px 0;
+  & ul {
+    display: flex;
+    padding: 0;
+  }
+  & li {
+    list-style: none;
+    margin: auto;
+    align-items: center;
+    font-size: .9rem;
+    font-family: $title;
+    text-align: center;
+  }
+  & li:hover {
+    text-decoration: underline;
+  }
+}

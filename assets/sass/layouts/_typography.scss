@@ -61,10 +61,6 @@ h1, h2, h3, h4, h5, h6 {
 
   a, a:visited {
     text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
   }
 }
 h1 {
@@ -94,7 +90,7 @@ h6 {
 }
 blockquote {
   background-color: #f9f9f9;
-  border-left: solid 5px $primary-color;
+  border-left: solid 5px $secondary-color;
   font-style: italic;
   padding: 20px;
 }
@@ -108,12 +104,12 @@ strong, b {
 }
 a, a:visited {
   @include transition (all 200ms ease-in-out);
-  color: #666;
+  color: $link-color;
   text-decoration: none;
 
   &:hover {
     @include transition (all 200ms ease-in-out);
-    color: $primary-color;
+    color: $link-color__hover;
   }
 }
 ul {
@@ -122,5 +118,3 @@ ul {
 ol {
   @extend %default-ol; // Adds browser default spacing back
 }
-
-

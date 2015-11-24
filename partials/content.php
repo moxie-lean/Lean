@@ -64,8 +64,11 @@
 		?>
 		</span>
 		<?php endif; ?>
+<!--
+Seperator
+-->
 
-		<?php
+		- <?php
 			edit_post_link(
 				esc_html__( 'Edit', TRANSLATED_TEXT_DOMAIN ),
 				'<span class="edit-link">', '</span>'
