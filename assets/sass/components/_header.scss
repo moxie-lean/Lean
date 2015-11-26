@@ -3,33 +3,73 @@
 }
 .site-title {
   & h1 {
-    padding: 0;
-    margin: 0;
+    padding  : 0;
+    margin   : 0;
     font-size: 2rem;
   }
 }
 .site-description {
-font-size: 0.9rem;
+  font-size: 0.9rem;
+}
+ul {
+  padding: 0;
 }
 
-#primary-nav {
-  background: #f8f8f8;
-  padding: 25px 15px 15px 15px;
-  text-align: center;
-  margin: 20px 0;
-  & ul {
-    display: flex;
-    padding: 0;
-  }
+ul.menu {
+  list-style:none;
+	position:relative;
+	float:left;
+	margin:20px 0;
+  text-align: left;
+  margin-left: -10px;
+
   & li {
-    list-style: none;
-    margin: auto;
-    align-items: center;
-    font-size: .9rem;
-    font-family: $title;
-    text-align: center;
+    display: inline-block;
   }
-  & li:hover {
-    text-decoration: underline;
-  }
+    & a
+    {
+    	display:block;
+    	color:#333;
+    	text-decoration:none;
+    	font-weight:400;
+    	font-size:14px;
+    	line-height:32px;
+    	padding:0 15px;
+      font-family: sans-serif;
+      text-align: left;
+    }
+    & ul li
+    {
+    	position:relative;
+    	float:left;
+    	margin:0;
+    	padding:0;
+      display:inline-block;
+    }
+    & > li > ul > li > ul >li {
+      background: #efefef;
+    }
+    & ul ul
+    {
+    	display:none;
+    	top:100%;
+    	left:0;
+    	padding:0
+    }
+    & ul {
+      display: none;
+      position: absolute;
+      padding: 0;
+    }
+
+    & ul li:hover > ul
+    {
+    	display:flex;
+      flex-direction: column;
+    	width:200px;
+    }
+    & li:hover > ul {
+      display: block;
+      background: #e2e2e2;
+    }
 }
