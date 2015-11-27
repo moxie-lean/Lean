@@ -13,4 +13,9 @@
     <exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
     <exclude name="WordPress.VIP.SuperGlobalInputUsage" />
   </rule>
+
+  <rule ref="Squiz.Commenting">
+    <exclude name="Squiz.Commenting.FileComment" />
+    <exclude name="Squiz.Commenting.LongConditionClosingComment" />
+  </rule>
 </ruleset>
