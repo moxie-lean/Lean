@@ -40,7 +40,12 @@ gulp.task('styles', ['styles:minify'], function() {
     source + 'css/style-min.css'
   ];
   return gulp.src(styles)
-  .pipe( notify({ message: 'Styles task complete', onLast: true }) );
+  .pipe( notify({
+    title: 'Styles completed',
+    message: 'The Sass files has been compiled into CSS',
+    onLast: true,
+    icon: './assets/images/notify/sass.png',
+  }));
 });
 
 /**
@@ -84,7 +89,12 @@ gulp.task('styles:combine', function(){
 // Task to combine and minify the js scripts.
 gulp.task('js', ['js:minify'], function() {
   return gulp.src( source + 'js/production.js')
-  .pipe(notify({ message: 'Scripts task complete', onLast: true }));
+  .pipe( notify({
+    title: 'JS completed',
+    message: 'The JS has been created',
+    onLast: true,
+    icon: './assets/images/notify/js.png',
+  }));
 });
 
 /**
