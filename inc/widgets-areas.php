@@ -1,0 +1,21 @@
+<?php
+/**
+ * Theme dependencies
+ *
+ * @package Lean
+ * @subpackage config
+ * @since 1.1.0
+ */
+
+add_action( 'widgets_init', function(){
+	register_sidebar(
+		array(
+			'name' => __( 'Sidebar', TRANSLATED_TEXT_DOMAIN ),
+			'id' => 'sidebar-1',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title' => '<h4 class="widget-title">',
+			'after_title' => '</h4>',
+		)
+	);
+});
