@@ -19,7 +19,7 @@ get_header();
 			<h1 class="page-title">
 			<?php
 			printf(
-				esc_html_e( 'Search Results for: %s', TRANSLATED_TEXT_DOMAIN ),
+				esc_html__( 'Search Results for: %s', TRANSLATED_TEXT_DOMAIN ),
 				'<span>' . get_search_query() . '</span>'
 			);
 			?>
