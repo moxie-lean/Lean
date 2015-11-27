@@ -1,21 +1,15 @@
-<?php
-/**
- * Functions to load files fro mthe partials directory also allows to send
- * custom partials to the files.
- *
- * @since 2.0.0
- *
- * @package Lean
- * @subpackage helpers
- */
-
-namespace lean\inc\helpers;
+<?php namespace lean\inc\helpers;
 
 
 /**
+ * Comment callback
+ *
+ * @param WP_Comment $comment	The comment.
+ * @param array      $args		The arguments.
+ * @param int        $depth		The depth of the comment.
  */
 function comment( $comment, $args, $depth ) {
-		$GLOBALS['comment'] = $comment;
+	$GLOBALS['comment'] = $comment;
 	if ( 'pingback' === $comment->comment_type || 'trackback' === $comment->comment_type ) : ?>
 
 	<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
