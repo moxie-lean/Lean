@@ -25,7 +25,7 @@ get_header(); ?>
 					 * If comments are open or we have at least one comment,
 					 * load up the comment template.
 					 */
-					if ( comments_open() || '0' !== intval( get_comments_number() ) ) :
+					if ( comments_open() || 0 !== absint( get_comments_number() ) ) :
 						comments_template();
 					endif;
 

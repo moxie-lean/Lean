@@ -24,12 +24,10 @@ if ( post_password_required() ) {
 <?php tha_comments_before(); ?>
 <div id="comments" class="comments-area">
 
-	<?php // You can start editing here -- including this comment! ?>
-
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
-			printf(
+			$message = sprintf(
 				_nx(
 					'One thought on &ldquo;%2$s&rdquo;',
 					'%1$s thoughts on &ldquo;%2$s&rdquo;',
@@ -40,11 +38,14 @@ if ( post_password_required() ) {
 				number_format_i18n( get_comments_number() ),
 				'<span>' . get_the_title() . '</span>'
 			);
+			$allowed = array(
+				'span' => array(),
+			);
+			echo wp_kses( $message, $allowed );
 			?>
 		</h2>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-		<?php // Are there comments to navigate through. ?>
 		<nav id="comment-nav-above" class="comment-navigation" role="navigation">
 			<h1 class="screen-reader-text">
 				<?php esc_html_e( 'Comment navigation', TRANSLATED_TEXT_DOMAIN ); ?>
@@ -71,7 +72,6 @@ if ( post_password_required() ) {
 		</ol>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-		<?php // Are there comments to navigate through. ?>
 		<nav id="comment-nav-below" class="comment-navigation" role="navigation">
 			<h1 class="screen-reader-text">
 				<?php esc_html_e( 'Comment navigation', TRANSLATED_TEXT_DOMAIN ); ?>
