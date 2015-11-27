@@ -14,12 +14,13 @@
   color:#c0c0c0;
     margin-bottom: 90px;
 }
+
 #primary-nav {
   width: 100%;
   position: absolute;
   left: 0;
   margin-top: -80px;
-  background: #eaeaea;
+  background: #253645;
 }
 
 ul.menu {
@@ -40,7 +41,9 @@ ul.menu {
     list-style: none;
     padding   : 10px;
     & > a {
-      color: #676767;
+      color: #fff;
+      width: 100%;
+      display: block;
     }
     &:hover {
       background: #f0f0f0;
@@ -55,7 +58,6 @@ ul.menu {
   & li:hover > ul {
     display   : block;
     position  : absolute;
-    box-shadow: 0 0 40px 1px #F3F3F3;
   }
   & > li {
     list-style: none;
