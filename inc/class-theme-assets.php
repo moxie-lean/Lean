@@ -1,18 +1,4 @@
-<?php
-/**
- * Assets loader class
- *
- * @package Lean
- * @subpackage inc
- * @since 1.0.0
- */
-
-namespace lean\inc;
-
-// Exit if this fiel is loaded directly.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+<?php namespace Lean\Inc;
 
 /**
  * Class for loading assets based on environment.
@@ -22,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.1.0
  */
-class Theme_Assets {
+class Assets {
 
 	/**
 	 * Which environment we are in. Defaults to development.
@@ -224,11 +210,16 @@ class Theme_Assets {
 
 		wp_deregister_script( 'jquery' );
 		wp_register_script(
-			'jquery', // Handle
-			sprintf( '%s/%s', FULL_THEME_URL, $jquery_path ), // source
-			false, // No dependency
-			$jquery_version, // No version
-			false // Don't load on footer.
+			// Handle.
+			'jquery',
+			// Source path.
+			sprintf( '%s/%s', FULL_THEME_URL, $jquery_path ),
+			// No dependencies.
+			false,
+			// Version number.
+			$jquery_version,
+			// Don't load on footer.
+			false
 		);
 		wp_enqueue_script( 'jquery' );
 	}
@@ -256,8 +247,7 @@ class Theme_Assets {
 	 * @return void
 	 */
 	private function load_comments_assets() {
-		$load_comments = is_singular() && comments_open()
-			&& get_option( 'thread_comments' );
+		$load_comments = is_singular() && comments_open() && get_option( 'thread_comments' );
 
 		if ( $load_comments ) {
 			wp_enqueue_script( 'comment-reply' );
