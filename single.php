@@ -22,7 +22,7 @@ get_header();
 		helpers\post_nav();
 
 		// If comments are open or we have at least one comment.
-		if ( comments_open() || '0' !== get_comments_number() ) :
+		if ( comments_open() || 0 !== absint( get_comments_number() ) ) :
 			comments_template();
 		endif;
 
