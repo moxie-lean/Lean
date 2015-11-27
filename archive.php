@@ -6,7 +6,7 @@
  * @since 1.0.0
  */
 
-use lean\inc\helpers as helpers;
+use Lean\Inc\Helpers as Helpers;
 
 get_header();
 ?>
@@ -20,7 +20,6 @@ get_header();
 				<h1 class="page-title">
 					<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
 				</h1>
-				<?php // Show an optional term description. ?>
 				<?php $option_description = term_description(); ?>
 				<?php if ( ! empty( $option_description ) ) : ?>
 					<div class="taxonomy-description">
@@ -42,7 +41,7 @@ get_header();
 
 			<?php endwhile; ?>
 
-			<?php helpers\pagination(); ?>
+			<?php Helpers\pagination(); ?>
 
 		<?php else : ?>
 
