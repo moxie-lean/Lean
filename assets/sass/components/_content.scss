@@ -25,7 +25,9 @@ article {
 .entry-title {
     font-size: 1.7rem;
     font-weight: bold;
-
+}
+.entry-content a {
+  color: $post-link-color;
 }
 .entry-meta {
   font-size: 0.75rem;

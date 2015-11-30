@@ -2,6 +2,7 @@
   padding-top: 60px;
 }
 .site-title {
+
   & h1 {
     padding  : 0;
     margin   : 0;
@@ -11,19 +12,27 @@
 .site-description {
   font-size: 0.9rem;
   color:#c0c0c0;
+    margin-bottom: 90px;
 }
+#primary-nav {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  margin-top: -80px;
+  background: #eaeaea;
+}
+
 ul.menu {
   padding    : 0;
   font-size  : 14px;
   font-family: sans-serif;
-  margin: 10px 0 -10px 0px;
-  border: 1px solid #eaeaea ;
+  margin: 10px auto;
+  @include outer-container;
   & ul {
     padding   : 5px;
     display   : none;
     position  : absolute;
     background: $menu-color;
-    border-left : 3px solid #e7e7e7;
     padding-left: 5px;
   }
   & li {
