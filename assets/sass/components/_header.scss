@@ -11,65 +11,55 @@
 .site-description {
   font-size: 0.9rem;
 }
-ul {
-  padding: 0;
-}
-
 ul.menu {
-  list-style:none;
-	position:relative;
-	float:left;
-	margin:20px 0;
-  text-align: left;
-  margin-left: -10px;
-
-  & li {
-    display: inline-block;
+  padding    : 0;
+  font-size  : 14px;
+  font-family: sans-serif;
+  margin: 10px 0 -30px 0px;
+  border: 1px solid #fcfcfc ;
+  & ul {
+    padding   : 5px;
+    display   : none;
+    position  : absolute;
+    background: $menu-color;
+    border-left : 3px solid #e7e7e7;
+    padding-left: 5px;
   }
-    & a
-    {
-    	display:block;
-    	color:#333;
-    	text-decoration:none;
-    	font-weight:400;
-    	font-size:14px;
-    	line-height:32px;
-    	padding:0 15px;
-      font-family: sans-serif;
-      text-align: left;
+  & li {
+    min-width : 230px;
+    list-style: none;
+    padding   : 10px;
+    & > a {
+      color: #676767;
     }
-    & ul li
-    {
-    	position:relative;
-    	float:left;
-    	margin:0;
-    	padding:0;
-      display:inline-block;
+    &:hover {
+      background: #f0f0f0;
+      & > a {
+        color: #0f0f0f;
+      }
     }
-    & > li > ul > li > ul >li {
-      background: #efefef;
+    & ul > li > ul {
+      margin-left: 15px;
     }
-    & ul ul
-    {
-    	display:none;
-    	top:100%;
-    	left:0;
-    	padding:0
-    }
-    & ul {
-      display: none;
-      position: absolute;
-      padding: 0;
-    }
+  }
+  & li:hover > ul {
+    display   : block;
+    position  : absolute;
+    box-shadow: 0 0 40px 1px #F3F3F3;
+  }
+  & > li {
+    list-style: none;
+    display   : inline-block;
+    position  : relative;
+    min-width : 130px;
+    margin    : 0;
+      & > a {
+        display: block;
 
-    & ul li:hover > ul
-    {
-    	display:flex;
-      flex-direction: column;
-    	width:200px;
+        text-align: center;
+      }
+    & > ul > li {
+      margin-left: 0;
     }
-    & li:hover > ul {
-      display: block;
-      background: #e2e2e2;
-    }
+  }
 }
