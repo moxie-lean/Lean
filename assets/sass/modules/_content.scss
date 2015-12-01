@@ -4,33 +4,33 @@ article {
     margin-top: 0;
   }
   & h1 {
-    font-size: 2rem;
+    @include fontSize(32px);
   }
   & h2 {
-    font-size: 1.75rem;
+    @include fontSize(28px);
   }
   & h3 {
-    font-size: 1.5rem;
+    @include fontSize(24px);
   }
   & h4 {
-    font-size: 1.25rem;
+    @include fontSize(20px);
   }
   & h5 {
-    font-size: 1rem;
+   @include fontSize(16px);
   }
   & h6 {
-    font-size: .75rem;
+   @include fontSize(12px);
   }
 }
 .entry-title {
-    font-size: 1.7rem;
+    @include fontSize(26px);
     font-weight: bold;
 }
 .entry-content a {
   color: $post-link-color;
 }
 .entry-meta {
-  font-size: 0.75rem;
+  @include fontSize(12px);
   & a:hover {
   text-decoration: underline;
   }

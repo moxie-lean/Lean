@@ -6,12 +6,12 @@
   & h1 {
     padding  : 0;
     margin   : 0;
-    font-size: 2rem;
+    @include fontSize(30px);
   }
 }
 .site-description {
-  font-size: 0.9rem;
-  color:#c0c0c0;
+    @include fontSize(16px);
+    color:#c0c0c0;
     margin-bottom: 90px;
 }
 

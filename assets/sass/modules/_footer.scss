@@ -1,5 +1,5 @@
 .site-footer {
-  font-size: 12px;
+  @include fontSize(12px);
   font-family: sans-serif;
   padding: 25px 0px;
   text-align: right;
