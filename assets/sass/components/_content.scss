@@ -35,3 +35,22 @@ article {
   text-decoration: underline;
   }
 }
+
+.entry-meta {
+  margin: 30px 0px;
+  font-family: sans-serif;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  & a[rel=prev] {
+  text-align: left;
+  width: 50%;
+  }
+  & a[rel=next] {
+  text-align: right;
+  width: 50%;
+  }
+}
