@@ -27,7 +27,6 @@ Tags:
 1.0 Normalize/Reset
 --------------------------------------------------------------*/
 @import "../../bower_components/normalize-scss/normalize.scss";
-
 /*--------------------------------------------------------------
 2.0 Bourbon, Bitters, Neat
 --------------------------------------------------------------*/
@@ -43,9 +42,10 @@ Tags:
 @import "components/content";
 @import "components/header";
 @import "components/footer";
+@import "components/comments";
 
 /*--------------------------------------------------------------
-4.0 Typography
+4.0 Typography and Responsive Fixes
 --------------------------------------------------------------*/
 @import "layouts/typography";
 
@@ -60,3 +60,4 @@ Tags:
 6.0 Layout and Structure
 --------------------------------------------------------------*/
 @import "layouts/structure";
+@import "layouts/responsive";
