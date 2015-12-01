@@ -39,10 +39,6 @@ Tags:
 3.0 Variables
 --------------------------------------------------------------*/
 @import "components/variables";
-@import "components/content";
-@import "components/header";
-@import "components/footer";
-@import "components/comments";
 
 /*--------------------------------------------------------------
 4.0 Typography and Responsive Fixes
@@ -61,3 +57,11 @@ Tags:
 --------------------------------------------------------------*/
 @import "layouts/structure";
 @import "layouts/responsive";
+
+/*--------------------------------------------------------------
+7.0 Modules
+--------------------------------------------------------------*/
+@import "modules/content";
+@import "modules/header";
+@import "modules/footer";
+@import "modules/comments";
