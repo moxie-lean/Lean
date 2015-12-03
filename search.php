@@ -6,7 +6,7 @@
  * @since 1.0.0
  */
 
-use lean\inc\helpers as helpers;
+use Lean\Inc\Helpers as Helpers;
 
 get_header();
 ?>
@@ -30,7 +30,7 @@ get_header();
 		while ( have_posts() ) : the_post();
 			get_template_part( 'partials/content', 'search' );
 		endwhile;
-			helpers\pagination();
+			Helpers\pagination();
 		else :
 		get_template_part( 'partials/content', 'none' );
 		?>

@@ -1,4 +1,4 @@
-<?php
+<?php namespace Lean\Inc\Helpers;
 /**
  * Functions to load files fro mthe partials directory also allows to send
  * custom partials to the files.
@@ -8,8 +8,6 @@
  * @package Lean
  * @subpackage helpers
  */
-
-namespace lean\inc\helpers;
 
 /**
  * Custom wrapper to load the partials files enabling the pass of parameters

@@ -1,5 +1,4 @@
-<?php namespace lean\inc\helpers;
-
+<?php namespace Lean\Inc\Helpers;
 
 /**
  * Comment callback

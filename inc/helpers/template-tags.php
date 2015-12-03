@@ -1,4 +1,4 @@
-<?php
+<?php namespace Lean\Inc\Helpers;
 /**
  * Custom template tags for this theme.
  *
@@ -8,8 +8,6 @@
  * @subpackage inc
  * @since 1.0.0
  */
-
-namespace lean\inc\helpers;
 
 // Exit if this fiel is loaded directly.
 if ( ! defined( 'ABSPATH' ) ) {
