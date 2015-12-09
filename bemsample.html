@@ -1,46 +1,40 @@
 <body class="home blog logged-in">
 	<div id="page" class="hfeed site">
 		<div class="wrap">
-			<header id="masthead" class="header__main" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
-				<div class="header__brading">
-					<div class="header__title">
-						<h1>
+			<header id="masthead" class="header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+						<h1 class="header__title">
 							<a href="http://localhost:8888/wordpress/" rel="home">
 							A Different Blog						</a>
 						</h1>
-					</div>
 					<div class="header__description">
 						Just another WordPress site </div>
-				</div>
-				<nav id="header__nav-primary" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-					<div class="menu__main">
+
+				<nav class="header__nav" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+					<div class="header__menu">
 						<ul>
-							<li class="menu__item menu__item--item-13"><a href="http://localhost:8888/wordpress/blockquote-page/">Blockquote Page</a></li>
-							<li class="page_item menu__item--item-15"><a href="http://localhost:8888/wordpress/headers-page/">Headers Page</a></li>
-							<li class="menu__item menu__item--item-11 menu__item_has_children"><a href="http://localhost:8888/wordpress/image-page/">Image Page</a>
-								<ul class='children'>
-									<li class="menu__item menu__item--item-16 menu__item_has_children"><a href="http://localhost:8888/wordpress/image-page/child-page/">Child Page</a>
-										<ul class='menu__children'>
-											<li class="menu__item menu__item--item-17"><a href="http://localhost:8888/wordpress/image-page/child-page/grandchild-page/">Grandchild Page</a></li>
+							<li class="header__menu__item header__menu__item--item-13"><a href="http://localhost:8888/wordpress/blockquote-page/">Blockquote Page</a></li>
+							<li class="page_item header__menu__item--item-15"><a href="http://localhost:8888/wordpress/headers-page/">Headers Page</a></li>
+							<li class="header__menu__item header__menu__item--item-11 header__menu__item_has_children"><a href="http://localhost:8888/wordpress/image-page/">Image Page</a>
+								<ul class='header__menu__children'>
+									<li class="header__menu__item header__menu__item--item-16 header__menu__item_has_children"><a href="http://localhost:8888/wordpress/image-page/child-page/">Child Page</a>
+										<ul class='header__menu__children'>
+											<li class="header__menu__item header__menu__item--item-17"><a href="http://localhost:8888/wordpress/image-page/child-page/grandchild-page/">Grandchild Page</a></li>
 										</ul>
 									</li>
 								</ul>
 							</li>
-							<li class="menu__item menu__item--item-14"><a href="http://localhost:8888/wordpress/links-page/">Links Page</a></li>
-							<li class="menu__item menu__item--item-10"><a href="http://localhost:8888/wordpress/multiple-paragraph-page/">Multiple Paragraph Page</a></li>
-							<li class="menu__item menu__item--item-2"><a href="http://localhost:8888/wordpress/sample-page/">Sample Page</a></li>
-							<li class="menu__item menu__item--item-12"><a href="http://localhost:8888/wordpress/ul-and-ol-page/">UL and OL Page</a></li>
+							<li class="header__menu__item header__menu__item--item-14"><a href="http://localhost:8888/wordpress/links-page/">Links Page</a></li>
+							<li class="header__menu__item header__menu__item--item-10"><a href="http://localhost:8888/wordpress/multiple-paragraph-page/">Multiple Paragraph Page</a></li>
+							<li class="header__menu__item header__menu__item--item-2"><a href="http://localhost:8888/wordpress/sample-page/">Sample Page</a></li>
+							<li class="header__menu__item header__menu__item--item-12"><a href="http://localhost:8888/wordpress/ul-and-ol-page/">UL and OL Page</a></li>
 						</ul>
 					</div>
 				</nav>
 			</header>
 
-
-
-			<div id="site__content" class="site__content">
-				<div id="primary" class="site__area">
-					<main id="site__main" class="site__main" role="main">
-						<article id="post-4" class="post-4 post type-post status-publish format-standard hentry category-uncategorized" itemscope itemType="http://schema.org/BlogPosting">
+				<div id="primary" class="site">
+					<main id="site" class="site" role="main">
+						<article id="post-4" class="entry post-4 post type-post status-publish format-standard hentry category-uncategorized" itemscope itemType="http://schema.org/BlogPosting">
 							<header class="entry__header">
 								<h1 class="entry__title" itemprop="name">
 									<a href="http://localhost:8888/wordpress/2015/12/07/multiple-paragraph-post/" rel="bookmark">
@@ -70,8 +64,7 @@
 						</article>
 					</main>
 				</div>
-			</div>
-			<footer id="site__colophon" class="site__footer" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+			<footer id="sitcolophon" class="site__footer" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 				<div class="site__info">
 					<a href="http://wordpress.org/" rel="generator">
 				Proudly powered by				<span class="genericon genericon-wordpress"></span> Wordpress
