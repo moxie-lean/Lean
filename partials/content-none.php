@@ -12,13 +12,13 @@
 ?>
 <?php tha_entry_before(); ?>
 <section class="no-results not-found">
-	<header class="page-header">
-		<h1 class="page-title">
+	<header class="page__header">
+		<h1 class="page__title">
 			<?php esc_html_e( 'Nothing Found', TRANSLATED_TEXT_DOMAIN ); ?>
 		</h1>
 	</header>
 	<?php tha_content_before(); ?>
-	<div class="page-content">
+	<div class="page__content">
 		<?php tha_entry_top(); ?>
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 

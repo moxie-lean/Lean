@@ -22,12 +22,12 @@ if ( post_password_required() ) {
 ?>
 
 <?php tha_comments_before(); ?>
-<div id="comments" class="comments-area">
+<div id="comments" class="comments__area">
 
 	<?php // You can start editing here -- including this comment! ?>
 
 	<?php if ( have_comments() ) : ?>
-		<h2 class="comments-title">
+		<h2 class="comments__title">
 			<?php
 			printf( esc_html(
 				_nx(
@@ -45,7 +45,7 @@ if ( post_password_required() ) {
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 		<?php // Are there comments to navigate through. ?>
-		<nav id="comment-nav-above" class="comment-navigation" role="navigation">
+		<nav id="comment__nav-above" class="comment__navigation" role="navigation">
 			<h1 class="screen-reader-text">
 				<?php esc_html_e( 'Comment navigation', TRANSLATED_TEXT_DOMAIN ); ?>
 			</h1>
@@ -66,7 +66,7 @@ if ( post_password_required() ) {
 		</nav>
 		<?php endif; ?>
 
-		<ol class="comment-list">
+		<ol class="comment__list">
 				<?php
 				/**
 				 * Loop through and list the comments. Tell wp_list_comments()
@@ -81,7 +81,7 @@ if ( post_password_required() ) {
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 		<?php // Are there comments to navigate through. ?>
-		<nav id="comment-nav-below" class="comment-navigation" role="navigation">
+		<nav id="comment__nav-below" class="comment__navigation" role="navigation">
 			<h1 class="screen-reader-text">
 				<?php esc_html_e( 'Comment navigation', TRANSLATED_TEXT_DOMAIN ); ?>
 			</h1>

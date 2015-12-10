@@ -1,6 +1,6 @@
 article {
   margin-top: 40px;
-  &:first-child .entry-title {
+  &:first-child .entry__title {
     margin-top: 0;
   }
   & h1 {
@@ -22,21 +22,21 @@ article {
    @include fontSize(12px);
   }
 }
-.entry-title {
+.entry__title {
     @include fontSize(26px);
     font-weight: bold;
 }
-.entry-content a {
+.entry__content a {
   color: $post-link-color;
 }
-.entry-meta {
+.entry__meta {
   @include fontSize(12px);
   & a:hover {
   text-decoration: underline;
   }
 }
 
-.entry-meta {
+.entry__meta {
   margin: 30px 0px;
   font-family: sans-serif;
 }
