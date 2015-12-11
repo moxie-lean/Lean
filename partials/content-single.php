@@ -7,7 +7,7 @@
  * @since 1.0.0
  */
 
-use lean\inc\helpers as helpers;
+use Lean\Inc\Helpers;
 ?>
 <?php tha_entry_before(); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>
@@ -40,7 +40,7 @@ use lean\inc\helpers as helpers;
 			 * */
 			$tags_list = get_the_tag_list( '', esc_html_e( ', ', TRANSLATED_TEXT_DOMAIN ) );
 
-			if ( ! helpers\categorized_blog() ) {
+			if ( ! Helpers\categorized_blog() ) {
 				/**
 				 * This blog only has 1 category so we just need to worry
 				 * about tags in the meta text.

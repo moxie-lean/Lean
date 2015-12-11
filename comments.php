@@ -68,7 +68,7 @@ if ( post_password_required() ) {
 		<?php endif; ?>
 
 		<ol class="comment-list">
-		<?php wp_list_comments( array( 'callback' => 'lean\inc\helpers\comment' ) ); ?>
+		<?php wp_list_comments( array( 'callback' => 'Lean\Inc\Helpers\Comment' ) ); ?>
 		</ol>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>

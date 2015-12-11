@@ -7,7 +7,7 @@
  * @since 1.0.0
  */
 
-use lean\inc\helpers as helpers;
+use Lean\Inc\Helpers;
 
 get_header();
 ?>
@@ -27,7 +27,7 @@ get_header();
 			get_template_part( 'partials/content', get_post_format() );
 		endwhile;
 
-		helpers\pagination();
+		Helpers\pagination();
 
 	else :
 		get_template_part( 'partials/content', 'none' );

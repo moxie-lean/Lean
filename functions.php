@@ -9,7 +9,9 @@
  */
 add_action( 'after_setup_theme', function(){
 	include 'config.php';
+
 	Lean\load_dependencies();
+
 	// Make theme available for translation.
 	load_theme_textdomain( TRANSLATED_TEXT_DOMAIN , FULL_THEME_PATH . '/config/languages' );
 	add_theme_support( 'post-thumbnails' );

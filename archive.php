@@ -6,7 +6,7 @@
  * @since 1.0.0
  */
 
-use Lean\Inc\Helpers as Helpers;
+use Lean\Inc\Helpers;
 
 get_header();
 ?>

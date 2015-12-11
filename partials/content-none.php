@@ -21,7 +21,6 @@
 	<div class="page-content">
 		<?php tha_entry_top(); ?>
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
-
 			<p>
 			<?php
 			wp_kses(
