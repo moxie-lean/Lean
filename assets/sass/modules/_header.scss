@@ -1,7 +1,7 @@
-.site-header {
+.header {
   padding-top: 60px;
 }
-.site-title {
+.header__title {
 
   & h1 {
     padding  : 0;
@@ -15,17 +15,14 @@
     margin-bottom: 90px;
 }
 
-#primary-nav {
+nav.header__nav {
   width: 100%;
-  position: absolute;
-  left: 0;
-  margin-top: -80px;
   background: #253645;
 }
 
 .menu ul {
   padding    : 0;
-  font-size  : 14px;
+  @include fontSize(14px);
   font-family: sans-serif;
   margin: 10px auto;
   @include outer-container;

@@ -103,12 +103,10 @@ strong, b {
   font-family: $title;
 }
 a, a:visited {
-  @include transition (all 200ms ease-in-out);
   color: $link-color;
   text-decoration: none;
 
   &:hover {
-    @include transition (all 200ms ease-in-out);
     color: $link-color__hover;
   }
 }

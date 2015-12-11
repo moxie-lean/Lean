@@ -49,14 +49,14 @@ if ( post_password_required() ) {
 			<h1 class="screen-reader-text">
 				<?php esc_html_e( 'Comment navigation', TRANSLATED_TEXT_DOMAIN ); ?>
 			</h1>
-			<div class="nav-previous">
+			<div class="nav__previous">
 				<?php
 				previous_comments_link(
 					esc_html_e( '&larr; Older Comments', TRANSLATED_TEXT_DOMAIN )
 				);
 				?>
 			</div>
-			<div class="nav-next">
+			<div class="nav__next">
 				<?php
 				next_comments_link(
 					esc_html_e( 'Newer Comments &rarr;', TRANSLATED_TEXT_DOMAIN )
@@ -85,14 +85,14 @@ if ( post_password_required() ) {
 			<h1 class="screen-reader-text">
 				<?php esc_html_e( 'Comment navigation', TRANSLATED_TEXT_DOMAIN ); ?>
 			</h1>
-			<div class="nav-previous">
+			<div class="nav__previous">
 				<?php
 				previous_comments_link(
 					esc_html_e( '&larr; Older Comments', TRANSLATED_TEXT_DOMAIN )
 				);
 				?>
 			</div>
-			<div class="nav-next">
+			<div class="nav__next">
 				<?php
 				next_comments_link(
 					esc_html_e( 'Newer Comments &rarr;', TRANSLATED_TEXT_DOMAIN )

@@ -16,41 +16,66 @@ article {
     @include fontSize(20px);
   }
   & h5 {
-   @include fontSize(16px);
+    @include fontSize(16px);
   }
   & h6 {
-   @include fontSize(12px);
+    @include fontSize(12px);
   }
 }
 .entry__title {
-    @include fontSize(26px);
-    font-weight: bold;
+  @include fontSize(26px);
+  font-weight: bold;
 }
 .entry__content a {
   color: $post-link-color;
 }
+.entry__content a:hover {
+  color: darken($post-link-color,35%);
+}
 .entry__meta {
   @include fontSize(12px);
   & a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
   }
 }
-
 .entry__meta {
-  margin: 30px 0px;
+  margin: 30px 0;
   font-family: sans-serif;
 }
-
+form.post-password-form {
+  @include fontSize(14px);
+  & input {
+    border: none;
+    outline: none;
+    &[type=password] {
+      border: 1px solid $secondary-color;
+    }
+    &[type=submit] {
+      background: red;
+      margin-top: 25px;;
+      &:hover {
+        background: lighten(red, 15%);
+      }
+    }
+  }
+}
 .nav-links {
   display: flex;
   flex-direction: row;
   width: 100%;
-  & a[rel=prev] {
-  text-align: left;
-  width: 50%;
+  & a {
+    color: #fff;
+    background: $secondary-color;
+    padding: 8px 12px;
+    @include fontSize(14px);
+    font-family: sans-serif;
   }
-  & a[rel=next] {
-  text-align: right;
-  width: 50%;
+  & .nav-previous {
+    text-align: left;
+    width: 50%;
+  }
+  & .nav-next {
+    text-align: right;
+    width: 50%;
   }
 }

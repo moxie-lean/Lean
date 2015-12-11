@@ -2,6 +2,10 @@
   margin-top: 50px;
   padding: 50px;
   background: $gray;
+  & h3 {
+    @include fontSize(24px);
+
+  }
   & input , & textarea {
     padding: 10px;
     margin: 0;
@@ -9,14 +13,17 @@
     border: 2px solid white;
     transition: 0.25s;
   }
-  & input:focus , & textarea:focus {
+  &  textarea:focus {
     border: 2px solid $dark-blue;
   }
   & input[type=submit] {
     background: $secondary-color;
-    border: 2px solid $secondary-color;
+    font-weight: normal;
+    @include fontSize(14px);
+    &:hover {
+      background: darken($secondary-color,15%);
+    }
     &:focus {
-      border: 2px solid $secondary-color;
       transform: translatey(5px);
     }
   }
