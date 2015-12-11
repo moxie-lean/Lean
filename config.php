@@ -1,4 +1,4 @@
-<?php
+<?php namespace Lean;
 /**
  * Configuration file to handle different common areas of the project to have
  * a better organizades structure of the code.
@@ -7,10 +7,8 @@
  * @since 1.0.0
  */
 
-// Exit if this fiel is loaded directly.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+// Text domain for the theme.
+define( 'TRANSLATED_TEXT_DOMAIN', 'lean' );
 
 // Absolute server path to the theme.
 define( 'FULL_THEME_PATH', get_template_directory() );
@@ -30,9 +28,3 @@ define( 'INC_DIR', FULL_THEME_PATH . '/inc' );
  * or something different like a custom class to load into the project.
  */
 include FULL_THEME_PATH . '/config/dependencies.php';
-
-/**
- * Specific constants to the project can be store in this file, different things
- * like ACF fields.
- */
-include FULL_THEME_PATH . '/config/constants.php';

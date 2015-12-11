@@ -22,5 +22,4 @@ function load_dependencies() {
 	require INC_DIR . '/helpers/loader.php';
 	require INC_DIR . '/helpers/template-tags.php';
 	require INC_DIR . '/helpers/comment.php';
-
 }
