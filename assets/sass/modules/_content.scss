@@ -60,8 +60,7 @@ form.post-password-form {
   }
 }
 .nav-links {
-  display: flex;
-  flex-direction: row;
+  display: block;
   width: 100%;
   & a {
     color: #fff;
@@ -73,9 +72,14 @@ form.post-password-form {
   & .nav-previous {
     text-align: left;
     width: 50%;
+    float: left;
   }
   & .nav-next {
     text-align: right;
     width: 50%;
+    float: right;
+  }
+  &:after {
+    clear: both;
   }
 }

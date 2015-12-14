@@ -1,3 +1,6 @@
+.clear {
+  clear: both;
+}
 .footer {
   @include fontSize(12px);
   font-family: sans-serif;
