@@ -1,4 +1,4 @@
-<?php
+<?php namespace Lean;
 /**
  * The template part for displaying a message that posts cannot be found.
  *

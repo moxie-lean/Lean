@@ -1,4 +1,4 @@
-<?php
+<?php namespace Lean;
 /**
  * Template part for displaying posts.
  *

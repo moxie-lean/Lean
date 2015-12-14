@@ -1,4 +1,4 @@
-<?php
+<?php namespace Lean;
 /**
  * The template used for displaying page content in page.php
  *

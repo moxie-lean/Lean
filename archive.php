@@ -1,4 +1,4 @@
-<?php
+<?php namespace Lean;
 /**
  * Template for displaying Archive pages.
  *

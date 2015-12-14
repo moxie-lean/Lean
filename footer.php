@@ -1,4 +1,4 @@
-<?php
+<?php namespace Lean;
 /**
  * The template for displaying the footer.
  *

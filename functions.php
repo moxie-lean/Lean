@@ -30,6 +30,6 @@ add_action( 'after_setup_theme', function(){
 		'css_version' => false,
 		'js_version' => time(),
 	);
-	$assets = new Lean\Inc\Assets( $args );
+	$assets = new Leean\Inc\Assets( $args );
 	$assets->load();
 });

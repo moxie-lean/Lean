@@ -1,12 +1,12 @@
-<?php
+<?php namespace Leean;
 /**
  * The Template for displaying all single posts.
  *
- * @package Lean
+ * @package Leean
  * @since 1.0.0
  **/
 
-use Lean\Inc\Helpers as Helpers;
+use Leean\Inc\Helpers as Helpers;
 
 get_header();
 ?>

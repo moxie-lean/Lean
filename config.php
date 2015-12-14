@@ -8,23 +8,22 @@
  */
 
 // Text domain for the theme.
-define( 'TRANSLATED_TEXT_DOMAIN', 'lean' );
-
+define( __NAMESPACE__ . '\TEXT_DOMAIN', 'lean' );
 // Absolute server path to the theme.
-define( 'FULL_THEME_PATH', get_template_directory() );
+define( __NAMESPACE__ . '\THEME_PATH', get_template_directory() );
 // Stylesheet directory URI for the current theme/child theme.
-define( 'FULL_THEME_URL', get_stylesheet_directory_uri() );
+define( __NAMESPACE__ . '\THEME_URL', get_stylesheet_directory_uri() );
 // Stylesheet URL with minification process.
-define( 'EDITOR_STYLESHEET', FULL_THEME_URL . '/assets/css/style-min.css' );
+define( __NAMESPACE__ . '\EDITOR_STYLESHEET', THEME_URL . '/assets/css/style-min.css' );
 // Production styles.
-define( 'EDITOR_STYLESHEET_UNMINIFIED', FULL_THEME_URL . '/assets/css/style.css' );
+define( __NAMESPACE__ . '\EDITOR_STYLESHEET_UNMINIFIED', THEME_URL . '/assets/css/style.css' );
 // Path to the composer file.
-define( 'COMPOSER_DIR', FULL_THEME_PATH . '/vendor' );
+define( __NAMESPACE__ . '\COMPOSER', THEME_PATH . '/vendor' );
 // Lib directory.
-define( 'INC_DIR', FULL_THEME_PATH . '/inc' );
+define( __NAMESPACE__ . '\INC', THEME_PATH . '/inc' );
 
 /**
  * Dependencies from other files like external classes from a composer directory
  * or something different like a custom class to load into the project.
  */
-include FULL_THEME_PATH . '/config/dependencies.php';
+include THEME_PATH . '/config/dependencies.php';
