@@ -16,7 +16,7 @@
 		<h1 class="entry__title" itemprop="name"><?php the_title(); ?></h1>
 	</header>
 
-	<div class="entry__content" itemprop="articleBody" >
+	<div class="entry__content entry__a--transition" itemprop="articleBody" >
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(

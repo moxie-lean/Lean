@@ -68,29 +68,42 @@ form.post-password-form {
     padding: 8px 12px;
     @include fontSize(14px);
     font-family: sans-serif;
+    transition: 0.4s;
     &:hover {
       color:#fff;
     }
   }
-  & .nav-previous {
+  & a[rel=prev] , & .nav-previous {
     text-align: left;
-    width: 50%;
     float: left;
     opacity: 0.6;
+    display: inline;
     &:hover {
       opacity: 1;
     }
   }
-  & .nav-next {
+  & a[rel=next] , & .nav-next {
     text-align: right;
-    width: 50%;
     float: right;
     opacity: 0.6;
     &:hover {
       opacity: 1;
     }
   }
-  &:after {
-    clear: both;
+}
+
+input[type=submit] , .nav-links a  {
+  background: $secondary-color;
+  font-weight: normal;
+  @include fontSize(14px);
+  &:hover {
+    background: darken($secondary-color,15%);
   }
+  &:focus {
+    transform: translatey(5px);
+  }
+}
+
+.entry__a--transition a {
+  transition: .3s;
 }

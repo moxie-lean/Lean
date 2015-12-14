@@ -19,7 +19,7 @@
 	</header>
 
 
-	<div class="entry__content" itemprop="mainContentOfPage">
+	<div class="entry__content entry__a--transition" itemprop="mainContentOfPage">
 
 		<?php the_content(); ?>
 

@@ -16,17 +16,6 @@
   &  textarea:focus {
     border: 2px solid $dark-blue;
   }
-  & input[type=submit] {
-    background: $secondary-color;
-    font-weight: normal;
-    @include fontSize(14px);
-    &:hover {
-      background: darken($secondary-color,15%);
-    }
-    &:focus {
-      transform: translatey(5px);
-    }
-  }
 }
 .comment__notes {
   color: $dark-blue;

@@ -20,7 +20,9 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
+<div class="clear">
 
+</div>
 <?php tha_comments_before(); ?>
 <div id="comments" class="comments__area">
 
