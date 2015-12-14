@@ -19,8 +19,7 @@ nav.header__nav {
   width: 100%;
   background: #253645;
 }
-
-.menu ul {
+ul.menu {
   padding    : 0;
   @include fontSize(14px);
   font-family: sans-serif;
@@ -44,6 +43,7 @@ nav.header__nav {
     }
     &:hover {
       background: #f0f0f0;
+      z-index: 9999;
       & > a {
         color: #0f0f0f;
       }

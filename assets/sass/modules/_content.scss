@@ -68,16 +68,27 @@ form.post-password-form {
     padding: 8px 12px;
     @include fontSize(14px);
     font-family: sans-serif;
+    &:hover {
+      color:#fff;
+    }
   }
   & .nav-previous {
     text-align: left;
     width: 50%;
     float: left;
+    opacity: 0.6;
+    &:hover {
+      opacity: 1;
+    }
   }
   & .nav-next {
     text-align: right;
     width: 50%;
     float: right;
+    opacity: 0.6;
+    &:hover {
+      opacity: 1;
+    }
   }
   &:after {
     clear: both;
