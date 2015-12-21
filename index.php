@@ -1,13 +1,13 @@
-<?php namespace Lean;
+<?php namespace Leean;
 /**
  * The main template file.  It is used to display a page when nothing more
  * specific matches a query.
  *
- * @package Lean
+ * @package Leean
  * @since 1.0.0
  */
 
-use Lean\Inc\Helpers;
+use Leean\Inc\Helpers;
 
 get_header();
 ?>

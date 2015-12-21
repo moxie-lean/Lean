@@ -1,10 +1,10 @@
-<?php namespace Lean;
+<?php namespace Leean;
 /**
  * The template part for displaying a message that posts cannot be found.
  *
  * @link http://codex.wordpress.org/Template_Hierarchy
  *
- * @package Lean
+ * @package Leean
  * @subpackage partials
  * @since 1.0.0
  */

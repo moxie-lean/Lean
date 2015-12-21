@@ -1,8 +1,8 @@
-<?php namespace Lean;
+<?php namespace Leean;
 
 /**
  * Load theme dependencies.
- * @package Lean
+ * @package Leean
  * @since 1.0.0
  */
 function load_dependencies() {

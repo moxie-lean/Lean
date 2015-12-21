@@ -1,12 +1,12 @@
-<?php namespace Lean;
+<?php namespace Leean;
 /**
  * The template for displaying Search Results pages.
  *
- * @package Lean
+ * @package Leean
  * @since 1.0.0
  */
 
-use Lean\Inc\Helpers as Helpers;
+use Leean\Inc\Helpers;
 
 get_header();
 ?>

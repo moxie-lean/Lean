@@ -1,13 +1,13 @@
-<?php namespace Lean;
+<?php namespace Leean;
 /**
  * Template part to display the content from single.php
  *
- * @package Lean
+ * @package Leean
  * @subpackage partials
  * @since 1.0.0
  */
 
-use Lean\Inc\Helpers;
+use Leean\Inc\Helpers;
 ?>
 <?php tha_entry_before(); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>

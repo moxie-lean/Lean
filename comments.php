@@ -1,4 +1,4 @@
-<?php namespace Lean;
+<?php namespace Leean;
 /**
  * The template for displaying Comments.
  *
@@ -7,7 +7,7 @@
  * handled by a callback to digistarter_comment() which is
  * located in the inc/template-tags.php file.
  *
- * @package Lean
+ * @package Leean
  * @since 1.0.0
  */
 
@@ -68,7 +68,7 @@ if ( post_password_required() ) {
 		<?php endif; ?>
 
 		<ol class="comment-list">
-		<?php wp_list_comments( array( 'callback' => 'Lean\Inc\Helpers\Comment' ) ); ?>
+		<?php wp_list_comments( array( 'callback' => '\Leean\Inc\Helpers\Comment' ) ); ?>
 		</ol>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>

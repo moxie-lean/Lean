@@ -1,10 +1,10 @@
-<?php namespace Lean\Inc\Helpers;
+<?php namespace Leean\Inc\Helpers;
 /**
  * Custom template tags for this theme.
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package Lean
+ * @package Leean
  * @subpackage inc
  * @since 1.0.0
  */

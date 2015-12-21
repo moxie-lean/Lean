@@ -1,9 +1,9 @@
-<?php namespace Lean;
+<?php namespace Leean;
 /**
  * Configuration file to handle different common areas of the project to have
  * a better organizades structure of the code.
  *
- * @package Lean
+ * @package Leean
  * @since 1.0.0
  */
 

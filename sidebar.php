@@ -1,8 +1,8 @@
-<?php namespace Lean;
+<?php namespace Leean;
 /**
  * The Sidebar containing the main widget areas.
  *
- * @package some_like_it_neat
+ * @package Leean
  */
 
 tha_sidebars_before();

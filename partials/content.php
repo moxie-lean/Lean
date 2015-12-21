@@ -1,8 +1,8 @@
-<?php namespace Lean;
+<?php namespace Leean;
 /**
  * Template part for displaying posts.
  *
- * @package Lean
+ * @package Leean
  * @subpackage partials
  * @since 1.0.0
  */

@@ -1,16 +1,16 @@
 'use strict';
 
-window.Lean = {};
-window.Lean.Behaviors = {};
+window.Leean = {};
+window.Leean.Behaviors = {};
 
 $(document).ready(function() {
   Essential.loadBehaviors({
     context: document,
-    application: Lean.Behaviors,
+    application: Leean.Behaviors,
   });
 });
 
-Lean.Behaviors.Base = Essential.Behavior.extend({
+Leean.Behaviors.Base = Essential.Behavior.extend({
 
   init: function() {
     this.$el = $(this.el);

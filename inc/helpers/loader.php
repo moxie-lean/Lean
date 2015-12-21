@@ -1,11 +1,11 @@
-<?php namespace Lean\Inc\Helpers;
+<?php namespace Leean\Inc\Helpers;
 /**
  * Functions to load files fro mthe partials directory also allows to send
  * custom partials to the files.
  *
  * @since 2.0.0
  *
- * @package Lean
+ * @package Leean
  * @subpackage helpers
  */
 

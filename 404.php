@@ -1,12 +1,12 @@
-<?php namespace Lean;
+<?php namespace Leean;
 /**
  * Template for displaying 404 pages (Not Found).
  *
- * @package Lean
+ * @package Leean
  * @since 1.0.0
  */
 
-use Lean\Inc\Helpers;
+use Leean\Inc\Helpers;
 
 get_header();
 ?>

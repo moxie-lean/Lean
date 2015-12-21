@@ -1,4 +1,4 @@
-# [Moxie Lean](https://github.com/moxie-leean/Leean) [![Build Status](https://travis-ci.org/moxie-leean/Leean.svg?branch=master)](https://travis-ci.org/moxie-leean/Leean)
+# [Moxie Leean](https://github.com/moxie-leean/Leean/) [![Build Status](https://travis-ci.org/moxie-leean/Leean.svg?branch=master)](https://travis-ci.org/moxie-leean/Leean)
 
 > Bare bones WordPress starter theme focused on modularity, scalability and performance.
 
@@ -22,7 +22,7 @@ have any.
 - [Requirements](#requirements)
 - [File Organization](#file-organization)
 - [Installation](#installation)
-- [Wiki](https://github.com/moxienyc/Moxie-Lean/wiki)
+- [Wiki](https://github.com/moxie-leean/Leean/wiki)
 - [Contribution](#contribution)
  - [Colaborate](#colaborate)
  - [Error reporting](#error-reporting)
@@ -75,11 +75,11 @@ To have the latest version of the theme you can clone the repo directly
 where you plan to start to work: 
 
 ```shell
-git clone git@github.com:moxienyc/Lean.git
+git clone git@github.com:moxie-leean/Leean.git
 ```
 
 Or you can download the latest release from 
-[the releases page](https://github.com/moxienyc/Moxie-Lean/releases).
+[the releases page](https://github.com/moxie-leean/Leean/releases).
 
 Once you have the files you need to be on the theme path or theme
 directory, then you need to install the `node`, `composer` and
@@ -109,17 +109,17 @@ theme in order to allow other tools to work properly (like gulp).
 
 ## Gulp taks and other utilites
 
-Please refer to this conten inside of [our wiki](https://github.com/moxienyc/Moxie-Lean/wiki) 
+Please refer to this conten inside of [our wiki](https://github.com/moxie-leean/Leean/wiki) 
 to learn about different tools we may have available on this theme as well with 
 all of the available commands.
 
-### [Wiki page](https://github.com/moxienyc/Moxie-Lean/wiki)
+### [Wiki page](https://github.com/moxie-leean/Leean/wiki)
 
 ## Contribution
 
 You're more than welcome to help in this project, you can help us by sending
 fixes or by corecting typos or to request a new feature, if you found an error,
-please create a [new issue](https://github.com/moxienyc/Lean/issues/new) with
+please create a [new issue](https://github.com/moxie-leean/Leean/new) with
 the problem:
 
 ### Collaborate
@@ -133,6 +133,6 @@ the problem:
 ### Error reporting
 
 If you found a problem or you have a trouble using the theme please 
-[open a new issue](https://github.com/moxienyc/Lean/issues/new) with the 
+[open a new issue](https://github.com/moxie-leean/Leean/new) with the 
 information of your problem, we will take a look at the problem as soon as 
 

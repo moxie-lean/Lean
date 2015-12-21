@@ -1,8 +1,8 @@
-<?php namespace Lean;
+<?php namespace Leean;
 /**
  * Template that displays all pages by default.
  *
- * @package Lean
+ * @package Leean
  * @since 1.0.0
  */
 
