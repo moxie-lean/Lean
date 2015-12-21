@@ -47,6 +47,11 @@ class Assets {
 	private $css_version = false;
 
 	/**
+	 * Path to the theme URL to load the assets.
+	 */
+	private $theme_path = '';
+
+	/**
 	 * Array of configuration options.
 	 *
 	 * @since 1.1.0
@@ -72,6 +77,7 @@ class Assets {
 	 */
 	public function __construct( $options = array() ) {
 		$this->options = is_array( $options ) ? $options : array();
+		$this->theme_path = isset( $options['theme_path'] ) ? $options['theme_path'] : '';
 		$this->set_up_environment();
 		$this->set_up_version_numbers();
 	}
@@ -176,7 +182,7 @@ class Assets {
 		// Load the JS files.
 		wp_enqueue_script(
 			sprintf( '%s-%s', $this->environment, 'js' ),
-			sprintf( '%s/assets/js/production%s.js', FULL_THEME_URL, $suffix ),
+			sprintf( '%s/assets/js/production%s.js', $this->theme_path, $suffix ),
 			array( 'jquery' ),
 			$this->js_version,
 			true
@@ -185,7 +191,7 @@ class Assets {
 		// Load the CSS files.
 		wp_enqueue_style(
 			sprintf( '%s-%s', $this->environment, 'style' ),
-			sprintf( '%s/assets/css/style%s.css', FULL_THEME_URL, $suffix ),
+			sprintf( '%s/assets/css/style%s.css', $this->theme_path, $suffix ),
 			array(),
 			$this->css_version,
 			'all'
@@ -205,7 +211,7 @@ class Assets {
 	 * @return void
 	 */
 	private function update_jquery() {
-		$jquery_path = './bower_components/jquery/dist/jquery.min.js';
+		$jquery_path = 'bower_components/jquery/dist/jquery.min.js';
 		$jquery_version = '2.1.4';
 
 		wp_deregister_script( 'jquery' );
@@ -213,7 +219,7 @@ class Assets {
 			// Handle.
 			'jquery',
 			// Source path.
-			sprintf( '%s/%s', FULL_THEME_URL, $jquery_path ),
+			sprintf( '%s/%s', $this->theme_path, $jquery_path ),
 			// No dependencies.
 			false,
 			// Version number.

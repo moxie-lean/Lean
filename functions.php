@@ -7,10 +7,13 @@
  *
  * @since 1.0.0
  */
+
+use Leean\Inc\Helpers;
+
 add_action( 'after_setup_theme', function(){
 	include 'config.php';
 
-	Lean\load_dependencies();
+	Leean\load_dependencies();
 
 	// Make theme available for translation.
 	load_theme_textdomain( TRANSLATED_TEXT_DOMAIN , FULL_THEME_PATH . '/config/languages' );
@@ -19,9 +22,9 @@ add_action( 'after_setup_theme', function(){
 	add_theme_support( 'tha_hooks', array( 'all' ) );
 	// Add Editor Style for adequate styling in text editor.
 	if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) {
-		add_editor_style( EDITOR_STYLESHEET_UNMINIFIED );
+		add_editor_style( \Leean\EDITOR_STYLESHEET_UNMINIFIED );
 	} else {
-		add_editor_style( EDITOR_STYLESHEET );
+		add_editor_style( \Leean\EDITOR_STYLESHEET );
 	}
 
 	// This theme uses wp_nav_menu() in one location.
@@ -29,7 +32,8 @@ add_action( 'after_setup_theme', function(){
 	$args = array(
 		'css_version' => false,
 		'js_version' => time(),
+		'theme_path' => \Leean\THEME_URL,
 	);
-	$assets = new Leean\Inc\Assets( $args );
+	$assets = new \Leean\Inc\Assets( $args );
 	$assets->load();
 });
