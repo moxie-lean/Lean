@@ -4,7 +4,7 @@
  *
  * @package Leean
  * @since 1.0.0
- **/
+ */
 
 use Leean\Inc\Helpers as Helpers;
 
