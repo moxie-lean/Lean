@@ -42,7 +42,7 @@
 				</div>
 			</div>
 
-			<nav class="header__nav" role="navigation" itemscope="itemscope"
+			<nav role="navigation" itemscope="itemscope"
 				itemtype="http://schema.org/SiteNavigationElement">
 				<?php
 				$args = array(
