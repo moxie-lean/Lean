@@ -35,7 +35,7 @@
 		<?php the_excerpt(); ?>
 	</div>
 	<?php else : ?>
-	<div class="entry__content entry__a--transition" itemprop="articleBody">
+	<div class="entry__content" itemprop="articleBody">
 		<?php
 			the_content( sprintf(
 				esc_html__( 'Continue reading%s &rarr;', TRANSLATED_TEXT_DOMAIN ),
