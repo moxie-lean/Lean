@@ -52,7 +52,7 @@ form.post-password-form {
     }
     &[type=submit] {
       background: red;
-      margin-top: 25px;;
+      margin-top: 25px;
       &:hover {
         background: lighten(red, 15%);
       }
@@ -69,10 +69,11 @@ form.post-password-form {
     font-family: sans-serif;
     transition: 0.4s;
     &:hover {
-      color:#fff;
+      color: #fff;
     }
   }
-  & a[rel=prev] , & .nav-previous {
+  & a[rel=prev],
+  & .nav-previous {
     text-align: left;
     float: left;
     display: inline;
@@ -80,7 +81,8 @@ form.post-password-form {
       text-decoration: underline;
     }
   }
-  & a[rel=next] , & .nav-next {
+  & a[rel=next],
+  & .nav-next {
     text-align: right;
     float: right;
     &:hover {
@@ -88,8 +90,7 @@ form.post-password-form {
     }
   }
 }
-
-input[type=submit]  {
+input[type=submit] {
   background: $secondary-color;
   font-weight: normal;
   @include fontSize(14px);
@@ -97,7 +98,7 @@ input[type=submit]  {
     background: darken($secondary-color,15%);
   }
 }
- .nav-links a  {
+.nav-links a {
   color: $secondary-color;
   font-weight: normal;
   @include fontSize(14px);
@@ -105,7 +106,6 @@ input[type=submit]  {
     color: darken($secondary-color,15%);
   }
 }
-
 .entry__a--transition a {
-  transition: .3s;
+  transition: 0.3s;
 }

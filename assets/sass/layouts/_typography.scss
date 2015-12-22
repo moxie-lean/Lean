@@ -107,7 +107,7 @@ a, a:visited {
   text-decoration: none;
 
   &:hover {
-    color: $link-color__hover;
+    color: lighten($link-color, 15%);;
   }
 }
 ul {

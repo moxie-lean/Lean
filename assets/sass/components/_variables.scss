@@ -1,18 +1,22 @@
 /* =Variables
 -------------------------------------------------------------- */
-$icon-color: #F0648B;
-$primary-color: #ffF000;
-$secondary-color: #F0648B;
+$yellow: #ffF000;
+$pink: #F0648B;
 $gray:#f8f8f8;
 $dark-blue: #253645;
-$link-color: #0C273E;
-$link-color__hover: #253645;
-$post-link-color:$secondary-color;
 $near-white:#fefefe;
 $moxie-blue: #375167;
 
-$title: $helvetica;
-$content: $georgia;
+$primary-color: $yellow;
+$secondary-color: $pink;
+
+
+$post-link-color:$secondary-color;
+$icon-color: $secondary-color;
+$link-color: $dark-blue;
 
 $menu-color:$moxie-blue;
 $input-border-color: $dark-blue;
+
+$title: $helvetica;
+$content: $georgia;
