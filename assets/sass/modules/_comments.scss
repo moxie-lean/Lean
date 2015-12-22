@@ -10,7 +10,7 @@
     padding: 10px;
     margin: 0;
     outline: 0;
-    border: 2px solid white;
+    border: 2px solid $comment-border;
     transition: 0.4s;
   }
   &  textarea:focus {
