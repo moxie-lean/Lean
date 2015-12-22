@@ -1,7 +1,7 @@
 .comments__area {
   margin-top: 50px;
   padding: 50px;
-  background: $gray;
+  background: $comment-background;
   & h3 {
     @include fontSize(24px);
 
@@ -14,10 +14,10 @@
     transition: 0.4s;
   }
   &  textarea:focus {
-    border: 2px solid $dark-blue;
+    border: 2px solid $comment-textarea-border;
   }
 }
 .comment__notes {
-  color: $dark-blue;
+  color: $comment-notes;
   opacity: 0.7;
 }

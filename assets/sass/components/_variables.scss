@@ -1,22 +1,24 @@
 /* =Variables
 -------------------------------------------------------------- */
-$yellow: #ffF000;
-$pink: #F0648B;
-$gray:#f8f8f8;
-$dark-blue: #253645;
-$near-white:#fefefe;
-$moxie-blue: #375167;
+$_yellow: #ffF000;
+$_pink: #F0648B;
+$_gray:#f8f8f8;
+$_dark-blue: #253645;
+$_near-white:#fefefe;
+$_moxie-blue: #375167;
 
-$primary-color: $yellow;
-$secondary-color: $pink;
+$primary-color: $_yellow;
+$secondary-color: $_pink;
 
 
 $post-link-color:$secondary-color;
 $icon-color: $secondary-color;
-$link-color: $dark-blue;
-
-$menu-color:$moxie-blue;
-$input-border-color: $dark-blue;
+$link-color: $_dark-blue;
+$comment-background: $_gray;
+$comment-textarea-border: $_dark-blue;
+$comment-notes: $_dark-blue;
+$menu-color:$_moxie-blue;
+$input-border-color: $_dark-blue;
 
 $title: $helvetica;
 $content: $georgia;
