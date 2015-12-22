@@ -10,7 +10,7 @@
 ?>
 
 <?php tha_entry_before(); ?>
-<article class="entry" id="post-<?php the_ID(); ?>" <?php post_class(); ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>
 		itemscope itemType="http://schema.org/BlogPosting">
 	<?php tha_entry_top(); ?>
 	<header class="entry__header">
@@ -64,9 +64,6 @@
 		?>
 		</span>
 		<?php endif; ?>
-<!--
-Seperator
--->
 
 		- <?php
 			edit_post_link(

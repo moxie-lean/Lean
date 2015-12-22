@@ -34,7 +34,7 @@ if ( ! class_exists( 'Theme_Assets' ) ) :
 		private $environment = 'development';
 
 		/**
-		 * Whether to load the comment__reply script or not.
+		 * Whether to load the comment-"reply script or not.
 		 *
 		 * @since 1.1.0
 		 * @access private
@@ -80,7 +80,7 @@ if ( ! class_exists( 'Theme_Assets' ) ) :
 		 *      @type string 	$environment   Which environment we are in.
 		 *      @type bool|int 	$js_verion 	   Version number to use for scripts.
 		 *      @type bool|int  $css_version   Version number to user for stylesheets.
-		 *      @type bool      $load_comments Whether to load the comment__reply script.
+		 *      @type bool      $load_comments Whether to load the comment-reply script.
 		 *      @type bool      $remove_emoji  Whether to remove emoji libraries.
 		 * }
 		 */
@@ -248,7 +248,7 @@ if ( ! class_exists( 'Theme_Assets' ) ) :
 		}
 
 		/**
-		 * Enqueues the theme comment__reply script.
+		 * Enqueues the theme comment-reply script.
 		 *
 		 * @since 1.1.0
 		 * @access private
@@ -260,7 +260,7 @@ if ( ! class_exists( 'Theme_Assets' ) ) :
 				&& get_option( 'thread_comments' );
 
 			if ( $load_comments ) {
-				wp_enqueue_script( 'comment__reply' );
+				wp_enqueue_script( 'comment--reply' );
 			}
 		}
 

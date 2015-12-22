@@ -25,7 +25,7 @@ get_header();
 
 					<?php get_search_form(); ?>
 
-					<?php the_widget( 'WP_widget__Recent_Posts' ); ?>
+					<?php the_widget( 'WP_widget_Recent_Posts' ); ?>
 
 					<?php if ( digistarter_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
 					<div class="widget widget__categories">
@@ -47,10 +47,10 @@ get_header();
 					<?php
 					/* translators: %1$s: smiley */
 					$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'lean' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_widget__Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
+					the_widget( 'WP_widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
 					?>
 
-					<?php the_widget( 'WP_widget__Tag_Cloud' ); ?>
+					<?php the_widget( 'WP_widget_Tag_Cloud' ); ?>
 				</div>
 			</section>
 		</main>
