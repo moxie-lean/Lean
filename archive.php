@@ -14,9 +14,9 @@ get_header();
 
 		<?php if ( have_posts() ) : ?>
 
-			<header class="page__header">
-				<h1 class="page__title">
-					<?php the_archive_title( '<h1 class="page__title">', '</h1>' ); ?>
+			<header>
+				<h1>
+					<?php the_archive_title( '<h1>', '</h1>' ); ?>
 				</h1>
 				<?php // Show an optional term description. ?>
 				<?php $option_description = term_description(); ?>

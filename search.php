@@ -13,8 +13,8 @@ get_header();
 
 	<?php if ( have_posts() ) : ?>
 
-		<header class="page__header">
-			<h1 class="page__title">
+		<header>
+			<h1>
 			<?php
 			printf(
 				esc_html_e( 'Search Results for: %s', TRANSLATED_TEXT_DOMAIN ),

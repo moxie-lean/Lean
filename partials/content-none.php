@@ -12,8 +12,8 @@
 ?>
 <?php tha_entry_before(); ?>
 <section class="no-results not-found">
-	<header class="page__header">
-		<h1 class="page__title">
+	<header>
+		<h1>
 			<?php esc_html_e( 'Nothing Found', TRANSLATED_TEXT_DOMAIN ); ?>
 		</h1>
 	</header>

@@ -12,8 +12,8 @@ get_header();
 		<main id="main" class="site__main" role="main">
 
 			<section class="error-404 not-found">
-				<header class="page__header">
-					<h1 class="page__title">
+				<header>
+					<h1>
 						<?php esc_html_e( 'Oops! That page can&rsquo;t be found.', TRANSLATED_TEXT_DOMAIN ); ?>
 					</h1>
 				</header>
