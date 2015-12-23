@@ -8,7 +8,7 @@
 tha_sidebars_before();
 ?>
 
-<div id="secondary" class="widget___area" role="complementary">
+<div id="secondary" role="complementary">
 
 	<?php tha_sidebar_top(); ?>
 

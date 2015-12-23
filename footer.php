@@ -7,9 +7,6 @@
  */
 
 ?>
-<div class="clear">
-
-</div>
 		<?php tha_content_bottom(); ?>
 
 		<?php tha_content_after(); ?>

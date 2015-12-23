@@ -41,7 +41,7 @@ get_header();
 							) );
 						?>
 						</ul>
-					</div><!-- .widget -->
+					</div>
 					<?php endif; ?>
 
 					<?php
@@ -55,5 +55,4 @@ get_header();
 			</section>
 		</main>
 	</div>
-
 <?php get_footer(); ?>
