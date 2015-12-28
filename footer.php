@@ -8,13 +8,13 @@
 
 ?>
 		<?php tha_content_bottom(); ?>
-		</div>
+
 		<?php tha_content_after(); ?>
    		<?php tha_footer_before(); ?>
-		<footer id="colophon" class="site-footer" role="contentinfo"
+		<footer id="colophon" class="footer" role="contentinfo"
 			itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 			<?php tha_footer_top(); ?>
-			<div class="site-info">
+			<div class="footer__info">
 				<a href="http://wordpress.org/" rel="generator">
 				<?php
 				printf(
@@ -27,7 +27,6 @@
 		</footer>
 		<?php tha_footer_after(); ?>
 	</div>
-</div>
 
 <?php tha_body_bottom(); ?>
 <?php wp_footer(); ?>

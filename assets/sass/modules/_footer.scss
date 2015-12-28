@@ -1,0 +1,14 @@
+.clear {
+  clear: both;
+}
+.footer {
+  @include fontSize(12px);
+  font-family: sans-serif;
+  padding: 25px 0px;
+  text-align: right;
+  & .footer__info a {
+  font-family: inherit;
+  color: inherit;
+  color: #B9B9B9;
+  }
+}

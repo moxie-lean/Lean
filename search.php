@@ -10,13 +10,13 @@ use Leean\Inc\Helpers;
 
 get_header();
 ?>
-<section id="primary" class="content-area">
-	<main id="main" class="site-main" role="main">
+<section id="primary" class="entry__area">
+	<main id="main" class="site__main" role="main">
 
 	<?php if ( have_posts() ) : ?>
 
-		<header class="page-header">
-			<h1 class="page-title">
+		<header>
+			<h1>
 			<?php
 			printf(
 				esc_html__( 'Search Results for: %s', TRANSLATED_TEXT_DOMAIN ),

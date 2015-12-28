@@ -21,29 +21,28 @@
 	<?php tha_head_bottom(); ?>
 	<?php wp_head(); ?>
 </head>
-
 <body <?php body_class(); ?>>
 <?php tha_body_top(); ?>
 <div id="page" class="hfeed site">
 	<div class="wrap">
 		<?php tha_header_before(); ?>
-		<header id="masthead" class="site-header" role="banner"
+		<header id="masthead" class="header" role="banner"
 				itemscope="itemscope" itemtype="http://schema.org/WPHeader">
 			<?php tha_header_top(); ?>
-			<div class="site-branding">
-				<div class="site-title">
+			<div class="header__branding">
+				<div class="header__title">
 					<h1>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 							<?php bloginfo( 'name' ); ?>
 						</a>
 					</h1>
 				</div>
-				<div class="site-description">
+				<div class="header__description">
 					<?php bloginfo( 'description' ) ?>
 				</div>
 			</div>
 
-			<nav id="primary-nav" role="navigation" itemscope="itemscope"
+			<nav role="navigation" itemscope="itemscope"
 				itemtype="http://schema.org/SiteNavigationElement">
 				<?php
 				$args = array(
@@ -60,5 +59,4 @@
 		<?php tha_header_after(); ?>
 
 		<?php tha_content_before(); ?>
-		<div id="content" class="site-content">
 			<?php tha_content_top(); ?>

@@ -10,17 +10,17 @@ use Leean\Inc\Helpers;
 
 get_header();
 ?>
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div id="primary" class="entry__area">
+		<main id="main" class="site__main" role="main">
 
 			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title">
+				<header>
+					<h1>
 						<?php esc_html_e( 'Oops! That page can&rsquo;t be found.', TRANSLATED_TEXT_DOMAIN ); ?>
 					</h1>
 				</header>
 
-				<div class="page-content">
+				<div class="page__content">
 					<p>
 						<?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', TRANSLATED_TEXT_DOMAIN ); ?>
 					</p>
@@ -43,19 +43,18 @@ get_header();
 							) );
 						?>
 						</ul>
-					</div><!-- .widget -->
+					</div>
 					<?php endif; ?>
 
 					<?php
 					/* translators: %1$s: smiley */
 					$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'lean' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
+					the_widget( 'WP_widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
 					?>
 
-					<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
+					<?php the_widget( 'WP_widget_Tag_Cloud' ); ?>
 				</div>
 			</section>
 		</main>
 	</div>
-
 <?php get_footer(); ?>

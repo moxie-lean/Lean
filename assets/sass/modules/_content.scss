@@ -1,0 +1,108 @@
+article {
+  margin-top: 40px;
+  &:first-child .entry__title {
+    margin-top: 0;
+  }
+  & h1 {
+    @include fontSize(32px);
+  }
+  & h2 {
+    @include fontSize(28px);
+  }
+  & h3 {
+    @include fontSize(24px);
+  }
+  & h4 {
+    @include fontSize(20px);
+  }
+  & h5 {
+    @include fontSize(16px);
+  }
+  & h6 {
+    @include fontSize(12px);
+  }
+}
+.entry__title {
+  @include fontSize(26px);
+  font-weight: bold;
+}
+.entry__content a {
+  color: $post-link-color;
+}
+.entry__content a:hover {
+  color: darken($post-link-color,35%);
+}
+.entry__meta {
+  @include fontSize(12px);
+  & a:hover {
+    text-decoration: underline;
+  }
+}
+.entry__meta {
+  margin: 30px 0;
+  font-family: sans-serif;
+}
+form.post-password-form {
+  @include fontSize(14px);
+  & input {
+    border: none;
+    outline: none;
+    &[type=password] {
+      border: 1px solid $secondary-color;
+    }
+    &[type=submit] {
+      background: red;
+      margin-top: 25px;
+      &:hover {
+        background: lighten(red, 15%);
+      }
+    }
+  }
+}
+.nav-links {
+  display: block;
+  width: 100%;
+  & a {
+    color: $secondary-color;
+    padding: 8px 12px;
+    @include fontSize(14px);
+    font-family: sans-serif;
+    transition: 0.4s;
+    &:hover {
+      color: #fff;
+    }
+  }
+  & a[rel=prev],
+  & .nav-previous {
+    text-align: left;
+    float: left;
+    display: inline;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  & a[rel=next],
+  & .nav-next {
+    text-align: right;
+    float: right;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+input[type=submit] {
+  background: $secondary-color;
+  font-weight: normal;
+  @include fontSize(14px);
+  &:hover {
+    background: darken($secondary-color,15%);
+  }
+}
+.nav-links a {
+  color: $secondary-color;
+  font-weight: normal;
+  @include fontSize(14px);
+  &:hover {
+    color: darken($secondary-color,15%);
+  }
+}

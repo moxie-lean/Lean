@@ -10,14 +10,14 @@
 use Leean\Inc\Helpers;
 ?>
 <?php tha_entry_before(); ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>
+<article class="entry" id="post-<?php the_ID(); ?>" <?php post_class(); ?>
 	itemscope itemType="http://schema.org/BlogPosting">
 	<?php tha_entry_top(); ?>
-	<header class="entry-header">
-		<h1 class="entry-title" itemprop="name"><?php the_title(); ?></h1>
+	<header class="entry__header">
+		<h1 class="entry__title" itemprop="name"><?php the_title(); ?></h1>
 	</header>
 
-	<div class="entry-content" itemprop="articleBody" >
+	<div class="entry__content" itemprop="articleBody" >
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
@@ -28,7 +28,7 @@ use Leean\Inc\Helpers;
 
 	</div>
 
-	<footer class="entry-meta" itemprop="keywords" >
+	<footer class="entry__meta" itemprop="keywords" >
 		<?php
 			/**
 			 * Translators: used between list items, there is a space after the comma

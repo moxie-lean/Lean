@@ -20,12 +20,14 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
+<div class="clear">
 
+</div>
 <?php tha_comments_before(); ?>
-<div id="comments" class="comments-area">
+<div id="comments" class="comments__area">
 
 	<?php if ( have_comments() ) : ?>
-		<h2 class="comments-title">
+		<h2 class="comments__title">
 			<?php
 			$message = sprintf(
 				_nx(
@@ -46,18 +48,18 @@ if ( post_password_required() ) {
 		</h2>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-		<nav id="comment-nav-above" class="comment-navigation" role="navigation">
+		<nav id="comment__nav-above" class="comment__navigation" role="navigation">
 			<h1 class="screen-reader-text">
 				<?php esc_html_e( 'Comment navigation', TRANSLATED_TEXT_DOMAIN ); ?>
 			</h1>
-			<div class="nav-previous">
+			<div class="nav__previous">
 				<?php
 				previous_comments_link(
 					esc_html_e( '&larr; Older Comments', TRANSLATED_TEXT_DOMAIN )
 				);
 				?>
 			</div>
-			<div class="nav-next">
+			<div class="nav__next">
 				<?php
 				next_comments_link(
 					esc_html_e( 'Newer Comments &rarr;', TRANSLATED_TEXT_DOMAIN )
@@ -67,23 +69,23 @@ if ( post_password_required() ) {
 		</nav>
 		<?php endif; ?>
 
-		<ol class="comment-list">
+		<ol class="comment__list">
 		<?php wp_list_comments( array( 'callback' => '\Leean\Inc\Helpers\Comment' ) ); ?>
 		</ol>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-		<nav id="comment-nav-below" class="comment-navigation" role="navigation">
+		<nav id="comment__nav-below" class="comment__navigation" role="navigation">
 			<h1 class="screen-reader-text">
 				<?php esc_html_e( 'Comment navigation', TRANSLATED_TEXT_DOMAIN ); ?>
 			</h1>
-			<div class="nav-previous">
+			<div class="nav__previous">
 				<?php
 				previous_comments_link(
 					esc_html_e( '&larr; Older Comments', TRANSLATED_TEXT_DOMAIN )
 				);
 				?>
 			</div>
-			<div class="nav-next">
+			<div class="nav__next">
 				<?php
 				next_comments_link(
 					esc_html_e( 'Newer Comments &rarr;', TRANSLATED_TEXT_DOMAIN )

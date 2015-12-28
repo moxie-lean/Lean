@@ -9,17 +9,17 @@
 
 ?>
 <?php tha_entry_before(); ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>
+<article class="entry" id="post-<?php the_ID(); ?>" <?php post_class(); ?>
 	itemscope itemType="http://schema.org/WebPage">
 	<?php tha_entry_top(); ?>
-	<header class="entry-header">
+	<header class="entry__header">
 
-		<h1 class="entry-title" itemprop="name"><?php the_title(); ?></h1>
+		<h1 class="entry__title" itemprop="name"><?php the_title(); ?></h1>
 
 	</header>
 
 
-	<div class="entry-content" itemprop="mainContentOfPage">
+	<div class="entry__content" itemprop="mainContentOfPage">
 
 		<?php the_content(); ?>
 
@@ -33,7 +33,7 @@
 		else :
 			wp_link_pages(
 				array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', TRANSLATED_TEXT_DOMAIN ),
+					'before' => '<div class="page__links">' . esc_html__( 'Pages:', TRANSLATED_TEXT_DOMAIN ),
 					'after'  => '</div>',
 				)
 			);
@@ -43,7 +43,7 @@
 	<?php
 		edit_post_link(
 			esc_html__( 'Edit', TRANSLATED_TEXT_DOMAIN ),
-			'<span class="edit-link">', '</span>'
+			'<span class="edit__link">', '</span>'
 		);
 	?>
 	<?php tha_entry_bottom(); ?>
