@@ -30,12 +30,12 @@ get_header();
 		while ( have_posts() ) : the_post();
 			get_template_part( 'partials/content', 'search' );
 		endwhile;
-			Helpers\pagination();
-		else :
-		get_template_part( 'partials/content', 'none' );
-		?>
+		Helpers\pagination();
 
-	<?php endif; ?>
+	else :
+		get_template_part( 'partials/content', 'none' );
+	endif;
+	?>
 	</main>
 </section>
 <?php get_footer(); ?>
