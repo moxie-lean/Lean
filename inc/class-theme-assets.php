@@ -48,6 +48,10 @@ class Assets {
 
 	/**
 	 * Path to the theme URL to load the assets.
+	 *
+	 * @since 2.0.0
+	 * @access private
+	 * @var string $theme_path
 	 */
 	private $theme_path = '';
 
