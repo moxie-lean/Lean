@@ -34,7 +34,7 @@ if ( ! class_exists( 'Theme_Assets' ) ) :
 		private $environment = 'development';
 
 		/**
-		 * Whether to load the comment-reply script or not.
+		 * Whether to load the comment reply script or not.
 		 *
 		 * @since 1.1.0
 		 * @access private

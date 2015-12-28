@@ -8,7 +8,7 @@
 tha_sidebars_before();
 ?>
 
-<div id="secondary" class="widget-area" role="complementary">
+<div id="secondary" role="complementary">
 
 	<?php tha_sidebar_top(); ?>
 
@@ -16,13 +16,13 @@ tha_sidebars_before();
 
 	<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 
-		<aside id="search" class="widget widget_search">
+		<aside id="search" class="widget widget__search">
 			<?php get_search_form(); ?>
 		</aside>
 
 		<aside id="archives" class="widget">
 
-			<h4 class="widget-title">
+			<h4 class="widget___title">
 				<?php esc_html_e( 'Archives', TRANSLATED_TEXT_DOMAIN ); ?>
 			</h4>
 
@@ -34,7 +34,7 @@ tha_sidebars_before();
 
 		<aside id="meta" class="widget">
 
-			<h4 class="widget-title">
+			<h4 class="widget___title">
 				<?php esc_html_e( 'Meta', TRANSLATED_TEXT_DOMAIN ); ?>
 			</h4>
 
