@@ -14,7 +14,7 @@ add_action( 'after_setup_theme', function(){
 	include 'config.php';
 	Leean\load_dependencies();
 	// Make theme available for translation.
-	load_theme_textdomain( TRANSLATED_TEXT_DOMAIN , FULL_THEME_PATH . '/config/languages' );
+	load_theme_textdomain( TRANSLATED_TEXT_DOMAIN , \Leean\THEME_PATH . '/config/languages' );
 	add_theme_support( 'post-thumbnails' );
 	// Add support for all the hooks from tha_hooks.
 	add_theme_support( 'tha_hooks', array( 'all' ) );
