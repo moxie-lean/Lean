@@ -10,6 +10,10 @@
     <exclude name="Squiz.Commenting.FileComment" />
     <exclude name="Squiz.Commenting.LongConditionClosingComment" />
     <exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
+    <exclude name="WordPress.Files.FileName" />
+    <exclude name="WordPress.Variables.GlobalVariables" />
     <exclude name="WordPress.VIP.SuperGlobalInputUsage" />
+    <exclude name="WordPress.VIP.RestrictedFunctions" />
+    <exclude name="WordPress.VIP.SlowDBQuery" />
   </rule>
 </ruleset>
