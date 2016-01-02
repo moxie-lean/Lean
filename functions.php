@@ -12,9 +12,7 @@ use Leean\Inc\Helpers;
 
 add_action( 'after_setup_theme', function(){
 	include 'config.php';
-
 	Leean\load_dependencies();
-
 	// Make theme available for translation.
 	load_theme_textdomain( TRANSLATED_TEXT_DOMAIN , FULL_THEME_PATH . '/config/languages' );
 	add_theme_support( 'post-thumbnails' );
@@ -26,7 +24,6 @@ add_action( 'after_setup_theme', function(){
 	} else {
 		add_editor_style( \Leean\EDITOR_STYLESHEET );
 	}
-
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menu( 'primary-navigation', __( 'Primary Menu', 'lean' ) );
 	$args = array(
