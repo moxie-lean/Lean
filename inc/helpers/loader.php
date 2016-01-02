@@ -33,7 +33,7 @@ function load_partial( $file_name = '', $args = array() ) {
  * @param array  $args Extra variables to pass to the template.
  */
 function load_template_part( $file_name = '', $args = array() ) {
-	$path = FULL_THEME_PATH . $file_name . '.php';
+	$path = \Leean\THEME_PATH . $file_name . '.php';
 
 	if ( ! file_exists( $path ) ) {
 		$message = sprintf( '<code>%s</code> does not exist.', $path );
