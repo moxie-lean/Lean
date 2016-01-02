@@ -32,11 +32,29 @@ function pagination() {
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav prev">&larr;</span> Older posts', 'digistarter' ) ); ?></div>
+			<div class="nav-previous">
+				<?php
+				next_posts_link(
+					__(
+						'<span class="meta-nav prev">&larr;</span> Older posts',
+						TRANSLATED_TEXT_DOMAIN
+					)
+				);
+			?>
+			</div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav next">&rarr;</span>', 'digistarter' ) ); ?></div>
+			<div class="nav-next">
+			<?php
+				previous_posts_link(
+					__(
+						'Newer posts <span class="meta-nav next">&rarr;</span>',
+						TRANSLATED_TEXT_DOMAIN
+					)
+				);
+			?>
+			</div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
