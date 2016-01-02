@@ -4,8 +4,8 @@
  *
  * The area of the page that contains both current comments
  * and the comment form. The actual display of comments is
- * handled by a callback to digistarter_comment() which is
- * located in the inc/template-tags.php file.
+ * handled by a callback to \Leean\Inc\Helpers\Comment() which is
+ * located in the inc/helpers/comment.php file.
  *
  * @package Leean
  * @since 1.0.0
