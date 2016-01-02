@@ -1,10 +1,10 @@
-<?php
+<?php namespace Leean;
 /**
  * The template part for displaying a message that posts cannot be found.
  *
  * @link http://codex.wordpress.org/Template_Hierarchy
  *
- * @package Lean
+ * @package Leean
  * @subpackage partials
  * @since 1.0.0
  */
@@ -21,7 +21,6 @@
 	<div class="page__content">
 		<?php tha_entry_top(); ?>
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
-
 			<p>
 			<?php
 			wp_kses(

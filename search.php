@@ -1,10 +1,12 @@
-<?php
+<?php namespace Leean;
 /**
  * The template for displaying Search Results pages.
  *
- * @package Lean
+ * @package Leean
  * @since 1.0.0
  */
+
+use Leean\Inc\Helpers;
 
 get_header();
 ?>
@@ -17,7 +19,7 @@ get_header();
 			<h1>
 			<?php
 			printf(
-				esc_html_e( 'Search Results for: %s', TRANSLATED_TEXT_DOMAIN ),
+				esc_html__( 'Search Results for: %s', TRANSLATED_TEXT_DOMAIN ),
 				'<span>' . get_search_query() . '</span>'
 			);
 			?>
@@ -28,12 +30,12 @@ get_header();
 		while ( have_posts() ) : the_post();
 			get_template_part( 'partials/content', 'search' );
 		endwhile;
-			digistarter_paging_nav();
-		else :
-		get_template_part( 'partials/content', 'none' );
-		?>
+		Helpers\pagination();
 
-	<?php endif; ?>
+	else :
+		get_template_part( 'partials/content', 'none' );
+	endif;
+	?>
 	</main>
 </section>
 <?php get_footer(); ?>

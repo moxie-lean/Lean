@@ -1,12 +1,13 @@
-<?php
+<?php namespace Leean;
 /**
  * Template part to display the content from single.php
  *
- * @package Lean
+ * @package Leean
  * @subpackage partials
  * @since 1.0.0
  */
 
+use Leean\Inc\Helpers;
 ?>
 <?php tha_entry_before(); ?>
 <article class="entry" id="post-<?php the_ID(); ?>" <?php post_class(); ?>
@@ -39,12 +40,12 @@
 			 * */
 			$tags_list = get_the_tag_list( '', esc_html_e( ', ', TRANSLATED_TEXT_DOMAIN ) );
 
-			if ( ! digistarter_categorized_blog() ) {
+			if ( ! Helpers\categorized_blog() ) {
 				/**
 				 * This blog only has 1 category so we just need to worry
 				 * about tags in the meta text.
 				 */
-				if ( ! empty( $tag_list ) ) {
+				if ( ! empty( $tags_list ) ) {
 					$meta_text = esc_html__(
 						'This entry was tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.',
 						TRANSLATED_TEXT_DOMAIN
@@ -60,7 +61,7 @@
 				 * But this blog has loads of categories so we should
 				 * probably display them here
 				 */
-				if ( ! empty( $tag_list )  ) {
+				if ( ! empty( $tags_list )  ) {
 					$meta_text = __(
 						'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.',
 						TRANSLATED_TEXT_DOMAIN
@@ -76,8 +77,8 @@
 			echo wp_kses(
 				sprintf(
 					$meta_text,
-					$category_list,
-					$tag_list,
+					$categories_list,
+					$tags_list,
 					get_permalink()
 				),
 				array(

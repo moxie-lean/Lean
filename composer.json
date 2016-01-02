@@ -1,26 +1,36 @@
 {
-    "name": "root/moxie-lean",
+    "name": "moxie/Leean",
     "description": "Bare bones WordPress starter theme focused on modularity, scalability and performance.",
+    "keywords": ["wordpress", "themes", "starter theme"],
+    "homepage": "https://github.com/moxie-leean/Leean",
+    "licence": "MIT",
+    "type": "project",
+    "require": {
+      "php": ">=5.3.0"
+    },
     "authors": [
-        {
-          "name": "Moxie Developer",
-          "email": "developer@getmoxied.net"
-        },
-        {
-            "name": "mitogh",
-            "email": "mitogh@gmail.com"
-        }
+      {
+        "name": "Moxie Developer",
+        "email": "developer@getmoxied.net"
+      },
+      {
+        "name": "Crisoforo Gaspar Hernandez",
+        "email": "github@crisoforo.com"
+      }
     ],
     "require": {
-        "zamoose/themehookalliance": "dev-master"
+      "zamoose/themehookalliance": "dev-master"
     },
     "require-dev": {
       "squizlabs/php_codesniffer": "2.*",
       "wp-coding-standards/wpcs": "dev-master"
     },
     "scripts": {
-      "post-install-cmd": [
-        "vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs/"
+      "post-update-cmd": [
+        "./vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs/",
+        "./vendor/bin/phpcs --config-set default_standard ./codesniffer.ruleset.xml",
+        "./vendor/bin/phpcs --config-set show_progress 0",
+        "./vendor/bin/phpcs --config-set colors 1"
       ]
     }
 }

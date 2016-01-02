@@ -1,11 +1,13 @@
-<?php
+<?php namespace Leean;
 /**
  * The main template file.  It is used to display a page when nothing more
  * specific matches a query.
  *
- * @package Lean
+ * @package Leean
  * @since 1.0.0
  */
+
+use Leean\Inc\Helpers;
 
 get_header();
 ?>
@@ -25,7 +27,7 @@ get_header();
 			get_template_part( 'partials/content', get_post_format() );
 		endwhile;
 
-		digistarter_paging_nav();
+		Helpers\pagination();
 
 	else :
 		get_template_part( 'partials/content', 'none' );

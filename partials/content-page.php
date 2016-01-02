@@ -1,8 +1,8 @@
-<?php
+<?php namespace Leean;
 /**
  * The template used for displaying page content in page.php
  *
- * @package Lean
+ * @package Leean
  * @subpackage partials
  * @since 1.0.0
  */

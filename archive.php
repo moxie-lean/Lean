@@ -1,10 +1,12 @@
-<?php
+<?php namespace Leean;
 /**
  * Template for displaying Archive pages.
  *
- * @package Lean
+ * @package Leean
  * @since 1.0.0
  */
+
+use Leean\Inc\Helpers;
 
 get_header();
 ?>
@@ -18,7 +20,6 @@ get_header();
 				<h1>
 					<?php the_archive_title( '<h1>', '</h1>' ); ?>
 				</h1>
-				<?php // Show an optional term description. ?>
 				<?php $option_description = term_description(); ?>
 				<?php if ( ! empty( $option_description ) ) : ?>
 					<div class="taxonomy-description">
@@ -40,7 +41,7 @@ get_header();
 
 			<?php endwhile; ?>
 
-			<?php digistarter_paging_nav(); ?>
+			<?php Helpers\pagination(); ?>
 
 		<?php else : ?>
 
