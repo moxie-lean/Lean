@@ -8,7 +8,7 @@
  */
 
 // Text domain for the theme.
-define( 'TRANSLATED_TEXT_DOMAIN', 'lean' );
+define( 'TRANSLATED_TEXT_DOMAIN', 'leean' );
 // Absolute server path to the theme.
 define( __NAMESPACE__ . '\THEME_PATH', get_template_directory() );
 // Stylesheet directory URI for the current theme/child theme.

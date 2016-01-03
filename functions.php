@@ -25,7 +25,10 @@ add_action( 'after_setup_theme', function(){
 		add_editor_style( \Leean\EDITOR_STYLESHEET );
 	}
 	// This theme uses wp_nav_menu() in one location.
-	register_nav_menu( 'primary-navigation', __( 'Primary Menu', 'lean' ) );
+	register_nav_menu(
+		'primary-navigation',
+		__( 'Primary Menu', TRANSLATED_TEXT_DOMAIN )
+	);
 	$args = array(
 		'css_version' => false,
 		'js_version' => time(),
