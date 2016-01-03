@@ -158,6 +158,7 @@ gulp.task('js:hint-ci', function() {
 gulp.task('js:cs', function() {
   return gulp.src( jsFiles )
   .pipe(jscs())
+  .pipe(jscs.reporter())
   .pipe( notify({ message: 'JSCS complete', onLast: true }) );
 });
 
@@ -210,6 +211,8 @@ gulp.task('php:ci', function () {
 /******************************************************************************
 | >   WATCH TASKS
 ******************************************************************************/
+// Alias to the watcH:all task
+gulp.task('watch', ['watch:all']);
 gulp.task('watch:all', ['watch:php', 'watch:js', 'watch:sass']);
 
 gulp.task('watch:php', ['php:lint'], function(){
