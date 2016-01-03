@@ -1,6 +1,5 @@
 {
   "browser": true,
-  "jquery": true,
   "node": true,
 
   "eqeqeq": true,
@@ -20,7 +19,6 @@
   "predef": [
     "Essential",
     "Leean",
-    "google",
-    "$"
+    "google"
   ]
 }
