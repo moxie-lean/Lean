@@ -9,6 +9,7 @@
  */
 
 use Leean\Inc\Helpers;
+use Moxie\Assets;
 
 add_action( 'after_setup_theme', function(){
 	include 'config.php';
@@ -34,6 +35,6 @@ add_action( 'after_setup_theme', function(){
 		'js_version' => time(),
 		'theme_path' => \Leean\THEME_URL,
 	);
-	$assets = new \Leean\Inc\Assets( $args );
+	$assets = new Assets( $args );
 	$assets->load();
 });
