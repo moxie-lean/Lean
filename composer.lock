@@ -4,9 +4,57 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2533b6db8cbe778e71b4ca027d78292c",
-    "content-hash": "e57a23788d3f932e3301e8bc32896e43",
+    "hash": "aee39a6a647ba5cc2b2e6064c68d0aa7",
+    "content-hash": "f53fe990568364d6bc13ff5eb3e2ea56",
     "packages": [
+        {
+            "name": "moxie-leean/theme-assets",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/moxie-leean/theme-assets.git",
+                "reference": "15efde64962b3f721ea4333767145477002be358"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/moxie-leean/theme-assets/zipball/15efde64962b3f721ea4333767145477002be358",
+                "reference": "15efde64962b3f721ea4333767145477002be358",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "phpdocumentor/phpdocumentor": "2.*",
+                "squizlabs/php_codesniffer": "2.*",
+                "wp-coding-standards/wpcs": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Moxie\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Crisoforo Gaspar Hernandez",
+                    "email": "github@crisoforo.com"
+                }
+            ],
+            "description": "Loader for theme assets and some extra utilities related with loader of the assets.",
+            "homepage": "https://github.com/moxie-leean/theme-assets",
+            "keywords": [
+                "assets",
+                "css",
+                "scripts",
+                "wordpress"
+            ],
+            "time": "2016-01-05 02:06:16"
+        },
         {
             "name": "zamoose/themehookalliance",
             "version": "dev-master",
@@ -158,6 +206,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "moxie-leean/theme-assets": 20,
         "zamoose/themehookalliance": 20,
         "wp-coding-standards/wpcs": 20
     },
