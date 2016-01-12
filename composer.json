@@ -19,8 +19,7 @@
       }
     ],
     "require": {
-      "moxie-leean/theme-assets": "dev-master",
-      "zamoose/themehookalliance": "dev-master"
+      "moxie-leean/theme-assets": "dev-master"
     },
     "require-dev": {
       "squizlabs/php_codesniffer": "2.*",

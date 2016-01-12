@@ -23,7 +23,6 @@ if ( post_password_required() ) {
 <div class="clear">
 
 </div>
-<?php tha_comments_before(); ?>
 <div id="comments" class="comments__area">
 
 	<?php if ( have_comments() ) : ?>
@@ -112,4 +111,3 @@ if ( post_password_required() ) {
 	<?php comment_form(); ?>
 
 </div>
-<?php tha_comments_after(); ?>

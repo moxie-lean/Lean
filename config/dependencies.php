@@ -7,15 +7,9 @@
  */
 function load_dependencies() {
 	/*
-	 * Including Theme Hook Alliance
-	 *
-	 * @linkg https://github.com/zamoose/themehookalliance.
-	 *
-	 * Use add_theme_support( 'tha_hooks', array('all') ) to add support.
+	 * Require of the autoloading of composer.
 	 */
 	require COMPOSER . '/autoload.php';
-	require COMPOSER . '/zamoose/themehookalliance/tha-theme-hooks.php';
-
 	/*
 	 * Custom template tags for this theme.
 	 */
