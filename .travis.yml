@@ -9,8 +9,5 @@ before_script:
   - composer update --prefer-lowest -n
   - composer update -n
 
-install:
- - composer install && composer update
-
 script:
   - gulp ci
