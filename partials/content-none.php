@@ -1,27 +1,23 @@
-<?php
+<?php namespace Leean;
 /**
  * The template part for displaying a message that posts cannot be found.
  *
  * @link http://codex.wordpress.org/Template_Hierarchy
  *
- * @package Lean
+ * @package Leean
  * @subpackage partials
  * @since 1.0.0
  */
 
 ?>
-<?php tha_entry_before(); ?>
 <section class="no-results not-found">
-	<header class="page-header">
-		<h1 class="page-title">
+	<header>
+		<h1>
 			<?php esc_html_e( 'Nothing Found', TRANSLATED_TEXT_DOMAIN ); ?>
 		</h1>
 	</header>
-	<?php tha_content_before(); ?>
-	<div class="page-content">
-		<?php tha_entry_top(); ?>
+	<div class="page__content">
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
-
 			<p>
 			<?php
 			wp_kses(
@@ -32,11 +28,11 @@
 					),
 					esc_url( admin_url( 'post-new.php' ) )
 				),
-				array(
-					'a' => array(
-						'href' => array(),
-					),
-				)
+				[
+					'a' => [
+						'href' => [],
+					],
+				]
 			);
 			?>
 			</p>
@@ -66,8 +62,5 @@
 			<?php get_search_form(); ?>
 
 		<?php endif; ?>
-		<?php tha_entry_bottom(); ?>
 	</div>
-	<?php tha_content_after(); ?>
 </section>
-<?php tha_entry_after(); ?>

@@ -1,0 +1,16 @@
+.header {
+  padding-top: 60px;
+}
+.header__title {
+
+  & h1 {
+    padding  : 0;
+    margin   : 0;
+    @include fontSize(30px);
+  }
+}
+.site-description {
+    @include fontSize(16px);
+    color:#c0c0c0;
+    margin-bottom: 90px;
+}

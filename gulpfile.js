@@ -4,21 +4,25 @@
 ******************************************************************************/
 var gulp = require('gulp');
 var autoprefixer = require('gulp-autoprefixer');
-var minifycss = require('gulp-minify-css');
-var jshint = require('gulp-jshint');
+var cssnano = require('gulp-cssnano');
+var browserify = require('browserify');
+var watchify = require('watchify');
 var jscs = require('gulp-jscs');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var notify = require('gulp-notify');
 var sourcemaps = require('gulp-sourcemaps');
+var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
 var phpcs = require('gulp-phpcs');
 var sass = require('gulp-sass');
+var gutil = require('gulp-util');
 /******************************************************************************
 | >   PROJECT VARIABLES
 ******************************************************************************/
 var project = '.';
-var source = project + '/assets/';
+var sourcePath = project + '/assets/';
 var bower = project + '/bower_components/';
 
 /******************************************************************************
@@ -36,11 +40,16 @@ gulp.task('assets', ['styles', 'js']);
  */
 gulp.task('styles', ['styles:minify'], function() {
   var styles = [
-    source + 'css/style.css',
-    source + 'css/style-min.css'
+    sourcePath + 'css/style.css',
+    sourcePath + 'css/style-min.css'
   ];
   return gulp.src(styles)
-  .pipe( notify({ message: 'Styles task complete', onLast: true }) );
+  .pipe( notify({
+    title: 'Styles completed',
+    message: 'The Sass files has been compiled into CSS',
+    onLast: true,
+    icon: './assets/images/notify/sass.png',
+  }));
 });
 
 /**
@@ -49,11 +58,10 @@ gulp.task('styles', ['styles:minify'], function() {
  * the CSS.
  */
 gulp.task('styles:minify', ['styles:combine'], function(){
-  return gulp.src(source + 'css/style.css')
-  .pipe(minifycss({ keepBreaks: true }))
-  .pipe(minifycss({ keepSpecialComments: 0 }))
+  return gulp.src(sourcePath + 'css/style.css')
+  .pipe(cssnano())
   .pipe(rename({ suffix: '-min' }))
-  .pipe(gulp.dest(source + 'css'));
+  .pipe(gulp.dest(sourcePath + 'css'));
 });
 
 /**
@@ -62,7 +70,7 @@ gulp.task('styles:minify', ['styles:combine'], function(){
  * version.
  */
 gulp.task('styles:combine', function(){
-  return gulp.src(source + 'sass/style.scss')
+  return gulp.src(sourcePath + 'sass/style.scss')
   .pipe(sourcemaps.init())
   .pipe(sass().on('error', sass.logError))
   .pipe(autoprefixer(
@@ -74,28 +82,40 @@ gulp.task('styles:combine', function(){
     'android 4'
   ))
   .pipe(sourcemaps.write('../maps'))
-  .pipe(gulp.dest(source + 'css'));
+  .pipe(gulp.dest(sourcePath + 'css'));
 });
 
 /******************************************************************************
 | >   JS TASKS
 ******************************************************************************/
 
+
 // Task to combine and minify the js scripts.
-gulp.task('js', ['js:minify'], function() {
-  return gulp.src( source + 'js/production.js')
-  .pipe(notify({ message: 'Scripts task complete', onLast: true }));
+gulp.task('js', ['js:combine', 'js:minify'], function() {
+  return gulp.src( sourcePath + 'js/production.js')
+  .pipe( notify({
+    title: 'JS completed',
+    message: 'The JS has been created',
+    onLast: true,
+    icon: './assets/images/notify/js.png',
+  }));
 });
 
 /**
  * Runs a minify task to combine and minify the scripts after are combined in
  * a single file stored in js as production.js
  */
-gulp.task('js:minify', ['js:combine'], function(){
-  return gulp.src(source + 'js/production.js')
-  .pipe(rename({ suffix: '-min' }))
+gulp.task('js:minify', ['js:combine_without_sourcemaps'], function(){
+  return gulp.src(sourcePath + 'js/production-min.js')
   .pipe(uglify())
-  .pipe(gulp.dest(source + 'js'));
+  .pipe(gulp.dest(sourcePath + 'js'));
+});
+
+gulp.task('js:combine_without_sourcemaps', function(){
+  return browserified({
+    debug: false,
+    output: 'production-min.js'
+  });
 });
 
 /**
@@ -103,51 +123,39 @@ gulp.task('js:minify', ['js:combine'], function(){
  * generated file to easy access to the original files from the browser to
  * enable faster development process.
  */
-gulp.task('js:combine', function(){
-  var scripts = [
-    bower + 'essential.js/essential.js',
-    source + 'js/app/main.js',
-    source + 'js/app/behaviors/*.js',
-  ];
-  return gulp.src( scripts )
-  .pipe(sourcemaps.init())
-  .pipe(concat('production.js'))
-  .pipe(sourcemaps.write('../maps'))
-  .pipe(gulp.dest(source + 'js'));
+gulp.task('js:combine', ['browserify']);
+
+gulp.task('browserify', function(){
+  return browserified({
+    debug: true,
+    output: 'production.js'
+  });
 });
+
+var mainJS = sourcePath + 'js/app/main.js';
+
+function browserified( opts ){
+  var opts = opts || {};
+  return browserify( mainJS, opts)
+  .bundle()
+  .on('error', gutil.log.bind(gutil, 'Browserify Error'))
+  .pipe(source( opts.output ))
+  .pipe(gulp.dest( sourcePath + '/js'))
+};
 
 // Files to inspect in order to follow the same standard
 var jsFiles = [
-    source + 'js/app/*.js',
-    source + 'js/app/behaviors/*.js',
+    sourcePath + 'js/app/**/*.js',
 ];
 
 // Tasks that are handle the lints without breaking the gulp report
-gulp.task('js:lint', ['js:hint', 'js:cs']);
-
-// JS hint to explore the errors in the JS file using jshintrc
-gulp.task('js:hint', function() {
-  return gulp.src( jsFiles )
-  .pipe(jshint('.jshintrc'))
-  .pipe(jshint.reporter('default'))
-  .pipe( notify({ message: 'JSHint complete', onLast: true }) );
-});
-
-/**
- * Task for continious integration using jshintrc, it will exit with code 1 if
- * there is an error in the JS files compared with the rules from .jshintrc
- */
-gulp.task('js:hint-ci', function() {
-  return gulp.src( jsFiles )
-  .pipe(jshint('.jshintrc'))
-  .pipe(jshint.reporter('default'))
-  .pipe(jshint.reporter('fail'));
-});
+gulp.task('js:lint', ['js:cs']);
 
 // Gulp taks to analyze the code using JS CS rules witouth breaking gulp
 gulp.task('js:cs', function() {
   return gulp.src( jsFiles )
   .pipe(jscs())
+  .pipe(jscs.reporter())
   .pipe( notify({ message: 'JSCS complete', onLast: true }) );
 });
 
@@ -160,7 +168,7 @@ gulp.task('js:cs-ci', function() {
 });
 
 // Group of JS tasks for continuous integration
-gulp.task('js:ci', ['js:hint-ci', 'js:cs-ci']);
+gulp.task('js:ci', ['js:cs-ci']);
 
 /******************************************************************************
 | >   PHP TASKS
@@ -168,13 +176,12 @@ gulp.task('js:ci', ['js:hint-ci', 'js:cs-ci']);
 // Files where the code sniffer should run
 var phpFiles = [
   '*.php',
-  'inc/*.php',
-  'inc/*/*.php',
-  'config/*.php',
-  'page-templates/*.php',
-  'page-templates/*.php',
-  'partials/*.php'
+  'inc/**/*.php',
+  'config/**/*.php',
+  'page-templates/**/*.php',
+  'partials/**/*.php'
 ];
+
 // Options for the code sniffer
 var phpOptions = {
   bin: './vendor/bin/phpcs',
@@ -200,6 +207,8 @@ gulp.task('php:ci', function () {
 /******************************************************************************
 | >   WATCH TASKS
 ******************************************************************************/
+// Alias to the watcH:all task
+gulp.task('watch', ['watch:all']);
 gulp.task('watch:all', ['watch:php', 'watch:js', 'watch:sass']);
 
 gulp.task('watch:php', ['php:lint'], function(){
@@ -207,11 +216,11 @@ gulp.task('watch:php', ['php:lint'], function(){
 });
 
 gulp.task('watch:js', ['js'], function(){
-  gulp.watch(source + 'js/app/**/*.js', ['js']);
+  gulp.watch(sourcePath + 'js/app/**/*.js', ['js']);
 });
 
 gulp.task('watch:sass', ['styles'], function(){
-  gulp.watch(source + 'sass/**/*.scss', ['styles']);
+  gulp.watch(sourcePath + 'sass/**/*.scss', ['styles']);
 });
 
 /******************************************************************************
@@ -223,4 +232,3 @@ gulp.task('ci', ['js:ci', 'php:ci']);
 | >   DEFAULT TASK
 ******************************************************************************/
 gulp.task('default', ['watch:js', 'watch:sass']);
-

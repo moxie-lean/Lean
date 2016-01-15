@@ -1,59 +1,67 @@
-<?php
+<?php namespace Leean;
 /**
  * Template for displaying 404 pages (Not Found).
  *
- * @package Lean
+ * @package Leean
  * @since 1.0.0
  */
 
+use Leean\Inc\Helpers;
+
 get_header();
 ?>
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div id="primary" class="entry__area">
+		<main id="main" class="site__main" role="main">
 
 			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title">
+				<header>
+					<h1>
 						<?php esc_html_e( 'Oops! That page can&rsquo;t be found.', TRANSLATED_TEXT_DOMAIN ); ?>
 					</h1>
 				</header>
 
-				<div class="page-content">
+				<div class="page__content">
 					<p>
 						<?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', TRANSLATED_TEXT_DOMAIN ); ?>
 					</p>
 
-					<?php get_search_form(); ?>
+					<?php
+						get_search_form();
+						the_widget( 'WP_Widget_Recent_Posts' );
+					?>
 
-					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
-
-					<?php if ( digistarter_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
+					<?php if ( Helpers\categorized_blog() ) : ?>
 					<div class="widget widget_categories">
-						<h2 class="widgettitle"><?php esc_html_e( 'Most Used Categories', TRANSLATED_TEXT_DOMAIN ); ?></h2>
+						<h2 class="widgettitle">
+							<?php esc_html_e( 'Most Used Categories', TRANSLATED_TEXT_DOMAIN ); ?>
+						</h2>
 						<ul>
 						<?php
-							wp_list_categories( array(
+							wp_list_categories( [
 								'orderby'    => 'count',
 								'order'      => 'DESC',
 								'show_count' => 1,
 								'title_li'   => '',
 								'number'     => 10,
-							) );
+							] );
 						?>
 						</ul>
-					</div><!-- .widget -->
-					<?php endif; ?>
-
+					</div>
 					<?php
-					/* translators: %1$s: smiley */
-					$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'lean' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-					?>
+					endif;
 
-					<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
+					/* translators: %1$s: smiley */
+					$archive_content = '<p>'
+						. sprintf(
+							__( 'Try looking in the monthly archives. %1$s', TRANSLATED_TEXT_DOMAIN ),
+							convert_smilies( ':)' )
+						)
+						. '</p>';
+					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
+					the_widget( 'WP_widget_Tag_Cloud' );
+					?>
 				</div>
 			</section>
 		</main>
 	</div>
-
 <?php get_footer(); ?>

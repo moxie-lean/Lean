@@ -1,16 +1,17 @@
 {
-  "name": "lean",
+  "name": "leean",
   "version": "1.0.1",
   "homepage": "http://getmoxied.net",
+  "description": "Bare bones WordPress starter theme focused on modularity, scalability and performance.",
+  "license": "GPL-2.0",
   "authors": [
     "Alex Vasquez <alexjvas@gmail.com>",
-    "Crisoforo Gaspar <mitogh@gmail.com>",
+    "Crisoforo Gaspar <github@crisoforo.com>",
     "Moxie Developer <developer@getmoxied.net>"
   ],
   "dependencies": {
-    "bourbon": "~4.1",
-    "essential.js": "~0.5.0",
     "jquery": "~2.1.4",
+    "bourbon": "~4.1",
     "neat": "~1.7",
     "normalize-scss": "~3.0.3"
   }
