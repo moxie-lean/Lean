@@ -4,7 +4,7 @@
 ******************************************************************************/
 var gulp = require('gulp');
 var autoprefixer = require('gulp-autoprefixer');
-var minifycss = require('gulp-minify-css');
+var cssnano = require('gulp-cssnano');
 var browserify = require('browserify');
 var watchify = require('watchify');
 var jscs = require('gulp-jscs');
@@ -59,8 +59,7 @@ gulp.task('styles', ['styles:minify'], function() {
  */
 gulp.task('styles:minify', ['styles:combine'], function(){
   return gulp.src(sourcePath + 'css/style.css')
-  .pipe(minifycss({ keepBreaks: true }))
-  .pipe(minifycss({ keepSpecialComments: 0 }))
+  .pipe(cssnano())
   .pipe(rename({ suffix: '-min' }))
   .pipe(gulp.dest(sourcePath + 'css'));
 });
