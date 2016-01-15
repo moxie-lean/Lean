@@ -7,7 +7,6 @@ var autoprefixer = require('gulp-autoprefixer');
 var minifycss = require('gulp-minify-css');
 var browserify = require('browserify');
 var watchify = require('watchify');
-var jshint = require('gulp-jshint');
 var jscs = require('gulp-jscs');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
@@ -147,31 +146,11 @@ function browserified( opts ){
 
 // Files to inspect in order to follow the same standard
 var jsFiles = [
-    sourcePath + 'js/app/*.js',
-    sourcePath + 'js/app/behaviors/*.js',
+    sourcePath + 'js/app/**/*.js',
 ];
 
 // Tasks that are handle the lints without breaking the gulp report
-gulp.task('js:lint', ['js:hint', 'js:cs']);
-
-// JS hint to explore the errors in the JS file using jshintrc
-gulp.task('js:hint', function() {
-  return gulp.src( jsFiles )
-  .pipe(jshint('.jshintrc'))
-  .pipe(jshint.reporter('default'))
-  .pipe( notify({ message: 'JSHint complete', onLast: true }) );
-});
-
-/**
- * Task for continious integration using jshintrc, it will exit with code 1 if
- * there is an error in the JS files compared with the rules from .jshintrc
- */
-gulp.task('js:hint-ci', function() {
-  return gulp.src( jsFiles )
-  .pipe(jshint('.jshintrc'))
-  .pipe(jshint.reporter('default'))
-  .pipe(jshint.reporter('fail'));
-});
+gulp.task('js:lint', ['js:cs']);
 
 // Gulp taks to analyze the code using JS CS rules witouth breaking gulp
 gulp.task('js:cs', function() {
@@ -190,7 +169,7 @@ gulp.task('js:cs-ci', function() {
 });
 
 // Group of JS tasks for continuous integration
-gulp.task('js:ci', ['js:hint-ci', 'js:cs-ci']);
+gulp.task('js:ci', ['js:cs-ci']);
 
 /******************************************************************************
 | >   PHP TASKS
@@ -198,12 +177,10 @@ gulp.task('js:ci', ['js:hint-ci', 'js:cs-ci']);
 // Files where the code sniffer should run
 var phpFiles = [
   '*.php',
-  'inc/*.php',
-  'inc/*/*.php',
-  'config/*.php',
-  'page-templates/*.php',
-  'page-templates/*.php',
-  'partials/*.php'
+  'inc/**/*.php',
+  'config/**/*.php',
+  'page-templates/**/*.php',
+  'partials/**/*.php'
 ];
 
 // Options for the code sniffer
@@ -256,4 +233,3 @@ gulp.task('ci', ['js:ci', 'php:ci']);
 | >   DEFAULT TASK
 ******************************************************************************/
 gulp.task('default', ['watch:js', 'watch:sass']);
-
