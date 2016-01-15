@@ -23,18 +23,16 @@
 
 		<?php
 		if ( function_exists( 'the_post_navigation' ) ) :
-				the_post_navigation( array(
+				the_post_navigation( [
 					'prev_text'	=> esc_html__( '&larr; Previous Page', TRANSLATED_TEXT_DOMAIN ),
 					'next_text'	=> esc_html__( 'Next Page &rarr;', TRANSLATED_TEXT_DOMAIN ),
 					'screen_reader_text' => esc_html__( 'Page navigation', TRANSLATED_TEXT_DOMAIN ),
-				));
+				]);
 		else :
-			wp_link_pages(
-				array(
-					'before' => '<div class="page__links">' . esc_html__( 'Pages:', TRANSLATED_TEXT_DOMAIN ),
-					'after'  => '</div>',
-				)
-			);
+			wp_link_pages( [
+				'before' => '<div class="page__links">' . esc_html__( 'Pages:', TRANSLATED_TEXT_DOMAIN ),
+				'after'  => '</div>',
+			]);
 		endif;
 		?>
 	</div>

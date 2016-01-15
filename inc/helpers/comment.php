@@ -33,19 +33,19 @@ function comment( $comment, $args, $depth ) {
 					__( '%s <span class="says">says:</span>', TRANSLATED_TEXT_DOMAIN ),
 					sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() )
 				);
-				$allowed = array(
-					'cite' => array(
-						'class' => array(),
-					),
-					'a' => array(
-						'href' => array(),
-						'rel' => array(),
-						'class' => array(),
-					),
-					'span' => array(
-						'class' => array(),
-					),
-				);
+				$allowed = [
+					'cite' => [
+						'class' => [],
+					],
+					'a' => [
+						'href' => [],
+						'rel' => [],
+						'class' => [],
+					],
+					'span' => [
+						'class' => [],
+					],
+				];
 				echo wp_kses( $message, $allowed );
 				?>
 				</div>

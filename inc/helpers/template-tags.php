@@ -87,11 +87,11 @@ function post_nav() {
 				'%link',
 				wp_kses(
 					_x( '<span class="meta-nav prev">&larr;</span> %title', 'Previous post link', TRANSLATED_TEXT_DOMAIN ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
+					[
+						'span' => [
+							'class' => [],
+						],
+					]
 				)
 			);
 			?>
@@ -100,18 +100,16 @@ function post_nav() {
 				'%link',
 				wp_kses(
 					_x( '%title <span class="meta-nav next">&rarr;</span>', 'Next post link', TRANSLATED_TEXT_DOMAIN ),
-					array(
-						'span' => array(
-							'class' => array(),
-					   	),
-					)
+					[
+						'span' => [
+							'class' => [],
+					   	],
+					]
 				)
 			);
 			?>
-
-
-		</div><!-- .nav-links -->
-	</nav><!-- .navigation -->
+		</div>
+	</nav>
 	<?php
 }
 
@@ -123,18 +121,12 @@ function post_nav() {
 function categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
-		$all_the_cool_cats = get_categories( array(
+		$all_the_cool_cats = get_categories( [
 			'hide_empty' => 1,
-		) );
+		] );
 		// Count the number of categories that are attached to the posts.
 		$all_the_cool_cats = count( $all_the_cool_cats );
 		set_transient( 'all_the_cool_cats', $all_the_cool_cats );
 	}
-	if ( 1 !== $all_the_cool_cats ) {
-		// This blog has more than 1 category so some_like_it_neat_categorized_blog should return true.
-		return true;
-	} else {
-		// This blog has only 1 category so some_like_it_neat_categorized_blog should return false.
-		return false;
-	}
+	return ( 1 !== $all_the_cool_cats );
 }

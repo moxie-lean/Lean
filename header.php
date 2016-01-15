@@ -39,11 +39,11 @@
 			<nav role="navigation" itemscope="itemscope"
 				itemtype="http://schema.org/SiteNavigationElement">
 				<?php
-				$args = array(
+				$args = [
 					'theme_location' => 'primary-navigation',
 					'items_wrap' =>
 					'<ul id="%1$s" class="%2$s">%3$s</ul>',
-				);
+				];
 				wp_nav_menu( $args );
 				?>
 			</nav>

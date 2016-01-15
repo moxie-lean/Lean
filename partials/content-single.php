@@ -18,10 +18,10 @@ use Leean\Inc\Helpers;
 	<div class="entry__content" itemprop="articleBody" >
 		<?php the_content(); ?>
 		<?php
-			wp_link_pages( array(
+			wp_link_pages( [
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', TRANSLATED_TEXT_DOMAIN ),
 				'after'  => '</div>',
-			) );
+			] );
 		?>
 
 	</div>
@@ -79,13 +79,13 @@ use Leean\Inc\Helpers;
 					$tags_list,
 					get_permalink()
 				),
-				array(
-					'a' => array(
-						'href' => array(),
-						'class' => array(),
-						'rel' => array(),
-					),
-				)
+				[
+					'a' => [
+						'href' => [],
+						'class' => [],
+						'rel' => [],
+					],
+				]
 			);
 		?>
 		<?php

@@ -28,11 +28,11 @@
 					),
 					esc_url( admin_url( 'post-new.php' ) )
 				),
-				array(
-					'a' => array(
-						'href' => array(),
-					),
-				)
+				[
+					'a' => [
+						'href' => [],
+					],
+				]
 			);
 			?>
 			</p>

@@ -28,11 +28,11 @@ add_action( 'after_setup_theme', function(){
 		'primary-navigation',
 		__( 'Primary Menu', TRANSLATED_TEXT_DOMAIN )
 	);
-	$args = array(
+	$args = [
 		'css_version' => false,
 		'js_version' => time(),
 		'theme_path' => \Leean\THEME_URL,
-	);
+	];
 	$assets = new Assets( $args );
 	$assets->load();
 });

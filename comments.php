@@ -39,9 +39,9 @@ if ( post_password_required() ) {
 				number_format_i18n( get_comments_number() ),
 				'<span>' . get_the_title() . '</span>'
 			);
-			$allowed = array(
-				'span' => array(),
-			);
+			$allowed = [
+				'span' => [],
+			];
 			echo wp_kses( $message, $allowed );
 			?>
 		</h2>
@@ -69,7 +69,7 @@ if ( post_password_required() ) {
 		<?php endif; ?>
 
 		<ol class="comment__list">
-		<?php wp_list_comments( array( 'callback' => '\Leean\Inc\Helpers\Comment' ) ); ?>
+		<?php wp_list_comments( [ 'callback' => '\Leean\Inc\Helpers\Comment' ] ); ?>
 		</ol>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
