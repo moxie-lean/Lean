@@ -16,13 +16,13 @@ get_header();
 			<section class="error-404 not-found">
 				<header>
 					<h1>
-						<?php esc_html_e( 'Oops! That page can&rsquo;t be found.', TRANSLATED_TEXT_DOMAIN ); ?>
+						<?php esc_html_e( 'Oops! That page can&rsquo;t be found.', _TEXT_DOMAIN_ ); ?>
 					</h1>
 				</header>
 
 				<div class="page__content">
 					<p>
-						<?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', TRANSLATED_TEXT_DOMAIN ); ?>
+						<?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', _TEXT_DOMAIN_ ); ?>
 					</p>
 
 					<?php
@@ -33,7 +33,7 @@ get_header();
 					<?php if ( Helpers\categorized_blog() ) : ?>
 					<div class="widget widget_categories">
 						<h2 class="widgettitle">
-							<?php esc_html_e( 'Most Used Categories', TRANSLATED_TEXT_DOMAIN ); ?>
+							<?php esc_html_e( 'Most Used Categories', _TEXT_DOMAIN_ ); ?>
 						</h2>
 						<ul>
 						<?php
@@ -53,7 +53,7 @@ get_header();
 					/* translators: %1$s: smiley */
 					$archive_content = '<p>'
 						. sprintf(
-							__( 'Try looking in the monthly archives. %1$s', TRANSLATED_TEXT_DOMAIN ),
+							__( 'Try looking in the monthly archives. %1$s', _TEXT_DOMAIN_ ),
 							convert_smilies( ':)' )
 						)
 						. '</p>';

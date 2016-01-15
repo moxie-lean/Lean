@@ -21,7 +21,7 @@
 		<aside id="archives" class="widget">
 
 			<h4 class="widget___title">
-				<?php esc_html_e( 'Archives', TRANSLATED_TEXT_DOMAIN ); ?>
+				<?php esc_html_e( 'Archives', _TEXT_DOMAIN_ ); ?>
 			</h4>
 
 			<ul>
@@ -33,7 +33,7 @@
 		<aside id="meta" class="widget">
 
 			<h4 class="widget___title">
-				<?php esc_html_e( 'Meta', TRANSLATED_TEXT_DOMAIN ); ?>
+				<?php esc_html_e( 'Meta', _TEXT_DOMAIN_ ); ?>
 			</h4>
 
 			<ul>

@@ -14,7 +14,7 @@
 				<a href="http://wordpress.org/" rel="generator">
 				<?php
 				printf(
-					esc_html_e( 'Proudly powered by', TRANSLATED_TEXT_DOMAIN )
+					esc_html_e( 'Proudly powered by', _TEXT_DOMAIN_ )
 				); ?>
 				<span class="genericon genericon-wordpress"></span> Wordpress
 				</a>

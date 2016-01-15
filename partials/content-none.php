@@ -13,7 +13,7 @@
 <section class="no-results not-found">
 	<header>
 		<h1>
-			<?php esc_html_e( 'Nothing Found', TRANSLATED_TEXT_DOMAIN ); ?>
+			<?php esc_html_e( 'Nothing Found', _TEXT_DOMAIN_ ); ?>
 		</h1>
 	</header>
 	<div class="page__content">
@@ -24,7 +24,7 @@
 				sprintf(
 					esc_html__(
 						'Ready to publish your first post? <a href="%1$s">Get started here</a>.',
-						TRANSLATED_TEXT_DOMAIN
+						_TEXT_DOMAIN_
 					),
 					esc_url( admin_url( 'post-new.php' ) )
 				),
@@ -43,7 +43,7 @@
 			<?php
 			esc_html_e(
 				'Sorry, but nothing matched your search terms. Please try again with some different keywords.',
-				TRANSLATED_TEXT_DOMAIN
+				_TEXT_DOMAIN_
 			);
 			?>
 			</p>
@@ -55,7 +55,7 @@
 			<?php
 			esc_html_e(
 				'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.',
-				TRANSLATED_TEXT_DOMAIN
+				_TEXT_DOMAIN_
 			);
 			?>
 			</p>

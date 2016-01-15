@@ -23,7 +23,7 @@ get_header();
 				<?php $option_description = term_description(); ?>
 				<?php if ( ! empty( $option_description ) ) : ?>
 					<div class="taxonomy-description">
-						<?php esc_html_e( $option_description, TRANSLATED_TEXT_DOMAIN ) ?>
+						<?php esc_html_e( $option_description, _TEXT_DOMAIN_ ) ?>
 					</div>
 				<?php endif; ?>
 			</header>
