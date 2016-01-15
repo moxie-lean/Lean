@@ -26,17 +26,13 @@
       "wp-coding-standards/wpcs": "dev-master"
     },
     "scripts": {
-      "post-install-cmd": [
+      "setup-code-sniffer": [
         "./vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs/",
         "./vendor/bin/phpcs --config-set default_standard ./codesniffer.ruleset.xml",
         "./vendor/bin/phpcs --config-set show_progress 0",
         "./vendor/bin/phpcs --config-set colors 1"
       ],
-      "post-update-cmd": [
-        "./vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs/",
-        "./vendor/bin/phpcs --config-set default_standard ./codesniffer.ruleset.xml",
-        "./vendor/bin/phpcs --config-set show_progress 0",
-        "./vendor/bin/phpcs --config-set colors 1"
-      ]
+      "post-install-cmd": [ "@setup-code-sniffer" ],
+      "post-update-cmd": [ "@setup-code-sniffer" ]
     }
 }
