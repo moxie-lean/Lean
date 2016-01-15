@@ -1,20 +1,20 @@
-<?php namespace Leean;
+<?php namespace Leean\Config;
 
 /**
  * Load theme dependencies.
  * @package Leean
  * @since 1.0.0
  */
-function load_dependencies() {
+add_action( '_lean_after_setup', function() {
 	/*
 	 * Require of the autoloading of composer.
 	 */
-	require COMPOSER . '/autoload.php';
+	require _COMPOSER_PATH_ . '/autoload.php';
 
 	/*
 	 * Custom template tags for this theme.
 	 */
-	require INC . '/helpers/loader.php';
-	require INC . '/helpers/template-tags.php';
-	require INC . '/helpers/comment.php';
-}
+	require _INC_PATH_ . '/helpers/loader.php';
+	require _INC_PATH_ . '/helpers/template-tags.php';
+	require _INC_PATH_ . '/helpers/comment.php';
+});
