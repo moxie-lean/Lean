@@ -13,19 +13,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/moxie-leean/theme-assets.git",
-                "reference": "d56c773d20f7be2b7f69a8efd33f10bc770d3dfe"
+                "reference": "4af9a0cf9ac41d6126cf0d748414956a9e521c82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/moxie-leean/theme-assets/zipball/d56c773d20f7be2b7f69a8efd33f10bc770d3dfe",
-                "reference": "d56c773d20f7be2b7f69a8efd33f10bc770d3dfe",
+                "url": "https://api.github.com/repos/moxie-leean/theme-assets/zipball/4af9a0cf9ac41d6126cf0d748414956a9e521c82",
+                "reference": "4af9a0cf9ac41d6126cf0d748414956a9e521c82",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5"
+                "php": ">=5.3"
             },
             "require-dev": {
-                "phpdocumentor/phpdocumentor": "2.*",
                 "squizlabs/php_codesniffer": "2.*",
                 "wp-coding-standards/wpcs": "dev-master"
             },
@@ -53,7 +52,7 @@
                 "scripts",
                 "wordpress"
             ],
-            "time": "2016-01-07 04:58:20"
+            "time": "2016-01-15 11:50:28"
         }
     ],
     "packages-dev": [
