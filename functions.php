@@ -9,29 +9,30 @@
  */
 
 use Leean\Inc\Helpers;
+use Leean\Config;
 use Moxie\Assets;
 
 add_action( 'after_setup_theme', function(){
 	include 'config.php';
-	Leean\load_dependencies();
+	do_action( '_lean_after_setup' );
 	// Make theme available for translation.
-	load_theme_textdomain( TRANSLATED_TEXT_DOMAIN , \Leean\THEME_PATH . '/config/languages' );
+	load_theme_textdomain( _TEXT_DOMAIN_ , _THEME_PATH_ . '/config/languages' );
 	add_theme_support( 'post-thumbnails' );
 	// Add Editor Style for adequate styling in text editor.
-	if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) {
-		add_editor_style( \Leean\EDITOR_STYLESHEET_UNMINIFIED );
+	if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+		add_editor_style( _THEME_PATH_ . '/assets/css/style.css' );
 	} else {
-		add_editor_style( \Leean\EDITOR_STYLESHEET );
+		add_editor_style( _THEME_PATH_ . '/assets/css/style-min.css' );
 	}
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menu(
 		'primary-navigation',
-		__( 'Primary Menu', TRANSLATED_TEXT_DOMAIN )
+		__( 'Primary Menu', _TEXT_DOMAIN_ )
 	);
 	$args = [
 		'css_version' => false,
 		'js_version' => time(),
-		'theme_path' => \Leean\THEME_URL,
+		'theme_path' => _THEME_URL_,
 	];
 	$assets = new Assets( $args );
 	$assets->load();
