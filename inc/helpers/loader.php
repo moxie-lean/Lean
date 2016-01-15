@@ -18,7 +18,7 @@
  * @param string $file_name The name of the file to load.
  * @param array  $args Extra variables to pass to the partial.
  */
-function load_partial( $file_name = '', $args = array() ) {
+function load_partial( $file_name = '', $args = [] ) {
 	$path = '/partials/' . $file_name;
 	load_template_part( $path, $args );
 }
@@ -32,14 +32,14 @@ function load_partial( $file_name = '', $args = array() ) {
  * @param string $file_name The name of the file to load.
  * @param array  $args Extra variables to pass to the template.
  */
-function load_template_part( $file_name = '', $args = array() ) {
+function load_template_part( $file_name = '', $args = [] ) {
 	$path = \Leean\THEME_PATH . $file_name . '.php';
 
 	if ( ! file_exists( $path ) ) {
 		$message = sprintf( '<code>%s</code> does not exist.', $path );
-		$allowed_html = array(
-			'code' => array(),
-		);
+		$allowed_html = [
+			'code' => [],
+		];
 		_doing_it_wrong( __FUNCTION__, wp_kses( $message, $allowed_html ), '4.3.1' );
 		return;
 	}

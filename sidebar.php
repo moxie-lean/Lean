@@ -5,12 +5,10 @@
  * @package Leean
  */
 
-tha_sidebars_before();
 ?>
 
 <div id="secondary" role="complementary">
 
-	<?php tha_sidebar_top(); ?>
 
 	<?php do_action( 'before_sidebar' ); ?>
 
@@ -27,7 +25,7 @@ tha_sidebars_before();
 			</h4>
 
 			<ul>
-				<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
+				<?php wp_get_archives( [ 'type' => 'monthly' ] ); ?>
 			</ul>
 
 		</aside>
@@ -48,8 +46,4 @@ tha_sidebars_before();
 
 <?php endif; ?>
 
-<?php tha_sidebar_bottom(); ?>
-
 </div>
-
-<?php tha_sidebars_after(); ?>

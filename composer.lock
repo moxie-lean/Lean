@@ -4,40 +4,55 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2533b6db8cbe778e71b4ca027d78292c",
-    "content-hash": "e57a23788d3f932e3301e8bc32896e43",
+    "hash": "9c0339b9fe6e9cd3c041b6098f859a02",
+    "content-hash": "33a156ccf5da48db9a767623a74c5761",
     "packages": [
         {
-            "name": "zamoose/themehookalliance",
+            "name": "moxie-leean/theme-assets",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/zamoose/themehookalliance.git",
-                "reference": "969c949df8c0a9740f27b88755d053762be5d283"
+                "url": "https://github.com/moxie-leean/theme-assets.git",
+                "reference": "4af9a0cf9ac41d6126cf0d748414956a9e521c82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zamoose/themehookalliance/zipball/969c949df8c0a9740f27b88755d053762be5d283",
-                "reference": "969c949df8c0a9740f27b88755d053762be5d283",
+                "url": "https://api.github.com/repos/moxie-leean/theme-assets/zipball/4af9a0cf9ac41d6126cf0d748414956a9e521c82",
+                "reference": "4af9a0cf9ac41d6126cf0d748414956a9e521c82",
                 "shasum": ""
             },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "2.*",
+                "wp-coding-standards/wpcs": "dev-master"
+            },
             "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Moxie\\": "src/"
+                }
+            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GPL-2.0+"
+                "MIT"
             ],
             "authors": [
                 {
-                    "name": "Doug Stewart",
-                    "homepage": "http://literalbarrage.org"
+                    "name": "Crisoforo Gaspar Hernandez",
+                    "email": "github@crisoforo.com"
                 }
             ],
-            "description": "Theme Hook Alliance",
-            "homepage": "https://github.com/zamoose/themehookalliance",
+            "description": "Loader for theme assets and some extra utilities related with loader of the assets.",
+            "homepage": "https://github.com/moxie-leean/theme-assets",
             "keywords": [
+                "assets",
+                "css",
+                "scripts",
                 "wordpress"
             ],
-            "time": "2015-08-05 03:42:29"
+            "time": "2016-01-15 11:50:28"
         }
     ],
     "packages-dev": [
@@ -158,7 +173,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "zamoose/themehookalliance": 20,
+        "moxie-leean/theme-assets": 20,
         "wp-coding-standards/wpcs": 20
     },
     "prefer-stable": false,

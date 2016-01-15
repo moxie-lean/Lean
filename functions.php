@@ -9,6 +9,7 @@
  */
 
 use Leean\Inc\Helpers;
+use Moxie\Assets;
 
 add_action( 'after_setup_theme', function(){
 	include 'config.php';
@@ -16,8 +17,6 @@ add_action( 'after_setup_theme', function(){
 	// Make theme available for translation.
 	load_theme_textdomain( TRANSLATED_TEXT_DOMAIN , \Leean\THEME_PATH . '/config/languages' );
 	add_theme_support( 'post-thumbnails' );
-	// Add support for all the hooks from tha_hooks.
-	add_theme_support( 'tha_hooks', array( 'all' ) );
 	// Add Editor Style for adequate styling in text editor.
 	if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) {
 		add_editor_style( \Leean\EDITOR_STYLESHEET_UNMINIFIED );
@@ -29,11 +28,11 @@ add_action( 'after_setup_theme', function(){
 		'primary-navigation',
 		__( 'Primary Menu', TRANSLATED_TEXT_DOMAIN )
 	);
-	$args = array(
+	$args = [
 		'css_version' => false,
 		'js_version' => time(),
 		'theme_path' => \Leean\THEME_URL,
-	);
-	$assets = new \Leean\Inc\Assets( $args );
+	];
+	$assets = new Assets( $args );
 	$assets->load();
 });

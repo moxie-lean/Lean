@@ -9,10 +9,8 @@
 
 use Leean\Inc\Helpers;
 ?>
-<?php tha_entry_before(); ?>
 <article class="entry" id="post-<?php the_ID(); ?>" <?php post_class(); ?>
 	itemscope itemType="http://schema.org/BlogPosting">
-	<?php tha_entry_top(); ?>
 	<header class="entry__header">
 		<h1 class="entry__title" itemprop="name"><?php the_title(); ?></h1>
 	</header>
@@ -20,10 +18,10 @@ use Leean\Inc\Helpers;
 	<div class="entry__content" itemprop="articleBody" >
 		<?php the_content(); ?>
 		<?php
-			wp_link_pages( array(
+			wp_link_pages( [
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', TRANSLATED_TEXT_DOMAIN ),
 				'after'  => '</div>',
-			) );
+			] );
 		?>
 
 	</div>
@@ -81,13 +79,13 @@ use Leean\Inc\Helpers;
 					$tags_list,
 					get_permalink()
 				),
-				array(
-					'a' => array(
-						'href' => array(),
-						'class' => array(),
-						'rel' => array(),
-					),
-				)
+				[
+					'a' => [
+						'href' => [],
+						'class' => [],
+						'rel' => [],
+					],
+				]
 			);
 		?>
 		<?php
@@ -97,6 +95,4 @@ use Leean\Inc\Helpers;
 			);
 		?>
 	</footer>
-	<?php tha_entry_bottom(); ?>
 </article>
-<?php tha_entry_after(); ?>

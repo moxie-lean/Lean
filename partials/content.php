@@ -9,10 +9,8 @@
 
 ?>
 
-<?php tha_entry_before(); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>
 		itemscope itemType="http://schema.org/BlogPosting">
-	<?php tha_entry_top(); ?>
 	<header class="entry__header">
 
 		<h1 class="entry__title" itemprop="name">
@@ -44,10 +42,10 @@
 		?>
 
 		<?php
-			wp_link_pages( array(
+			wp_link_pages( [
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', TRANSLATED_TEXT_DOMAIN ),
 				'after'  => '</div>',
-			) );
+			] );
 		?>
 	</div>
 	<?php endif; ?>
@@ -72,6 +70,4 @@
 			);
 		?>
 	</footer>
-	<?php tha_entry_bottom(); ?>
 </article>
-<?php tha_entry_after(); ?>

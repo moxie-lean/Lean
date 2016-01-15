@@ -10,16 +10,13 @@
  */
 
 ?>
-<?php tha_entry_before(); ?>
 <section class="no-results not-found">
 	<header>
 		<h1>
 			<?php esc_html_e( 'Nothing Found', TRANSLATED_TEXT_DOMAIN ); ?>
 		</h1>
 	</header>
-	<?php tha_content_before(); ?>
 	<div class="page__content">
-		<?php tha_entry_top(); ?>
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 			<p>
 			<?php
@@ -31,11 +28,11 @@
 					),
 					esc_url( admin_url( 'post-new.php' ) )
 				),
-				array(
-					'a' => array(
-						'href' => array(),
-					),
-				)
+				[
+					'a' => [
+						'href' => [],
+					],
+				]
 			);
 			?>
 			</p>
@@ -65,8 +62,5 @@
 			<?php get_search_form(); ?>
 
 		<?php endif; ?>
-		<?php tha_entry_bottom(); ?>
 	</div>
-	<?php tha_content_after(); ?>
 </section>
-<?php tha_entry_after(); ?>
