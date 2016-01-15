@@ -3,10 +3,11 @@ sudo: false
 php:
   - 5.4
 
-before_install:
-  - composer self-update
+before_script:
+  - composer self-update -q
   - composer install
-  - composer update
+  - composer update --prefer-lowest -n
+  - composer update -n
 
 install:
  - composer install && composer update
