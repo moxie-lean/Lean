@@ -10,6 +10,7 @@ function load_dependencies() {
 	 * Require of the autoloading of composer.
 	 */
 	require COMPOSER . '/autoload.php';
+
 	/*
 	 * Custom template tags for this theme.
 	 */
