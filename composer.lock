@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "aee39a6a647ba5cc2b2e6064c68d0aa7",
-    "content-hash": "f53fe990568364d6bc13ff5eb3e2ea56",
+    "hash": "7367b5938cadc9e241ae4bc98d7f9254",
+    "content-hash": "33a156ccf5da48db9a767623a74c5761",
     "packages": [
         {
             "name": "moxie-leean/theme-assets",
@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/moxie-leean/theme-assets.git",
-                "reference": "15efde64962b3f721ea4333767145477002be358"
+                "reference": "d56c773d20f7be2b7f69a8efd33f10bc770d3dfe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/moxie-leean/theme-assets/zipball/15efde64962b3f721ea4333767145477002be358",
-                "reference": "15efde64962b3f721ea4333767145477002be358",
+                "url": "https://api.github.com/repos/moxie-leean/theme-assets/zipball/d56c773d20f7be2b7f69a8efd33f10bc770d3dfe",
+                "reference": "d56c773d20f7be2b7f69a8efd33f10bc770d3dfe",
                 "shasum": ""
             },
             "require": {
@@ -53,39 +53,7 @@
                 "scripts",
                 "wordpress"
             ],
-            "time": "2016-01-05 02:06:16"
-        },
-        {
-            "name": "zamoose/themehookalliance",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/zamoose/themehookalliance.git",
-                "reference": "969c949df8c0a9740f27b88755d053762be5d283"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/zamoose/themehookalliance/zipball/969c949df8c0a9740f27b88755d053762be5d283",
-                "reference": "969c949df8c0a9740f27b88755d053762be5d283",
-                "shasum": ""
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Doug Stewart",
-                    "homepage": "http://literalbarrage.org"
-                }
-            ],
-            "description": "Theme Hook Alliance",
-            "homepage": "https://github.com/zamoose/themehookalliance",
-            "keywords": [
-                "wordpress"
-            ],
-            "time": "2015-08-05 03:42:29"
+            "time": "2016-01-07 04:58:20"
         }
     ],
     "packages-dev": [
@@ -207,7 +175,6 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "moxie-leean/theme-assets": 20,
-        "zamoose/themehookalliance": 20,
         "wp-coding-standards/wpcs": 20
     },
     "prefer-stable": false,
