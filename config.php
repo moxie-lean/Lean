@@ -28,8 +28,16 @@ if ( ! defined( '_INC_PATH_' ) ){
 	define( '_INC_PATH_', _THEME_PATH_ . '/inc' );
 }
 
-/**
- * Dependencies from other files like external classes from a composer directory
- * or something different like a custom class to load into the project.
- */
-include _THEME_PATH_ . '/config/dependencies.php';
+add_action( '_lean_after_setup', function() {
+	/*
+	 * Require of the autoloading of composer.
+	 */
+	require _COMPOSER_PATH_ . '/autoload.php';
+
+	/*
+	 * Custom template tags for this theme.
+	 */
+	require _INC_PATH_ . '/helpers/loader.php';
+	require _INC_PATH_ . '/helpers/template-tags.php';
+	require _INC_PATH_ . '/helpers/comment.php';
+});
