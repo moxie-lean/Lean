@@ -16,7 +16,7 @@ add_action( 'after_setup_theme', function(){
 	include 'config.php';
 	do_action( '_lean_after_setup' );
 	// Make theme available for translation.
-	load_theme_textdomain( _TEXT_DOMAIN_ , _THEME_PATH_ . '/config/languages' );
+	load_theme_textdomain( _TEXT_DOMAIN_ , _THEME_PATH_ . '/languages' );
 	add_theme_support( 'post-thumbnails' );
 	// Add Editor Style for adequate styling in text editor.
 	if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
