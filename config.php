@@ -24,20 +24,8 @@ if ( ! defined( '_COMPOSER_PATH_' ) ) {
 	define( '_COMPOSER_PATH_', _THEME_PATH_ . '/vendor' );
 }
 // Lib directory.
-if ( ! defined( '_INC_PATH_' ) ){
+if ( ! defined( '_INC_PATH_' ) ) {
 	define( '_INC_PATH_', _THEME_PATH_ . '/inc' );
 }
 
-add_action( '_lean_after_setup', function() {
-	/*
-	 * Require of the autoloading of composer.
-	 */
-	require _COMPOSER_PATH_ . '/autoload.php';
-
-	/*
-	 * Custom template tags for this theme.
-	 */
-	require _INC_PATH_ . '/helpers/loader.php';
-	require _INC_PATH_ . '/helpers/template-tags.php';
-	require _INC_PATH_ . '/helpers/comment.php';
-});
+require _COMPOSER_PATH_ . '/autoload.php';
