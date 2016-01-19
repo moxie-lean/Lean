@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "60c5243d4e42728636ca0cc2dfbccb59",
-    "content-hash": "33a156ccf5da48db9a767623a74c5761",
+    "hash": "5e1566ea6efb5eeae9502b8d8a1ec627",
+    "content-hash": "6e9ff43805cc68cb13d53c3408f0dde6",
     "packages": [
         {
             "name": "moxie-leean/theme-assets",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/moxie-leean/theme-assets.git",
-                "reference": "4af9a0cf9ac41d6126cf0d748414956a9e521c82"
+                "url": "https://github.com/moxie-leean/assets.git",
+                "reference": "a10b58c46ba83ae5cc0ccfa277395aa48ee3bfc5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/moxie-leean/theme-assets/zipball/4af9a0cf9ac41d6126cf0d748414956a9e521c82",
-                "reference": "4af9a0cf9ac41d6126cf0d748414956a9e521c82",
+                "url": "https://api.github.com/repos/moxie-leean/assets/zipball/a10b58c46ba83ae5cc0ccfa277395aa48ee3bfc5",
+                "reference": "a10b58c46ba83ae5cc0ccfa277395aa48ee3bfc5",
                 "shasum": ""
             },
             "require": {
@@ -31,7 +31,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Moxie\\": "src/"
+                    "Leean\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -45,14 +45,14 @@
                 }
             ],
             "description": "Loader for theme assets and some extra utilities related with loader of the assets.",
-            "homepage": "https://github.com/moxie-leean/theme-assets",
+            "homepage": "https://github.com/moxie-leean/assets",
             "keywords": [
                 "assets",
                 "css",
                 "scripts",
                 "wordpress"
             ],
-            "time": "2016-01-15 11:50:28"
+            "time": "2016-01-19 03:10:00"
         }
     ],
     "packages-dev": [
@@ -178,6 +178,8 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": ">=5.4.0"
+    },
     "platform-dev": []
 }
