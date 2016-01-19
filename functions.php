@@ -10,7 +10,7 @@
 
 use Leean\Inc\Helpers;
 use Leean\Config;
-use Moxie\Assets;
+use Leean\Assets;
 
 add_action( 'after_setup_theme', function(){
 	include 'config.php';
