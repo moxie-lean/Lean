@@ -36,14 +36,14 @@
 	<div class="entry__content" itemprop="articleBody">
 		<?php
 			the_content( sprintf(
-				esc_html__( 'Continue reading%s &rarr;', TRANSLATED_TEXT_DOMAIN ),
+				esc_html__( 'Continue reading%s &rarr;', _TEXT_DOMAIN_ ),
 				'<span class="screen-reader-text">  '.get_the_title().'</span>'
 			)  );
 		?>
 
 		<?php
 			wp_link_pages( [
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', TRANSLATED_TEXT_DOMAIN ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', _TEXT_DOMAIN_ ),
 				'after'  => '</div>',
 			] );
 		?>
@@ -55,9 +55,9 @@
 		<span class="comments__link" itemprop="comment" >
 		<?php
 			comments_popup_link(
-				esc_html__( 'Leave a comment', TRANSLATED_TEXT_DOMAIN ),
-				esc_html__( '1 Comment', TRANSLATED_TEXT_DOMAIN ),
-				esc_html__( '% Comments', TRANSLATED_TEXT_DOMAIN )
+				esc_html__( 'Leave a comment', _TEXT_DOMAIN_ ),
+				esc_html__( '1 Comment', _TEXT_DOMAIN_ ),
+				esc_html__( '% Comments', _TEXT_DOMAIN_ )
 			);
 		?>
 		</span>
@@ -65,7 +65,7 @@
 
 		- <?php
 			edit_post_link(
-				esc_html__( 'Edit', TRANSLATED_TEXT_DOMAIN ),
+				esc_html__( 'Edit', _TEXT_DOMAIN_ ),
 				'<span class="edit-link">', '</span>'
 			);
 		?>

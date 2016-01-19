@@ -27,7 +27,7 @@ function pagination() {
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
 		<h4 class="screen-reader-text">
-		<?php __( 'Posts navigation', TRANSLATED_TEXT_DOMAIN ); ?>
+		<?php __( 'Posts navigation', _TEXT_DOMAIN_ ); ?>
 		</h4>
 		<div class="nav-links">
 
@@ -37,7 +37,7 @@ function pagination() {
 				next_posts_link(
 					__(
 						'<span class="meta-nav prev">&larr;</span> Older posts',
-						TRANSLATED_TEXT_DOMAIN
+						_TEXT_DOMAIN_
 					)
 				);
 			?>
@@ -50,7 +50,7 @@ function pagination() {
 				previous_posts_link(
 					__(
 						'Newer posts <span class="meta-nav next">&rarr;</span>',
-						TRANSLATED_TEXT_DOMAIN
+						_TEXT_DOMAIN_
 					)
 				);
 			?>
@@ -78,7 +78,7 @@ function post_nav() {
 	?>
 	<nav class="navigation post-navigation" role="navigation">
 		<h3 class="screen-reader-text">
-		<?php __( 'Post navigation', TRANSLATED_TEXT_DOMAIN ); ?>
+		<?php __( 'Post navigation', _TEXT_DOMAIN_ ); ?>
 		</h3>
 		<div class="nav-links">
 
@@ -86,7 +86,7 @@ function post_nav() {
 			previous_post_link(
 				'%link',
 				wp_kses(
-					_x( '<span class="meta-nav prev">&larr;</span> %title', 'Previous post link', TRANSLATED_TEXT_DOMAIN ),
+					_x( '<span class="meta-nav prev">&larr;</span> %title', 'Previous post link', _TEXT_DOMAIN_ ),
 					[
 						'span' => [
 							'class' => [],
@@ -99,7 +99,7 @@ function post_nav() {
 			next_post_link(
 				'%link',
 				wp_kses(
-					_x( '%title <span class="meta-nav next">&rarr;</span>', 'Next post link', TRANSLATED_TEXT_DOMAIN ),
+					_x( '%title <span class="meta-nav next">&rarr;</span>', 'Next post link', _TEXT_DOMAIN_ ),
 					[
 						'span' => [
 							'class' => [],

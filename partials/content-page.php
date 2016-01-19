@@ -24,13 +24,13 @@
 		<?php
 		if ( function_exists( 'the_post_navigation' ) ) :
 				the_post_navigation( [
-					'prev_text'	=> esc_html__( '&larr; Previous Page', TRANSLATED_TEXT_DOMAIN ),
-					'next_text'	=> esc_html__( 'Next Page &rarr;', TRANSLATED_TEXT_DOMAIN ),
-					'screen_reader_text' => esc_html__( 'Page navigation', TRANSLATED_TEXT_DOMAIN ),
+					'prev_text'	=> esc_html__( '&larr; Previous Page', _TEXT_DOMAIN_ ),
+					'next_text'	=> esc_html__( 'Next Page &rarr;', _TEXT_DOMAIN_ ),
+					'screen_reader_text' => esc_html__( 'Page navigation', _TEXT_DOMAIN_ ),
 				]);
 		else :
 			wp_link_pages( [
-				'before' => '<div class="page__links">' . esc_html__( 'Pages:', TRANSLATED_TEXT_DOMAIN ),
+				'before' => '<div class="page__links">' . esc_html__( 'Pages:', _TEXT_DOMAIN_ ),
 				'after'  => '</div>',
 			]);
 		endif;
@@ -38,7 +38,7 @@
 	</div>
 	<?php
 		edit_post_link(
-			esc_html__( 'Edit', TRANSLATED_TEXT_DOMAIN ),
+			esc_html__( 'Edit', _TEXT_DOMAIN_ ),
 			'<span class="edit__link">', '</span>'
 		);
 	?>

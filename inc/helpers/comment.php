@@ -14,9 +14,9 @@ function comment( $comment, $args, $depth ) {
 
 	<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
 		<div class="comment-body">
-			<?php esc_html_e( 'Pingback:', TRANSLATED_TEXT_DOMAIN ); ?>
+			<?php esc_html_e( 'Pingback:', _TEXT_DOMAIN_ ); ?>
 			<?php comment_author_link(); ?>
-			<?php edit_comment_link( __( 'Edit', TRANSLATED_TEXT_DOMAIN ), '<span class="edit-link">', '</span>' ); ?>
+			<?php edit_comment_link( __( 'Edit', _TEXT_DOMAIN_ ), '<span class="edit-link">', '</span>' ); ?>
 		</div>
 
 	<?php else : ?>
@@ -30,7 +30,7 @@ function comment( $comment, $args, $depth ) {
 					echo get_avatar( $comment, $args['avatar_size'] );
 				}
 				$message = sprintf(
-					__( '%s <span class="says">says:</span>', TRANSLATED_TEXT_DOMAIN ),
+					__( '%s <span class="says">says:</span>', _TEXT_DOMAIN_ ),
 					sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() )
 				);
 				$allowed = [
@@ -55,7 +55,7 @@ function comment( $comment, $args, $depth ) {
 						<time datetime="<?php comment_time( 'c' ); ?>">
 							<?php
 							$message = sprintf(
-								_x( '%1$s at %2$s', '1: date, 2: time', TRANSLATED_TEXT_DOMAIN ),
+								_x( '%1$s at %2$s', '1: date, 2: time', _TEXT_DOMAIN_ ),
 								get_comment_date(),
 								get_comment_time()
 							);
@@ -63,12 +63,12 @@ function comment( $comment, $args, $depth ) {
 							?>
 						</time>
 					</a>
-					<?php edit_comment_link( __( 'Edit', TRANSLATED_TEXT_DOMAIN ), '<span class="edit-link">', '</span>' ); ?>
+					<?php edit_comment_link( __( 'Edit', _TEXT_DOMAIN_ ), '<span class="edit-link">', '</span>' ); ?>
 				</div>
 
 				<?php if ( 0 === absint( $comment->comment_approved ) ) : ?>
 				<p class="comment-awaiting-moderation">
-					<?php esc_html_e( 'Your comment is awaiting moderation.', TRANSLATED_TEXT_DOMAIN ); ?>
+					<?php esc_html_e( 'Your comment is awaiting moderation.', _TEXT_DOMAIN_ ); ?>
 				</p>
 				<?php endif; ?>
 			</footer>

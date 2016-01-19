@@ -9,7 +9,7 @@
 
 add_action( 'widgets_init', function(){
 	register_sidebar( [
-		'name' => __( 'Sidebar', TRANSLATED_TEXT_DOMAIN ),
+		'name' => __( 'Sidebar', _TEXT_DOMAIN_ ),
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',

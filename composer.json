@@ -5,9 +5,6 @@
     "homepage": "https://github.com/moxie-leean/Leean",
     "licence": "MIT",
     "type": "project",
-    "require": {
-      "php": ">=5.4.0"
-    },
     "authors": [
       {
         "name": "Moxie Developer",
@@ -18,7 +15,15 @@
         "email": "github@crisoforo.com"
       }
     ],
+    "autoload": {
+      "files": [
+        "inc/helpers/loader.php",
+        "inc/helpers/template-tags.php",
+        "inc/helpers/comment.php"
+      ]
+    },
     "require": {
+      "php": ">=5.4.0",
       "moxie-leean/theme-assets": "dev-master"
     },
     "require-dev": {

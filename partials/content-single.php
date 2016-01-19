@@ -19,7 +19,7 @@ use Leean\Inc\Helpers;
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( [
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', TRANSLATED_TEXT_DOMAIN ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', _TEXT_DOMAIN_ ),
 				'after'  => '</div>',
 			] );
 		?>
@@ -31,12 +31,12 @@ use Leean\Inc\Helpers;
 			/**
 			 * Translators: used between list items, there is a space after the comma
 			 * */
-			$categories_list = get_the_category_list( esc_html_e( ', ', TRANSLATED_TEXT_DOMAIN ) );
+			$categories_list = get_the_category_list( esc_html_e( ', ', _TEXT_DOMAIN_ ) );
 
 			/**
 			 * Translators: used between list items, there is a space after the comma
 			 * */
-			$tags_list = get_the_tag_list( '', esc_html_e( ', ', TRANSLATED_TEXT_DOMAIN ) );
+			$tags_list = get_the_tag_list( '', esc_html_e( ', ', _TEXT_DOMAIN_ ) );
 
 			if ( ! Helpers\categorized_blog() ) {
 				/**
@@ -46,12 +46,12 @@ use Leean\Inc\Helpers;
 				if ( ! empty( $tags_list ) ) {
 					$meta_text = esc_html__(
 						'This entry was tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.',
-						TRANSLATED_TEXT_DOMAIN
+						_TEXT_DOMAIN_
 					);
 				} else {
 					$meta_text = esc_html__(
 						'Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.',
-						TRANSLATED_TEXT_DOMAIN
+						_TEXT_DOMAIN_
 					);
 				}
 			} else {
@@ -62,12 +62,12 @@ use Leean\Inc\Helpers;
 				if ( ! empty( $tags_list )  ) {
 					$meta_text = __(
 						'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.',
-						TRANSLATED_TEXT_DOMAIN
+						_TEXT_DOMAIN_
 					);
 				} else {
 					$meta_text = __(
 						'This entry was posted in %1$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.',
-						TRANSLATED_TEXT_DOMAIN
+						_TEXT_DOMAIN_
 					);
 				}
 			}
@@ -90,7 +90,7 @@ use Leean\Inc\Helpers;
 		?>
 		<?php
 			edit_post_link(
-				esc_html__( 'Edit', TRANSLATED_TEXT_DOMAIN ),
+				esc_html__( 'Edit', _TEXT_DOMAIN_ ),
 				'<span class="edit-link">', '</span>'
 			);
 		?>

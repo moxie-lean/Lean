@@ -34,7 +34,7 @@ if ( post_password_required() ) {
 					'%1$s thoughts on &ldquo;%2$s&rdquo;',
 					get_comments_number(),
 					'comments title',
-					TRANSLATED_TEXT_DOMAIN
+					_TEXT_DOMAIN_
 				),
 				number_format_i18n( get_comments_number() ),
 				'<span>' . get_the_title() . '</span>'
@@ -49,19 +49,19 @@ if ( post_password_required() ) {
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 		<nav id="comment__nav-above" class="comment__navigation" role="navigation">
 			<h1 class="screen-reader-text">
-				<?php esc_html_e( 'Comment navigation', TRANSLATED_TEXT_DOMAIN ); ?>
+				<?php esc_html_e( 'Comment navigation', _TEXT_DOMAIN_ ); ?>
 			</h1>
 			<div class="nav__previous">
 				<?php
 				previous_comments_link(
-					esc_html_e( '&larr; Older Comments', TRANSLATED_TEXT_DOMAIN )
+					esc_html_e( '&larr; Older Comments', _TEXT_DOMAIN_ )
 				);
 				?>
 			</div>
 			<div class="nav__next">
 				<?php
 				next_comments_link(
-					esc_html_e( 'Newer Comments &rarr;', TRANSLATED_TEXT_DOMAIN )
+					esc_html_e( 'Newer Comments &rarr;', _TEXT_DOMAIN_ )
 				);
 				?>
 			</div>
@@ -75,19 +75,19 @@ if ( post_password_required() ) {
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 		<nav id="comment__nav-below" class="comment__navigation" role="navigation">
 			<h1 class="screen-reader-text">
-				<?php esc_html_e( 'Comment navigation', TRANSLATED_TEXT_DOMAIN ); ?>
+				<?php esc_html_e( 'Comment navigation', _TEXT_DOMAIN_ ); ?>
 			</h1>
 			<div class="nav__previous">
 				<?php
 				previous_comments_link(
-					esc_html_e( '&larr; Older Comments', TRANSLATED_TEXT_DOMAIN )
+					esc_html_e( '&larr; Older Comments', _TEXT_DOMAIN_ )
 				);
 				?>
 			</div>
 			<div class="nav__next">
 				<?php
 				next_comments_link(
-					esc_html_e( 'Newer Comments &rarr;', TRANSLATED_TEXT_DOMAIN )
+					esc_html_e( 'Newer Comments &rarr;', _TEXT_DOMAIN_ )
 				);
 				?>
 			</div>
@@ -104,7 +104,7 @@ if ( post_password_required() ) {
 	) :
 	?>
 		<p class="no-comments">
-			<?php esc_html_e( 'Comments are closed.', TRANSLATED_TEXT_DOMAIN ); ?>
+			<?php esc_html_e( 'Comments are closed.', _TEXT_DOMAIN_ ); ?>
 		</p>
 	<?php endif; ?>
 
