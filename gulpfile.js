@@ -6,7 +6,6 @@ var gulp = require('gulp');
 var autoprefixer = require('gulp-autoprefixer');
 var cssnano = require('gulp-cssnano');
 var browserify = require('browserify');
-var watchify = require('watchify');
 var eslint = require('gulp-eslint');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
@@ -18,6 +17,7 @@ var buffer = require('vinyl-buffer');
 var phpcs = require('gulp-phpcs');
 var sass = require('gulp-sass');
 var gutil = require('gulp-util');
+var assign = require('lodash.assign');
 /******************************************************************************
 | >   PROJECT VARIABLES
 ******************************************************************************/
@@ -135,18 +135,16 @@ gulp.task('browserify', function(){
 var mainJS = sourcePath + 'js/app/main.js';
 
 function browserified( opts ){
-  var opts = opts || {};
-  return browserify( mainJS, opts)
+  var options = assign({}, opts);
+  return browserify(mainJS, options);
   .bundle()
   .on('error', gutil.log.bind(gutil, 'Browserify Error'))
-  .pipe(source( opts.output ))
-  .pipe(gulp.dest( sourcePath + '/js'))
+  .pipe(source( options.output ))
+  .pipe(gulp.dest( sourcePath + '/js'));
 };
 
 // Files to inspect in order to follow the same standard
-var jsFiles = [
-    sourcePath + 'js/app/**/*.js',
-];
+var jsFiles = [ sourcePath + 'js/app/**/*.js' ];
 
 // Tasks that are handle the lints without breaking the gulp report
 gulp.task('js:lint', ['js:cs']);
@@ -189,8 +187,8 @@ var phpOptions = {
 };
 // Lint that does not break gulp
 // Lint taks to inspect PHP files in order to follow WP Standards
- gulp.task('php:lint', function () {
- return gulp.src( phpFiles )
+gulp.task('php:lint', function () {
+  return gulp.src( phpFiles )
   .pipe(phpcs( phpOptions ))
   .pipe(phpcs.reporter('log'));
 });
