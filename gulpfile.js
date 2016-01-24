@@ -6,10 +6,8 @@ var gulp = require('gulp');
 var autoprefixer = require('gulp-autoprefixer');
 var cssnano = require('gulp-cssnano');
 var browserify = require('browserify');
-var eslint = require('gulp-eslint');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
-var concat = require('gulp-concat');
 var notify = require('gulp-notify');
 var sourcemaps = require('gulp-sourcemaps');
 var source = require('vinyl-source-stream');
@@ -75,10 +73,8 @@ gulp.task('styles:combine', function(){
   .pipe(sass().on('error', sass.logError))
   .pipe(autoprefixer(
     'last 2 version',
-    'safari 5', 'ie 8',
     'ie 9',
-    'opera 12.1',
-    'ios 6',
+    'ios 7',
     'android 4'
   ))
   .pipe(sourcemaps.write('../maps'))
@@ -136,7 +132,7 @@ var mainJS = sourcePath + 'js/app/main.js';
 
 function browserified( opts ){
   var options = assign({}, opts);
-  return browserify(mainJS, options);
+  return browserify(mainJS, options)
   .bundle()
   .on('error', gutil.log.bind(gutil, 'Browserify Error'))
   .pipe(source( options.output ))
