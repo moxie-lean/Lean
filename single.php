@@ -19,7 +19,8 @@ get_header();
 
 		get_template_part( 'partials/content', 'single' );
 
-		Helpers\post_nav();
+		wp_link_pages();
+		the_post_navigation();
 
 		// If comments are open or we have at least one comment.
 		if ( comments_open() || 0 !== absint( get_comments_number() ) ) :

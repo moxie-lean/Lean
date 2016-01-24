@@ -27,7 +27,7 @@ get_header();
 			get_template_part( 'partials/content', get_post_format() );
 		endwhile;
 
-		Helpers\pagination();
+		the_posts_pagination();
 
 	else :
 		get_template_part( 'partials/content', 'none' );
