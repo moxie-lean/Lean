@@ -8,8 +8,8 @@
 
 get_header();
 ?>
-<div id="primary" class="entry__area">
-	<main id="main" class="site__main" role="main">
+<div class="wrap">
+	<main class="site__main" role="main">
 
 		<?php
 		while ( have_posts() ) : the_post();
@@ -22,6 +22,7 @@ get_header();
 		?>
 
 	</main>
+	<?php get_sidebar(); ?>
 </div>
 
 <?php get_footer(); ?>

@@ -6,11 +6,8 @@ var gulp = require('gulp');
 var autoprefixer = require('gulp-autoprefixer');
 var cssnano = require('gulp-cssnano');
 var browserify = require('browserify');
-var watchify = require('watchify');
-var jscs = require('gulp-jscs');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
-var concat = require('gulp-concat');
 var notify = require('gulp-notify');
 var sourcemaps = require('gulp-sourcemaps');
 var source = require('vinyl-source-stream');
@@ -18,6 +15,7 @@ var buffer = require('vinyl-buffer');
 var phpcs = require('gulp-phpcs');
 var sass = require('gulp-sass');
 var gutil = require('gulp-util');
+var assign = require('lodash.assign');
 /******************************************************************************
 | >   PROJECT VARIABLES
 ******************************************************************************/
@@ -75,10 +73,8 @@ gulp.task('styles:combine', function(){
   .pipe(sass().on('error', sass.logError))
   .pipe(autoprefixer(
     'last 2 version',
-    'safari 5', 'ie 8',
     'ie 9',
-    'opera 12.1',
-    'ios 6',
+    'ios 7',
     'android 4'
   ))
   .pipe(sourcemaps.write('../maps'))
@@ -135,18 +131,16 @@ gulp.task('browserify', function(){
 var mainJS = sourcePath + 'js/app/main.js';
 
 function browserified( opts ){
-  var opts = opts || {};
-  return browserify( mainJS, opts)
+  var options = assign({}, opts);
+  return browserify(mainJS, options)
   .bundle()
   .on('error', gutil.log.bind(gutil, 'Browserify Error'))
-  .pipe(source( opts.output ))
-  .pipe(gulp.dest( sourcePath + '/js'))
+  .pipe(source( options.output ))
+  .pipe(gulp.dest( sourcePath + '/js'));
 };
 
 // Files to inspect in order to follow the same standard
-var jsFiles = [
-    sourcePath + 'js/app/**/*.js',
-];
+var jsFiles = [ sourcePath + 'js/app/**/*.js' ];
 
 // Tasks that are handle the lints without breaking the gulp report
 gulp.task('js:lint', ['js:cs']);
@@ -154,17 +148,17 @@ gulp.task('js:lint', ['js:cs']);
 // Gulp taks to analyze the code using JS CS rules witouth breaking gulp
 gulp.task('js:cs', function() {
   return gulp.src( jsFiles )
-  .pipe(jscs())
-  .pipe(jscs.reporter())
-  .pipe( notify({ message: 'JSCS complete', onLast: true }) );
+  .pipe(eslint())
+  .pipe(eslint.format())
+  .pipe( notify({ message: 'JS Completed', onLast: true }) );
 });
 
 // Tasks for continuous integration using the JS CS rules
 gulp.task('js:cs-ci', function() {
   return gulp.src( jsFiles )
-  .pipe(jscs())
-  .pipe(jscs.reporter())
-  .pipe(jscs.reporter('fail'));
+  .pipe(eslint())
+  .pipe(eslint.format())
+  .pipe(eslint.failAfterError());
 });
 
 // Group of JS tasks for continuous integration
@@ -178,7 +172,6 @@ var phpFiles = [
   '*.php',
   'inc/**/*.php',
   'config/**/*.php',
-  'page-templates/**/*.php',
   'partials/**/*.php'
 ];
 
@@ -190,8 +183,8 @@ var phpOptions = {
 };
 // Lint that does not break gulp
 // Lint taks to inspect PHP files in order to follow WP Standards
- gulp.task('php:lint', function () {
- return gulp.src( phpFiles )
+gulp.task('php:lint', function () {
+  return gulp.src( phpFiles )
   .pipe(phpcs( phpOptions ))
   .pipe(phpcs.reporter('log'));
 });

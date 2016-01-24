@@ -6,13 +6,10 @@
  * @since 1.0.0
  */
 
-use Leean\Inc\Helpers;
-
 get_header();
 ?>
-	<div id="primary" class="entry__area">
-		<main id="main" class="site__main" role="main">
-
+	<div class="wrap">
+		<main role="main">
 			<section class="error-404 not-found">
 				<header>
 					<h1>
@@ -26,11 +23,9 @@ get_header();
 					</p>
 
 					<?php
-						get_search_form();
-						the_widget( 'WP_Widget_Recent_Posts' );
-					?>
+					get_search_form();
+					the_widget( 'WP_Widget_Recent_Posts' );
 
-					<?php
 					/* translators: %1$s: smiley */
 					$archive_content = '<p>'
 						. sprintf(

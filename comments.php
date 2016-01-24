@@ -21,7 +21,7 @@ if ( post_password_required() ) {
 <div class="clear">
 
 </div>
-<div id="comments" class="comments__area">
+<div class="comments__area">
 
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments__title">
@@ -45,7 +45,7 @@ if ( post_password_required() ) {
 		</h2>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-		<nav id="comment__nav-above" class="comment__navigation" role="navigation">
+		<nav class="comment__navigation" role="navigation">
 			<h1 class="screen-reader-text">
 				<?php esc_html_e( 'Comment navigation', _TEXT_DOMAIN_ ); ?>
 			</h1>
@@ -71,7 +71,7 @@ if ( post_password_required() ) {
 		</ol>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-		<nav id="comment__nav-below" class="comment__navigation" role="navigation">
+		<nav class="comment__navigation" role="navigation">
 			<h1 class="screen-reader-text">
 				<?php esc_html_e( 'Comment navigation', _TEXT_DOMAIN_ ); ?>
 			</h1>

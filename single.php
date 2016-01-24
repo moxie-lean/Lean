@@ -6,14 +6,11 @@
  * @since 1.0.0
  */
 
-use Leean\Inc\Helpers as Helpers;
-
 get_header();
 ?>
 
-<div id="primary" class="entry__area">
-	<main id="main" class="site__main" role="main">
-
+<div class="wrap">
+	<main class="site__main" role="main">
 	<?php
 	while ( have_posts() ) : the_post();
 
@@ -30,6 +27,7 @@ get_header();
 	endwhile;
 	?>
 	</main>
+	<?php get_sidebar(); ?>
 </div>
 
 <?php get_footer(); ?>

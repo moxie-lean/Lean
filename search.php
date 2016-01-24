@@ -6,12 +6,10 @@
  * @since 1.0.0
  */
 
-use Leean\Inc\Helpers;
-
 get_header();
 ?>
-<section id="primary" class="entry__area">
-	<main id="main" class="site__main" role="main">
+<section class="wrap">
+	<main class="site__main" role="main">
 
 	<?php if ( have_posts() ) : ?>
 
@@ -37,5 +35,6 @@ get_header();
 	endif;
 	?>
 	</main>
+	<?php get_sidebar(); ?>
 </section>
 <?php get_footer(); ?>

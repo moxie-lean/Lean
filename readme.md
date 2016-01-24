@@ -53,12 +53,8 @@ process.
 |  |- css/ ---------------------> Generated files after gulp compilation
 |  |- maps/ --------------------> Generated source maps for sass and js
 |  |- sass/ --------------------> Sass files
-|- config/ ---------------------> Configuration files
-|  |- languages/ ---------------> Translations
-|  |- constans.php -------------> Constant of the project
-|  |- dependencies.php ---------> File to load other php files in the theme
+|- languages/ ------------------> Translations
 |- inc/ ------------------------> PHP files or custom ones.
-|- page-templates/ -------------> Custom page templates.
 |- partials/ -------------------> Repeated views than can be reusable.
 ```
 

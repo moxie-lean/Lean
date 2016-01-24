@@ -1,0 +1,22 @@
+.primary__navigation {
+  margin-bottom: 50px;
+
+  .menu{
+    ul {
+      list-style: none;
+      margin: 20px 0;
+      padding-left: 0;
+      text-align: center;
+    }
+
+    li {
+      display: inline-block;
+      margin: 5px 15px 10px 15px;
+      line-height: 150%;
+    }
+
+    .children{
+      display: none;
+    }
+  }
+}

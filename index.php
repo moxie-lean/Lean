@@ -7,13 +7,10 @@
  * @since 1.0.0
  */
 
-use Leean\Inc\Helpers;
-
 get_header();
 ?>
-<div id="primary" class="entry__area">
-	<main id="main" class="site__main" role="main">
-
+<div class="wrap">
+	<main class="site__main" role="main">
 	<?php
 	if ( have_posts() ) :
 
@@ -33,8 +30,7 @@ get_header();
 		get_template_part( 'partials/content', 'none' );
 	endif;
 	?>
-
 	</main>
+	<?php get_sidebar(); ?>
 </div>
-
 <?php get_footer(); ?>
