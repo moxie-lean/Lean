@@ -8,7 +8,7 @@
 
 ?>
 
-	<footer id="colophon" class="footer" role="contentinfo"
+	<footer class="footer" role="contentinfo"
 		itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 		<div class="footer__info">
 			<a href="http://wordpress.org/" rel="generator">

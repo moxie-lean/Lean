@@ -8,8 +8,8 @@
 
 get_header();
 ?>
-<section id="primary" class="entry__area">
-	<main id="main" class="site__main" role="main">
+<section class="entry__area">
+	<main class="site__main" role="main">
 
 	<?php if ( have_posts() ) : ?>
 

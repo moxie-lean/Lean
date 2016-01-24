@@ -178,7 +178,6 @@ var phpFiles = [
   '*.php',
   'inc/**/*.php',
   'config/**/*.php',
-  'page-templates/**/*.php',
   'partials/**/*.php'
 ];
 

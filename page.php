@@ -8,8 +8,8 @@
 
 get_header();
 ?>
-<div id="primary" class="entry__area">
-	<main id="main" class="site__main" role="main">
+<div class="entry__area">
+	<main class="site__main" role="main">
 
 		<?php
 		while ( have_posts() ) : the_post();

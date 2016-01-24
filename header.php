@@ -19,10 +19,9 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
+<div class="hfeed site">
 	<div class="wrap">
-		<header id="masthead" class="header" role="banner"
-				itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+		<header class="header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
 			<div class="header__branding">
 				<div class="header__title">
 					<h1>

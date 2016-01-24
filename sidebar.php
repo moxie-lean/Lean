@@ -7,8 +7,7 @@
 
 ?>
 
-<div id="secondary" role="complementary">
-
+<aside role="complementary">
 
 	<?php do_action( 'before_sidebar' ); ?>
 
@@ -18,7 +17,7 @@
 			<?php get_search_form(); ?>
 		</aside>
 
-		<aside id="archives" class="widget">
+		<aside class="widget">
 
 			<h4 class="widget___title">
 				<?php esc_html_e( 'Archives', _TEXT_DOMAIN_ ); ?>
@@ -30,7 +29,7 @@
 
 		</aside>
 
-		<aside id="meta" class="widget">
+		<aside class="widget">
 
 			<h4 class="widget___title">
 				<?php esc_html_e( 'Meta', _TEXT_DOMAIN_ ); ?>
@@ -46,4 +45,4 @@
 
 <?php endif; ?>
 
-</div>
+</aside>
