@@ -30,7 +30,7 @@ get_header();
 		while ( have_posts() ) : the_post();
 			get_template_part( 'partials/content', 'search' );
 		endwhile;
-		Helpers\pagination();
+		the_posts_pagination();
 
 	else :
 		get_template_part( 'partials/content', 'none' );
