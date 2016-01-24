@@ -15,7 +15,7 @@ var buffer = require('vinyl-buffer');
 var phpcs = require('gulp-phpcs');
 var sass = require('gulp-sass');
 var gutil = require('gulp-util');
-var assign = require('lodash.assign');
+var eslint = require('gulp-eslint');
 /******************************************************************************
 | >   PROJECT VARIABLES
 ******************************************************************************/
@@ -131,7 +131,7 @@ gulp.task('browserify', function(){
 var mainJS = sourcePath + 'js/app/main.js';
 
 function browserified( opts ){
-  var options = assign({}, opts);
+  var options = opts || {};
   return browserify(mainJS, options)
   .bundle()
   .on('error', gutil.log.bind(gutil, 'Browserify Error'))
