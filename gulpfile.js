@@ -7,7 +7,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var cssnano = require('gulp-cssnano');
 var browserify = require('browserify');
 var watchify = require('watchify');
-var jscs = require('gulp-jscs');
+var eslint = require('gulp-eslint');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
@@ -154,17 +154,17 @@ gulp.task('js:lint', ['js:cs']);
 // Gulp taks to analyze the code using JS CS rules witouth breaking gulp
 gulp.task('js:cs', function() {
   return gulp.src( jsFiles )
-  .pipe(jscs())
-  .pipe(jscs.reporter())
-  .pipe( notify({ message: 'JSCS complete', onLast: true }) );
+  .pipe(eslint())
+  .pipe(eslint.format())
+  .pipe( notify({ message: 'JS Completed', onLast: true }) );
 });
 
 // Tasks for continuous integration using the JS CS rules
 gulp.task('js:cs-ci', function() {
   return gulp.src( jsFiles )
-  .pipe(jscs())
-  .pipe(jscs.reporter())
-  .pipe(jscs.reporter('fail'));
+  .pipe(eslint())
+  .pipe(eslint.format())
+  .pipe(eslint.failAfterError());
 });
 
 // Group of JS tasks for continuous integration
