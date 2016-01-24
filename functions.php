@@ -8,7 +8,6 @@
  * @since 1.0.0
  */
 
-use Leean\Inc\Helpers;
 use Leean\Config;
 use Leean\Assets;
 

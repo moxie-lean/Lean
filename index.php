@@ -7,8 +7,6 @@
  * @since 1.0.0
  */
 
-use Leean\Inc\Helpers;
-
 get_header();
 ?>
 <div id="primary" class="entry__area">
