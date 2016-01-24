@@ -7,7 +7,6 @@
  * @since 1.0.0
  */
 
-use Leean\Inc\Helpers;
 ?>
 <article class="entry" id="post-<?php the_ID(); ?>" <?php post_class(); ?>
 	itemscope itemType="http://schema.org/BlogPosting">
