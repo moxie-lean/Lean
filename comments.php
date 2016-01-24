@@ -3,9 +3,7 @@
  * The template for displaying Comments.
  *
  * The area of the page that contains both current comments
- * and the comment form. The actual display of comments is
- * handled by a callback to \Leean\Inc\Helpers\Comment() which is
- * located in the inc/helpers/comment.php file.
+ * and the comment form.
  *
  * @package Leean
  * @since 1.0.0
@@ -69,7 +67,7 @@ if ( post_password_required() ) {
 		<?php endif; ?>
 
 		<ol class="comment__list">
-		<?php wp_list_comments( [ 'callback' => '\Leean\Inc\Helpers\Comment' ] ); ?>
+			<?php wp_list_comments(); ?>
 		</ol>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>

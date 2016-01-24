@@ -18,8 +18,7 @@
     "autoload": {
       "files": [
         "inc/helpers/loader.php",
-        "inc/helpers/template-tags.php",
-        "inc/helpers/comment.php"
+        "inc/helpers/template-tags.php"
       ]
     },
     "require": {
