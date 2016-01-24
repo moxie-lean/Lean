@@ -16,6 +16,7 @@ var phpcs = require('gulp-phpcs');
 var sass = require('gulp-sass');
 var gutil = require('gulp-util');
 var assign = require('lodash.assign');
+var eslint = require('gulp-eslint');
 /******************************************************************************
 | >   PROJECT VARIABLES
 ******************************************************************************/
