@@ -8,7 +8,7 @@
 
 get_header();
 ?>
-<section class="entry__area">
+<section class="wrap">
 	<main class="site__main" role="main">
 
 	<?php if ( have_posts() ) : ?>
@@ -35,5 +35,6 @@ get_header();
 	endif;
 	?>
 	</main>
+	<?php get_sidebar(); ?>
 </section>
 <?php get_footer(); ?>

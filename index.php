@@ -9,9 +9,8 @@
 
 get_header();
 ?>
-<div class="entry__area">
+<div class="wrap">
 	<main class="site__main" role="main">
-
 	<?php
 	if ( have_posts() ) :
 
@@ -31,8 +30,7 @@ get_header();
 		get_template_part( 'partials/content', 'none' );
 	endif;
 	?>
-
 	</main>
+	<?php get_sidebar(); ?>
 </div>
-
 <?php get_footer(); ?>

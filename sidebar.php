@@ -7,7 +7,7 @@
 
 ?>
 
-<aside role="complementary">
+<aside class="sidebar" role="complementary">
 
 	<?php do_action( 'before_sidebar' ); ?>
 

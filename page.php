@@ -8,7 +8,7 @@
 
 get_header();
 ?>
-<div class="entry__area">
+<div class="wrap">
 	<main class="site__main" role="main">
 
 		<?php
@@ -22,6 +22,7 @@ get_header();
 		?>
 
 	</main>
+	<?php get_sidebar(); ?>
 </div>
 
 <?php get_footer(); ?>

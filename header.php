@@ -19,32 +19,30 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<div class="hfeed site">
-	<div class="wrap">
-		<header class="header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
-			<div class="header__branding">
-				<div class="header__title">
-					<h1>
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-							<?php bloginfo( 'name' ); ?>
-						</a>
-					</h1>
-				</div>
-				<div class="header__description">
-					<?php bloginfo( 'description' ) ?>
-				</div>
-			</div>
+<header class="header wrap" role="banner"
+	itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+	<div class="header__branding">
+		<div class="header__title">
+			<h1>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<?php bloginfo( 'name' ); ?>
+				</a>
+			</h1>
+		</div>
+		<div class="header__description">
+			<?php bloginfo( 'description' ) ?>
+		</div>
+	</div>
 
-			<nav role="navigation" itemscope="itemscope"
-				itemtype="http://schema.org/SiteNavigationElement">
-				<?php
-				$args = [
-					'theme_location' => 'primary-navigation',
-					'items_wrap' =>
-					'<ul id="%1$s" class="%2$s">%3$s</ul>',
-				];
-				wp_nav_menu( $args );
-				?>
-			</nav>
-
-		</header>
+	<nav role="navigation" itemscope="itemscope"
+		itemtype="http://schema.org/SiteNavigationElement">
+		<?php
+		$args = [
+			'theme_location' => 'primary-navigation',
+			'items_wrap' =>
+			'<ul id="%1$s" class="%2$s">%3$s</ul>',
+		];
+		wp_nav_menu( $args );
+		?>
+	</nav>
+</header>
