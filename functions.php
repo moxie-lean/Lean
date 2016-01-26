@@ -63,3 +63,8 @@ add_action( 'after_setup_theme', function(){
 	$assets = new Assets( $args );
 	$assets->load();
 });
+
+add_filter('loader_alias', function( $alias ){
+  $alias['partial'] = 'partials';
+  return $alias;
+});
