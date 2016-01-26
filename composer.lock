@@ -4,9 +4,53 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8aff6581f3d302e142dd9f30721ee1ef",
-    "content-hash": "6e9ff43805cc68cb13d53c3408f0dde6",
+    "hash": "cd9e9584eaec756b1f7846195924cc83",
+    "content-hash": "a81d7bbd9b0dc7c0088b0e5470c09bb3",
     "packages": [
+        {
+            "name": "leean/loader",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/moxie-leean/loader.git",
+                "reference": "96d0b3f73b3a907716920e143613bc608a481ea3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/moxie-leean/loader/zipball/96d0b3f73b3a907716920e143613bc608a481ea3",
+                "reference": "96d0b3f73b3a907716920e143613bc608a481ea3",
+                "shasum": ""
+            },
+            "require": {
+                "moxie-leean/theme-assets": "dev-master",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "2.*",
+                "wp-coding-standards/wpcs": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Leean\\": "src/"
+                },
+                "files": [
+                    "./src/config.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Crisoforo Gaspar",
+                    "email": "github@crisoforo.com"
+                }
+            ],
+            "description": "Loader for files in wordpress making things easier instead of using a require",
+            "time": "2016-01-26 03:10:34"
+        },
         {
             "name": "moxie-leean/theme-assets",
             "version": "dev-master",
@@ -174,6 +218,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "moxie-leean/theme-assets": 20,
+        "leean/loader": 20,
         "wp-coding-standards/wpcs": 20
     },
     "prefer-stable": false,
