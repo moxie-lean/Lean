@@ -7,6 +7,8 @@
  */
 
 get_header();
+
+use Leean\Load;
 ?>
 
 <div class="wrap">
@@ -14,7 +16,7 @@ get_header();
 	<?php
 	while ( have_posts() ) : the_post();
 
-		get_template_part( 'partials/content', 'single' );
+		Load::partial( 'content-single' );
 
 		wp_link_pages();
 		the_post_navigation();
