@@ -1,9 +1,10 @@
-const $ = require('jQuery');
+'use strict';
 
+const $ = require('jQuery');
 const constants = {
   $window: $(window),
   $body: $('body'),
-  $document: $(document),
+  $document: $(document)
 };
 
 module.exports = constants;
