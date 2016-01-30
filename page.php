@@ -7,13 +7,15 @@
  */
 
 get_header();
+
+use Leean\Load;
 ?>
 <div class="wrap">
 	<main class="site__main" role="main">
 
 		<?php
 		while ( have_posts() ) : the_post();
-			get_template_part( 'partials/content', 'page' );
+			Load::partial( 'content' );
 			// If comments are open or we have at least one comment.
 			if ( comments_open() || 0 !== intval( get_comments_number() ) ) :
 					comments_template();

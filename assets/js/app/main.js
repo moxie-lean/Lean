@@ -1,5 +1,5 @@
 'use strict';
-var $ = require('jQuery');
+const { $document } = require('./constants');
 
-$(document).ready(function() {
+$document.ready(function() {
 });

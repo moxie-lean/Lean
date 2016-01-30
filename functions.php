@@ -54,7 +54,7 @@ add_action( 'after_setup_theme', function(){
  * This actions register the assets and some configuration about the assets
  * in order to load the CSS and JS files into the theme.
  */
-add_action( 'after_setup_theme', function(){
+add_action( 'after_setup_theme', function() {
 	$args = [
 		'css_version' => false,
 		'js_version' => time(),
@@ -62,4 +62,9 @@ add_action( 'after_setup_theme', function(){
 	];
 	$assets = new Assets( $args );
 	$assets->load();
+});
+
+add_filter('loader_alias', function( $alias ) {
+	$alias['partial'] = 'partials';
+	return $alias;
 });
