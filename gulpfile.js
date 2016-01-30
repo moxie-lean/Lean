@@ -3,6 +3,7 @@
 | >   PLUGINS
 ******************************************************************************/
 var gulp = require('gulp');
+var babelify = require('babelify');
 var autoprefixer = require('gulp-autoprefixer');
 var cssnano = require('gulp-cssnano');
 var browserify = require('browserify');
@@ -88,6 +89,7 @@ gulp.task('styles:combine', function(){
 
 // Task to combine and minify the js scripts.
 gulp.task('js', ['js:combine', 'js:minify'], function() {
+  return;
   return gulp.src( sourcePath + 'js/production.js')
   .pipe( notify({
     title: 'JS completed',
@@ -133,6 +135,9 @@ var mainJS = sourcePath + 'js/app/main.js';
 function browserified( opts ){
   var options = opts || {};
   return browserify(mainJS, options)
+  .transform(babelify, {
+    presets: ['es2015']
+  })
   .bundle()
   .on('error', gutil.log.bind(gutil, 'Browserify Error'))
   .pipe(source( options.output ))
