@@ -1,8 +1,8 @@
-<?php namespace Leean;
+<?php namespace Lean;
 /**
  * The template for displaying Search Results pages.
  *
- * @package Leean
+ * @package Lean
  * @since 1.0.0
  */
 

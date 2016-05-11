@@ -1,8 +1,8 @@
-<?php namespace Leean\Inc;
+<?php namespace Lean\Inc;
 /**
  * Theme dependencies
  *
- * @package Leean
+ * @package Lean
  * @subpackage config
  * @since 1.1.0
  */

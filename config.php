@@ -1,15 +1,15 @@
-<?php namespace Leean;
+<?php namespace Lean;
 /**
  * Configuration file to handle different common areas of the project to have
  * a better organizades structure of the code.
  *
- * @package Leean
+ * @package Lean
  * @since 1.0.0
  */
 
 // Text domain for the theme.
 if ( ! defined( '_TEXT_DOMAIN_' ) ) {
-	define( '_TEXT_DOMAIN_', 'leean' );
+	define( '_TEXT_DOMAIN_', 'lean' );
 }
 // Absolute server path to the theme.
 if ( ! defined( '_THEME_PATH_' ) ) {

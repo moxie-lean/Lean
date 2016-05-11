@@ -1,8 +1,8 @@
-<?php namespace Leean;
+<?php namespace Lean;
 /**
  * Template part to display the content from single.php
  *
- * @package Leean
+ * @package Lean
  * @subpackage partials
  * @since 1.0.0
  */

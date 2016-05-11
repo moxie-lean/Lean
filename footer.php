@@ -1,8 +1,8 @@
-<?php namespace Leean;
+<?php namespace Lean;
 /**
  * The template for displaying the footer.
  *
- * @package Leean
+ * @package Lean
  * @since 1.0.0
  */
 

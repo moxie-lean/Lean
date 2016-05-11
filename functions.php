@@ -8,8 +8,8 @@
  * @since 1.0.0
  */
 
-use Leean\Config;
-use Leean\Assets;
+use Lean\Config;
+use Lean\Assets;
 
 /**
  * Action to load the configuration file and define constant values, this action
