@@ -22,8 +22,8 @@
     },
     "require": {
       "php": ">=5.4.0",
-      "moxie-lean/assets": "dev-master",
-      "moxie-lean/loader": "dev-master"
+      "moxie-lean/assets": "1.0.1",
+      "moxie-lean/loader": "1.0.0"
     },
     "require-dev": {
       "squizlabs/php_codesniffer": "2.*",
