@@ -1,11 +1,11 @@
-<?php namespace Leean;
+<?php namespace Lean;
 /**
  * The template for displaying Comments.
  *
  * The area of the page that contains both current comments
  * and the comment form.
  *
- * @package Leean
+ * @package Lean
  * @since 1.0.0
  */
 

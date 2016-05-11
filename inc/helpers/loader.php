@@ -1,11 +1,11 @@
-<?php namespace Leean\Inc\Helpers;
+<?php namespace Lean\Inc\Helpers;
 /**
  * Functions to load files fro mthe partials directory also allows to send
  * custom partials to the files.
  *
  * @since 2.0.0
  *
- * @package Leean
+ * @package Lean
  * @subpackage helpers
  */
 
@@ -33,7 +33,7 @@ function load_partial( $file_name = '', $args = [] ) {
  * @param array  $args Extra variables to pass to the template.
  */
 function load_template_part( $file_name = '', $args = [] ) {
-	$path = \Leean\THEME_PATH . $file_name . '.php';
+	$path = \Lean\THEME_PATH . $file_name . '.php';
 
 	if ( ! file_exists( $path ) ) {
 		$message = sprintf( '<code>%s</code> does not exist.', $path );

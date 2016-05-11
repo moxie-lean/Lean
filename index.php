@@ -1,9 +1,9 @@
-<?php namespace Leean;
+<?php namespace Lean;
 /**
  * The main template file.  It is used to display a page when nothing more
  * specific matches a query.
  *
- * @package Leean
+ * @package Lean
  * @since 1.0.0
  */
 

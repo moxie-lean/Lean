@@ -1,14 +1,14 @@
-<?php namespace Leean;
+<?php namespace Lean;
 /**
  * Template that displays all pages by default.
  *
- * @package Leean
+ * @package Lean
  * @since 1.0.0
  */
 
 get_header();
 
-use Leean\Load;
+use Lean\Load;
 ?>
 <div class="wrap">
 	<main class="site__main" role="main">

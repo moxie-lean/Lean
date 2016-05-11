@@ -4,65 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3f2ee613c762687eb51fc76b0273e199",
-    "content-hash": "5b9745f0a3c0c78fab5dc63f827053ec",
+    "hash": "a8df43c7f74fc9861a4758fb01bd13ef",
+    "content-hash": "a8d54e88f30119c13e7186938aeaeb3a",
     "packages": [
         {
-            "name": "moxie-leean/loader",
-            "version": "dev-master",
+            "name": "moxie-lean/assets",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/moxie-leean/loader.git",
-                "reference": "2fe1de3db0466278ba5114672e30bd7317fcb57d"
+                "url": "https://github.com/moxie-lean/assets.git",
+                "reference": "7e0db010cb03b85865a3735367efe5631a58a14c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/moxie-leean/loader/zipball/2fe1de3db0466278ba5114672e30bd7317fcb57d",
-                "reference": "2fe1de3db0466278ba5114672e30bd7317fcb57d",
-                "shasum": ""
-            },
-            "require": {
-                "moxie-leean/theme-assets": "dev-master",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "squizlabs/php_codesniffer": "2.*",
-                "wp-coding-standards/wpcs": "dev-master"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Leean\\": "src/"
-                },
-                "files": [
-                    "./src/config.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Crisoforo Gaspar",
-                    "email": "github@crisoforo.com"
-                }
-            ],
-            "description": "Loader for files in wordpress making things easier instead of using a require",
-            "time": "2016-03-08 17:38:53"
-        },
-        {
-            "name": "moxie-leean/theme-assets",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/moxie-leean/assets.git",
-                "reference": "a10b58c46ba83ae5cc0ccfa277395aa48ee3bfc5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/moxie-leean/assets/zipball/a10b58c46ba83ae5cc0ccfa277395aa48ee3bfc5",
-                "reference": "a10b58c46ba83ae5cc0ccfa277395aa48ee3bfc5",
+                "url": "https://api.github.com/repos/moxie-lean/assets/zipball/7e0db010cb03b85865a3735367efe5631a58a14c",
+                "reference": "7e0db010cb03b85865a3735367efe5631a58a14c",
                 "shasum": ""
             },
             "require": {
@@ -70,12 +26,12 @@
             },
             "require-dev": {
                 "squizlabs/php_codesniffer": "2.*",
-                "wp-coding-standards/wpcs": "dev-master"
+                "wp-coding-standards/wpcs": "0.9.0"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Leean\\": "src/"
+                    "Lean\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -96,25 +52,70 @@
                 "scripts",
                 "wordpress"
             ],
-            "time": "2016-01-19 03:10:00"
+            "time": "2016-04-26 15:18:16"
+        },
+        {
+            "name": "moxie-lean/loader",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/moxie-lean/loader.git",
+                "reference": "ecdf490682f4c9ba5f46898bb898345fd909e013"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/moxie-lean/loader/zipball/ecdf490682f4c9ba5f46898bb898345fd909e013",
+                "reference": "ecdf490682f4c9ba5f46898bb898345fd909e013",
+                "shasum": ""
+            },
+            "require": {
+                "moxie-lean/assets": "1.*.*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "2.*",
+                "wp-coding-standards/wpcs": "0.9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Lean\\": "src/"
+                },
+                "files": [
+                    "./src/config.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Crisoforo Gaspar",
+                    "email": "github@crisoforo.com"
+                }
+            ],
+            "description": "Loader for files in wordpress making things easier instead of using a require",
+            "time": "2016-04-26 15:25:27"
         }
     ],
     "packages-dev": [
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "2.5.1",
+            "version": "2.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "6731851d6aaf1d0d6c58feff1065227b7fda3ba8"
+                "reference": "1bcdf03b068a530ac1962ce671dead356eeba43b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/6731851d6aaf1d0d6c58feff1065227b7fda3ba8",
-                "reference": "6731851d6aaf1d0d6c58feff1065227b7fda3ba8",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/1bcdf03b068a530ac1962ce671dead356eeba43b",
+                "reference": "1bcdf03b068a530ac1962ce671dead356eeba43b",
                 "shasum": ""
             },
             "require": {
+                "ext-simplexml": "*",
                 "ext-tokenizer": "*",
                 "ext-xmlwriter": "*",
                 "php": ">=5.1.2"
@@ -175,7 +176,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2016-01-19 23:39:10"
+            "time": "2016-04-03 22:58:34"
         },
         {
             "name": "wp-coding-standards/wpcs",
@@ -183,12 +184,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git",
-                "reference": "b415094aa5fd24da6eba2295323bcff840902dd3"
+                "reference": "f50ccffe5ef3a77e84b3be9487cb7a477248a8ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress-Coding-Standards/WordPress-Coding-Standards/zipball/b415094aa5fd24da6eba2295323bcff840902dd3",
-                "reference": "b415094aa5fd24da6eba2295323bcff840902dd3",
+                "url": "https://api.github.com/repos/WordPress-Coding-Standards/WordPress-Coding-Standards/zipball/f50ccffe5ef3a77e84b3be9487cb7a477248a8ea",
+                "reference": "f50ccffe5ef3a77e84b3be9487cb7a477248a8ea",
                 "shasum": ""
             },
             "require": {
@@ -211,14 +212,12 @@
                 "standards",
                 "wordpress"
             ],
-            "time": "2016-02-01 16:14:59"
+            "time": "2016-05-02 03:33:03"
         }
     ],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "moxie-leean/theme-assets": 20,
-        "moxie-leean/loader": 20,
         "wp-coding-standards/wpcs": 20
     },
     "prefer-stable": false,

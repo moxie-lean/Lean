@@ -1,8 +1,8 @@
-<?php namespace Leean;
+<?php namespace Lean;
 /**
  * Template for displaying 404 pages (Not Found).
  *
- * @package Leean
+ * @package Lean
  * @since 1.0.0
  */
 

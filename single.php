@@ -1,14 +1,14 @@
-<?php namespace Leean;
+<?php namespace Lean;
 /**
  * The Template for displaying all single posts.
  *
- * @package Leean
+ * @package Lean
  * @since 1.0.0
  */
 
 get_header();
 
-use Leean\Load;
+use Lean\Load;
 ?>
 
 <div class="wrap">

@@ -1,8 +1,8 @@
-<?php namespace Leean;
+<?php namespace Lean;
 /**
  * The main header file.
  *
- * @package Leean
+ * @package Lean
  * @since 1.0.0
  */
 

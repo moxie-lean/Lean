@@ -1,8 +1,8 @@
 {
-    "name": "moxie/Leean",
+    "name": "moxie/Lean",
     "description": "Bare bones WordPress starter theme focused on modularity, scalability and performance.",
     "keywords": ["wordpress", "themes", "starter theme"],
-    "homepage": "https://github.com/moxie-leean/Leean",
+    "homepage": "https://github.com/moxie-lean/Lean",
     "licence": "MIT",
     "type": "project",
     "authors": [
@@ -22,8 +22,8 @@
     },
     "require": {
       "php": ">=5.4.0",
-      "moxie-leean/theme-assets": "dev-master",
-      "moxie-leean/loader": "dev-master"
+      "moxie-lean/assets": "1.0.1",
+      "moxie-lean/loader": "1.0.0"
     },
     "require-dev": {
       "squizlabs/php_codesniffer": "2.*",

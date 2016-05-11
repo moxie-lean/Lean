@@ -1,8 +1,8 @@
-<?php namespace Leean;
+<?php namespace Lean;
 /**
  * The Sidebar containing the main widget areas.
  *
- * @package Leean
+ * @package Lean
  */
 
 ?>
