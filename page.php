@@ -1,4 +1,4 @@
-<?php namespace Lean;
+<?php
 /**
  * Template that displays all pages by default.
  *

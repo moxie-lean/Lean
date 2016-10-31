@@ -1,4 +1,4 @@
-<?php namespace Lean;
+<?php
 /**
  * The main header file.
  *

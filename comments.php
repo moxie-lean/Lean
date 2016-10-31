@@ -1,4 +1,4 @@
-<?php namespace Lean;
+<?php
 /**
  * The template for displaying Comments.
  *

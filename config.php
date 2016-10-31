@@ -1,4 +1,4 @@
-<?php namespace Lean;
+<?php
 /**
  * Configuration file to handle different common areas of the project to have
  * a better organizades structure of the code.

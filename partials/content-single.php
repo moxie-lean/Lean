@@ -1,4 +1,4 @@
-<?php namespace Lean;
+<?php
 /**
  * Template part to display the content from single.php
  *

@@ -1,4 +1,4 @@
-<?php namespace Lean;
+<?php
 /**
  * Template for displaying 404 pages (Not Found).
  *
