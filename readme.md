@@ -1,10 +1,10 @@
-# [Moxie Lean](https://github.com/moxie-lean/Lean/) [![Build Status](https://travis-ci.org/moxie-lean/Lean.svg?branch=master)](https://travis-ci.org/moxie-lean/Lean)
+# [Nolte Lean](https://github.com/moxie-lean/Lean/) [![Build Status](https://travis-ci.org/moxie-lean/Lean.svg?branch=master)](https://travis-ci.org/moxie-lean/Lean)
 
 > Bare bones WordPress starter theme focused on modularity, scalability and performance.
 
 Insipired in the amazing job from [digisavvy](https://github.com/digisavvy)
 in [some-like-it-neat](https://github.com/digisavvy/some-like-it-neat).
-As [Moxie](https://github.com/moxienyc) we decied to create something that
+As [Nolte](https://github.com/moxienyc) we decied to create something that
 help us improve our workflow. 
 
 We are focus on create custom platforms using [WordPress](https://wordpress.org/), 
